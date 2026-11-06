@@ -13,9 +13,9 @@
       <p class="phero__lead enter" style="--d:.18s">Esame pakloję daugiau nei 50&nbsp;000&nbsp;m tinklų ir atlikę per 150 statybos objektų. Atestuoti LR aplinkos ministerijoje, atestato Nr.&nbsp;{{ imone.atestatas }}.</p>
     </div>
     <div class="collage enter" style="--d:.2s" aria-hidden="true">
-      <div class="collage__a">{{ pic('assets/img/agvysta/hero/slide-1', '', '(max-width: 760px) 70vw, 30vw', lazy=False) }}</div>
-      <div class="collage__b">{{ pic('assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0174', '', '(max-width: 760px) 50vw, 20vw') }}</div>
-      <div class="collage__c">{{ pic('assets/img/agvysta/galerija/siurblines-rezervuarai--IMGP5509', '', '(max-width: 760px) 60vw, 24vw') }}</div>
+      <div class="collage__a px" style="--par:24">{{ pic('assets/img/agvysta/hero/slide-1', '', '(max-width: 760px) 70vw, 30vw', lazy=False) }}</div>
+      <div class="collage__b px" style="--par:84">{{ pic('assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0174', '', '(max-width: 760px) 50vw, 20vw') }}</div>
+      <div class="collage__c px" style="--par:52">{{ pic('assets/img/agvysta/galerija/siurblines-rezervuarai--IMGP5509', '', '(max-width: 760px) 60vw, 24vw') }}</div>
     </div>
   </div>
 </section>
@@ -85,7 +85,7 @@
     <aside class="certs" aria-label="Sertifikatai ir atestatas">
       {% for c in a.sertifikatai %}
       {% set wh = img_size(c.failas) %}
-      <button class="cert reveal" type="button" style="--i:{{ loop.index0 }}" data-gallery="{% for x in a.sertifikatai %}{{ x.failas }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-captions="{% for x in a.sertifikatai %}{{ x.pavadinimas }}{% if not loop.last %}|{% endif %}{% endfor %}" aria-label="Peržiūrėti: {{ c.pavadinimas }}">
+      <button class="cert reveal px" type="button" style="--i:{{ loop.index0 }}; --par:{{ 14 if loop.index0 is even else 40 }}" data-gallery="{% for x in a.sertifikatai %}{{ x.failas }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-captions="{% for x in a.sertifikatai %}{{ x.pavadinimas }}{% if not loop.last %}|{% endif %}{% endfor %}" aria-label="Peržiūrėti: {{ c.pavadinimas }}">
         <span class="cert__img"><img src="{{ c.failas }}-800.webp" alt="{{ c.pavadinimas }}" loading="lazy" width="{{ wh[0] }}" height="{{ wh[1] }}"></span>
         <span class="cert__cap">{{ c.pavadinimas }}</span>
       </button>

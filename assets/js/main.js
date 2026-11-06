@@ -29,8 +29,10 @@
   const hdr = $('[data-hdr]');
   const hero = $('.hero');
   if (hdr && hero && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver(([e]) => hdr.classList.toggle('is-solid', !e.isIntersecting), { rootMargin: '-72px 0px 0px 0px' });
-    io.observe(hero);
+    /* antraštė tampa vientisa praslinkus ketvirtadalį hero (kol kylantis tekstas dar nepasiekė meniu) */
+    const mark = $('.hero__sentinel', hero) || hero;
+    const io = new IntersectionObserver(([e]) => hdr.classList.toggle('is-solid', !e.isIntersecting && e.boundingClientRect.top < 0), { rootMargin: '-72px 0px 0px 0px' });
+    io.observe(mark);
   } else if (hdr) hdr.classList.add('is-solid');
 
   /* išskleidžiamas paslaugų meniu */

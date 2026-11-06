@@ -52,6 +52,18 @@ Demonstracinė **agvysta.lt** svetainės versija. Turinys yra originalus (perkel
 - Po hero: juosta „Tarp mūsų užsakovų“ su 13 užsakovų logotipų (vienspalviai, lėtai slenka, sustoja užvedus pelę; esant „mažiau judesio“ nustatymui stovi ir slenkama ranka). Šaltiniai: [`docs/logotipai.md`](docs/logotipai.md).
 - Meniu: LT / EN / RU vėliavėlės (tik dizainas, vertimų nėra; paspaudus EN ar RU rodomas pranešimas). Mobiliajame meniu vėliavėlės su kalbų pavadinimais.
 
+## v4: gylis ir parallax
+
+Visi efektai yra CSS scroll-driven animations (`animation-timeline: view()`): be JS `scroll` klausytojų, animuojamos tik `translate`, `scale` ir `opacity`. Veikia Chrome, Edge ir Safari 26+; kitur viskas tiesiog statiška. Esant „mažiau judesio“ nustatymui niekas nejuda.
+
+- **Hero:** video slenka lėčiau nei puslapis, antraštė ir tekstas kyla ir blunka, paslaugų juosta išnyksta; antraštė tampa vientisa praslinkus ketvirtadalį hero.
+- **Vaizdas rėmelyje** (`.px-in`): projektų kortelės, „Sąlygos“, paslaugų galerijos, paslaugų ir karjeros hero video, kontaktų nuotrauka.
+- **Sluoksniai skirtingais greičiais** (`.px`, `--par`): faktai, sertifikatų vėduoklė (gilesni lapai juda daugiau), „Apie mus“ koliažas, sertifikatai „Apie mus“, karjeros nuotraukų juosta (banga).
+- **Įplaukimas iš gylio** (`.rise`): paslaugų video rėmelis, „Sąlygos“ vaizdas, kontaktų blokas.
+- **Vidinių puslapių hero** video slenkant „nugrimzta“ (mažėja ir lėtėja).
+- **„Ilgiausios paklotos trasos“:** fone didelis kontūrinis „36 005 m“, slenkantis horizontaliai.
+- Telefone parallax amplitudė perpus mažesnė (`--pk: .5`).
+
 ## Puslapiai
 
 Puslapių adresai (slug) **tokie pat kaip senojoje svetainėje** (SEO).

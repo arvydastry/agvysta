@@ -16,6 +16,7 @@
     </video>
   </div>
   <div class="hero__shade" aria-hidden="true"></div>
+  <span class="hero__sentinel" aria-hidden="true"></span>
   <div class="wrap hero__inner">
     <h1 class="hero__title" id="hero-title">
       <span class="ln"><span>Jūsų ateities</span></span>
@@ -54,7 +55,7 @@
 <section class="intro" aria-label="Apie įmonę trumpai">
   <div class="wrap intro__grid">
     <p class="intro__statement reveal">Įrengiame lauko vandentiekio, buitinių ir lietaus nuotekų tinklus, siurblines bei valymo įrenginius. <span>Nuo privačių projektų iki didelės apimties valstybinių užsakymų.</span></p>
-    <dl class="facts">
+    <dl class="facts px" style="--par:26">
       {% for f in site.faktai %}
       <div class="fact reveal" style="--i:{{ loop.index0 }}">
         <dt class="fact__label">{{ f.tekstas }}</dt>
@@ -85,7 +86,7 @@
         </li>
         {% endfor %}
       </ol>
-      <div class="svc__media" aria-hidden="true">
+      <div class="svc__media rise" aria-hidden="true">
         {% for p in paslaugos %}
         <div class="svc__frame{% if loop.first %} is-on{% endif %}" data-svc-frame="{{ loop.index0 }}">
           {{ video(p.video) }}
@@ -111,10 +112,10 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="cond__media reveal" aria-hidden="true">
+    <div class="cond__media rise" aria-hidden="true">
       {% for c in site.salygos %}
       <div class="cond__frame{% if loop.first %} is-on{% endif %}" data-cond-frame="{{ loop.index0 }}">
-        {% if c.media == 'video' %}{{ video(c.src) }}{% else %}{{ pic(c.src, '', '(max-width: 900px) 92vw, 56vw') }}{% endif %}
+        {% if c.media == 'video' %}{{ video(c.src, 'px-in') }}{% else %}{{ pic(c.src, '', '(max-width: 900px) 92vw, 56vw', cls='px-in') }}{% endif %}
       </div>
       {% endfor %}
     </div>
@@ -136,7 +137,7 @@
     {% for p in featured %}
     <article class="pcard reveal" style="--i:{{ loop.index0 % 4 }}">
       <button class="pcard__btn" type="button" data-gallery="{{ gallery_data(p) }}" data-caption="{{ p.trumpas }}, {{ p.laikotarpis }}" aria-label="Peržiūrėti nuotraukas: {{ p.trumpas }} ({{ p.nuotraukos|length }})">
-        <span class="pcard__img"><img src="{{ p.virselis.thumb }}" alt="" loading="lazy" decoding="async" width="800" height="600" draggable="false"></span>
+        <span class="pcard__img"><img class="px-in" src="{{ p.virselis.thumb }}" alt="" loading="lazy" decoding="async" width="800" height="600" draggable="false"></span>
       </button>
       <div class="pcard__meta">
         <p class="pcard__yr">{{ p.laikotarpis }}<span class="pcard__ph"><i class="ph ph-images" aria-hidden="true"></i>{{ p.nuotraukos|length }}</span></p>
@@ -151,6 +152,7 @@
 </section>
 
 <section class="routes" aria-labelledby="rt-title">
+  <p class="routes__bg" aria-hidden="true">{{ trasu.metrai|thousands }}&nbsp;m</p>
   <div class="wrap routes__grid">
     <div class="routes__head">
       <h2 class="h2 reveal" id="rt-title">Ilgiausios paklotos trasos</h2>
@@ -187,7 +189,7 @@
     <div class="fan reveal" data-fan>
       {% for c in site.apie.sertifikatai %}
       {% set wh = img_size(c.failas) %}
-      <button class="fan__doc" type="button" style="--k:{{ loop.index0 }}" data-gallery="{% for x in site.apie.sertifikatai %}{{ x.failas }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-captions="{% for x in site.apie.sertifikatai %}{{ x.pavadinimas }}{% if not loop.last %}|{% endif %}{% endfor %}" aria-label="Peržiūrėti: {{ c.pavadinimas }}">
+      <button class="fan__doc px" type="button" style="--k:{{ loop.index0 }}; --par:{{ 10 + loop.index0 * 16 }}" data-gallery="{% for x in site.apie.sertifikatai %}{{ x.failas }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-captions="{% for x in site.apie.sertifikatai %}{{ x.pavadinimas }}{% if not loop.last %}|{% endif %}{% endfor %}" aria-label="Peržiūrėti: {{ c.pavadinimas }}">
         <img src="{{ c.failas }}-800.webp" alt="{{ c.pavadinimas }}" loading="lazy" width="{{ wh[0] }}" height="{{ wh[1] }}">
         <span class="fan__cap">{{ c.pavadinimas }}</span>
       </button>

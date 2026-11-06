@@ -20,9 +20,9 @@
         {% if s.nuotraukos %}<div><dt>Nuotraukų iš objektų</dt><dd><a href="#galerija">{{ s.nuotraukos|length }}</a></dd></div>{% endif %}
       </dl>
     </div>
-    <div class="phero__media enter" style="--d:.15s">
-      {{ video(s.video, 'phero__video') }}
-    </div>
+    <div class="phero__media enter" style="--d:.15s"><div class="phero__depth">
+      {{ video(s.video, 'phero__video px-in') }}
+    </div></div>
   </div>
 </section>
 
@@ -48,7 +48,7 @@
     <div class="gal__grid" data-gal>
       {% for b in s.nuotraukos %}
       <button class="gal__item reveal{% if loop.index > 12 %} is-more{% endif %}" type="button" style="--i:{{ loop.index0 % 4 }}" data-gallery="{% for x in all %}{{ x }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-caption="{{ s.trumpas }}" aria-label="Didinti nuotrauką {{ loop.index }}">
-        {{ pic(b, '', '(max-width: 760px) 50vw, 25vw') }}
+        {{ pic(b, '', '(max-width: 760px) 50vw, 25vw', cls='px-in') }}
       </button>
       {% endfor %}
     </div>
