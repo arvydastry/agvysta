@@ -1,0 +1,62 @@
+{% macro logo(id='lg') -%}
+<svg class="logo__mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+  <defs><clipPath id="{{ id }}-c"><circle cx="22" cy="22" r="17.2"/></clipPath></defs>
+  <circle cx="22" cy="22" r="19.2" fill="none" stroke="currentColor" stroke-width="3.6"/>
+  <g class="logo__waves" clip-path="url(#{{ id }}-c)" fill="none" stroke-width="3.4" stroke-linecap="round">
+    <path d="M2 15.5c3.4-2.8 6.8-2.8 10.2 0s6.8 2.8 10.2 0 6.8-2.8 10.2 0 6.8 2.8 10.2 0"/>
+    <path d="M2 22.5c3.4-2.8 6.8-2.8 10.2 0s6.8 2.8 10.2 0 6.8-2.8 10.2 0 6.8 2.8 10.2 0"/>
+    <path d="M2 29.5c3.4-2.8 6.8-2.8 10.2 0s6.8 2.8 10.2 0 6.8-2.8 10.2 0 6.8 2.8 10.2 0"/>
+  </g>
+</svg>
+<span class="logo__word">AGVYSTA</span>
+{%- endmacro %}
+
+{% macro pic(base, alt='', sizes='(max-width: 760px) 92vw, 50vw', cls='', lazy=True) -%}
+{% set wh = img_size(base) %}
+<img{% if cls %} class="{{ cls }}"{% endif %} src="{{ base }}-800.webp" srcset="{{ base }}-800.webp 800w, {{ base }}.webp 1600w" sizes="{{ sizes }}" width="{{ wh[0] }}" height="{{ wh[1] }}" alt="{{ alt }}"{% if lazy %} loading="lazy" decoding="async"{% endif %}>
+{%- endmacro %}
+
+{% macro video(name, cls='', poster=True) -%}
+<video class="{{ cls }}" muted loop playsinline preload="none" data-auto{% if poster %} poster="assets/video/{{ name }}-poster.webp"{% endif %} aria-hidden="true">
+  <source data-src="assets/video/{{ name }}.mp4" type="video/mp4">
+</video>
+{%- endmacro %}
+
+{% macro plural(n, one, few, many) -%}
+{%- set n10 = n % 10 -%}{%- set n100 = n % 100 -%}
+{{ n }}&nbsp;{% if n10 == 1 and n100 != 11 %}{{ one }}{% elif n10 >= 2 and (n100 < 10 or n100 >= 20) %}{{ few }}{% else %}{{ many }}{% endif %}
+{%- endmacro %}
+
+{% macro metrics(p) -%}
+{% if p.ilgiai_m %}<span class="metric">L&nbsp;=&nbsp;{{ p.ilgiai_m|map('thousands')|join(' m, ') }}&nbsp;m</span>{% endif %}
+{%- endmacro %}
+
+{% macro gallery_data(p) -%}
+{{ p.nuotraukos|map(attribute='src')|join('|') }}
+{%- endmacro %}
+
+{% macro arrow() -%}<i class="ph ph-arrow-right" aria-hidden="true"></i>{%- endmacro %}
+
+{% macro cta(title='Planuojate objektą?', text='Papasakokite apie objektą telefonu ar el. paštu arba pateikite užklausą. Aptarsime darbų apimtį ir terminus.', btn='Pateikti užklausą', href='kontaktai.html#forma') -%}
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap"><div class="cta__grid">
+    <div class="cta__main">
+      <h2 class="cta__title reveal" id="cta-title">{{ title }}</h2>
+      <p class="cta__text reveal">{{ text }}</p>
+      <a class="btn btn--primary reveal" href="{{ href }}">{{ btn }}{{ arrow() }}</a>
+    </div>
+    <ul class="cta__people">
+      <li class="cta__row reveal">
+        <p class="cta__who">Biuras<span>{{ imone.adresas }}, Vilnius</span></p>
+        <p class="cta__how"><a href="tel:{{ imone.telefonas_href }}">{{ imone.telefonas }}</a><a href="mailto:{{ imone.el_pastas }}">{{ imone.el_pastas }}</a></p>
+      </li>
+      {% for z in site.zmones[:2] %}
+      <li class="cta__row reveal" style="--i:{{ loop.index }}">
+        <p class="cta__who">{{ z.vardas }}<span>{{ z.pareigos }}</span></p>
+        <p class="cta__how"><a href="tel:{{ z.tel_href }}">{{ z.tel }}</a><a href="mailto:{{ z.el }}">{{ z.el }}</a></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div></div>
+</section>
+{%- endmacro %}

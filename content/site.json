@@ -1,0 +1,405 @@
+{
+  "imone": {
+    "pavadinimas": "UAB „Agvysta“",
+    "kodas": "300130064",
+    "pvm": "LT100001825318",
+    "telefonas": "+370 5 264 0357",
+    "telefonas_href": "+37052640357",
+    "faksas": "+370 5 264 0457",
+    "el_pastas": "info@agvysta.lt",
+    "adresas": "Savanorių pr. 187",
+    "miestas": "LT-02300 Vilnius",
+    "zemelapis": "https://goo.gl/maps/ZwgWPpGDPEZ3rW286",
+    "lat": 54.64685,
+    "lon": 25.21031,
+    "atestatas": "5441",
+    "nuo": 2005
+  },
+  "sukis": "Jūsų ateities projektų partneris",
+  "hero_tekstas": "Lauko inžineriniai tinklai, siurblinės, žemės ir specialieji darbai. Vamzdynus klojame nuo šaltinio iki galutinio vartotojo.",
+  "faktai": [
+    {
+      "skaicius": "2005",
+      "nuo": true,
+      "vienetas": "",
+      "tekstas": "Įmonės veiklos pradžia"
+    },
+    {
+      "skaicius": "50 000",
+      "count": 50000,
+      "vienetas": "m",
+      "plius": true,
+      "tekstas": "Paklota lauko inžinerinių tinklų"
+    },
+    {
+      "skaicius": "150",
+      "count": 150,
+      "vienetas": "",
+      "plius": true,
+      "tekstas": "Atlikta statybos objektų"
+    },
+    {
+      "skaicius": "3",
+      "nuo": true,
+      "vienetas": "",
+      "tekstas": "Sertifikuotos vadybos sistemos: ISO 9001, ISO 14001, OHSAS 18001"
+    }
+  ],
+  "paslaugos": [
+    {
+      "slug": "lauko-inzineriniu-tinklu-montavimas",
+      "nr": "01",
+      "pavadinimas": "Lauko inžinerinių tinklų montavimas",
+      "trumpas": "Lauko inžineriniai tinklai",
+      "ivadas": "Lauko ir vidaus vandentiekio, buitinių bei lietaus nuotekų tinklai. Vamzdynus tiesiame nuo šaltinio iki galutinio vartotojo.",
+      "punktai": [
+        "Vamzdynų tiesimas nuo šaltinio iki galutinio vartotojo",
+        "Lauko ir vidaus tinklai",
+        "Visos vamzdynų medžiagos",
+        "Visi skersmenys bei spaudimo lygiai",
+        "Naujų vamzdynų tiesimas ir senų renovacija",
+        "Nuo įvairaus lygio privačių projektų iki didelės apimties valstybinių užsakymų",
+        "Patirtis įveikiant sudėtingas kliūtis (perėjimas per kelius, upes)",
+        "Vamzdynų klojimas ypač nepalankiomis sąlygomis (šlapi gruntai, dideli gyliai, ankštos sąlygos, įšalo laužymas)"
+      ],
+      "video": "lauko-tinklai",
+      "galerija": "lauko-inzineriniu-tinklu-montavimas",
+      "kategorija": "tinklai",
+      "virselis": "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Vakarinis-aplinkelis-Vandentiekis-2-"
+    },
+    {
+      "slug": "siurbliniu-rezervuaru-valymo-irenginiu-infiltraciniu-lauku-montavimas",
+      "nr": "02",
+      "pavadinimas": "Siurblinių, rezervuarų, valymo įrenginių, infiltracinių laukų montavimas",
+      "trumpas": "Siurblinės ir rezervuarai",
+      "ivadas": "Sumontuojame siurblines, priešgaisrinius rezervuarus, valymo įrenginius, naftos bei riebalų gaudykles. Įrengiame infiltracinius laukus ir drenažo tinklus.",
+      "punktai": [
+        "Siurblinių, priešgaisrinių rezervuarų, naftos ir riebalų gaudyklių montavimas",
+        "Nuo įvairaus lygio privačių projektų iki didelės apimties valstybinių užsakymų",
+        "Įrenginių montavimas ypač nepalankiomis sąlygomis (šlapi gruntai, dideli gyliai, ankštos sąlygos, įšalo laužymas)",
+        "Infiltracinių laukų montavimas ir drenažo įrengimas"
+      ],
+      "video": "siurblines",
+      "galerija": "siurblines-rezervuarai",
+      "kategorija": "siurblines",
+      "virselis": "assets/img/agvysta/galerija/siurblines-rezervuarai--IMGP5509"
+    },
+    {
+      "slug": "zemes-darbai-ir-gerbuvio-darbai-2",
+      "nr": "03",
+      "pavadinimas": "Žemės darbai ir gerbūvio darbai",
+      "trumpas": "Žemės ir gerbūvio darbai",
+      "ivadas": "Atliekame žemės, gerbūvio bei bendrastatybinius darbus ir klojame kelius, kad objektas būtų užbaigtas iki galo.",
+      "punktai": [
+        "Žemės darbai",
+        "Gerbūvio įrengimas ir keliai",
+        "Bendrastatybiniai darbai"
+      ],
+      "video": "zemes-darbai",
+      "galerija": null,
+      "galerija_rinkinys": [
+        "assets/img/agvysta/hero/slide-4",
+        "assets/img/agvysta/hero/slide-5",
+        "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0206",
+        "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0306",
+        "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Linkmenu-g-22",
+        "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0307",
+        "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Pietinis-III-2",
+        "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0323"
+      ],
+      "kategorija": "zemes",
+      "virselis": "assets/img/agvysta/hero/slide-4"
+    },
+    {
+      "slug": "spec-paslaugos-gruntinio-vandens-pazeminimas-atraminiu-sienuciu-irengimas-isalo-lauzymas",
+      "nr": "04",
+      "pavadinimas": "Specialiosios paslaugos",
+      "trumpas": "Spec. paslaugos",
+      "ivadas": "Gruntinio vandens pažeminimas, atraminės sienutės iš plieninio špunto ir įšalo laužymas objektuose, kur sąlygos sudėtingos.",
+      "punktai": [
+        "Gruntinio vandens pažeminimas",
+        "Atraminių sienučių iš plieninio špunto įrengimas",
+        "Įšalo laužymas",
+        "Bendrastatybiniai darbai",
+        "Mechanizmų nuoma"
+      ],
+      "video": "spec-paslaugos",
+      "galerija": "spec-paslaugos",
+      "kategorija": "spec",
+      "virselis": "assets/img/agvysta/galerija/spec-paslaugos--Gruntinio-vandens-pazeminimas-2"
+    }
+  ],
+  "salygos": [
+    {
+      "pavadinimas": "Šlapi gruntai",
+      "tekstas": "Prieš klojant vamzdynus pažeminame gruntinio vandens lygį.",
+      "media": "img",
+      "src": "assets/img/agvysta/galerija/spec-paslaugos--Gruntinio-vandens-pazeminimas-2"
+    },
+    {
+      "pavadinimas": "Dideli gyliai",
+      "tekstas": "Šuliniai ir kameros giliose iškasose, sutvirtintose plieninio špunto sienutėmis.",
+      "media": "img",
+      "src": "assets/img/agvysta/galerija/spec-paslaugos--Vakarinis-mikro-2"
+    },
+    {
+      "pavadinimas": "Ankštos sąlygos",
+      "tekstas": "Tinklai tarp esamų pastatų, gatvių ir veikiančių komunikacijų.",
+      "media": "img",
+      "src": "assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Linkmenu-g-22"
+    },
+    {
+      "pavadinimas": "Įšalo laužymas",
+      "tekstas": "Darbai objekte nesustoja ir žiemą.",
+      "media": "video",
+      "src": "spec-paslaugos"
+    },
+    {
+      "pavadinimas": "Perėjimai per kelius ir upes",
+      "tekstas": "Vilijos g. 2 įrengėme 180 m uždarą perėjimą po geležinkeliu (2009 m.).",
+      "media": "video",
+      "src": "ekskavatorius-upe"
+    }
+  ],
+  "atrinkti_projektai": [
+    {
+      "id": "a34",
+      "virselis": 1,
+      "trumpas": "Vakarinio aplinkelio I etapas"
+    },
+    {
+      "id": "a20",
+      "virselis": 2,
+      "trumpas": "Gariūnų g. rekonstrukcija"
+    },
+    {
+      "id": "a19",
+      "virselis": 0,
+      "trumpas": "Gamybinės paskirties pastatas Vilijos g. 2"
+    },
+    {
+      "id": "a23",
+      "virselis": 0,
+      "trumpas": "CCGT projektas Lietuvos elektrinėje"
+    },
+    {
+      "id": "a24",
+      "virselis": 2,
+      "trumpas": "Sandėliavimo pastatas S. Dariaus ir S. Girėno g. 81"
+    },
+    {
+      "id": "a10",
+      "virselis": 0,
+      "trumpas": "Fizikos instituto mokslo ir technologijų parkas"
+    },
+    {
+      "id": "a46",
+      "virselis": 0,
+      "trumpas": "Santariškių g. 45 gyvenamieji namai"
+    },
+    {
+      "id": "a08",
+      "virselis": 2,
+      "trumpas": "Šolomo Aleichemo ORT gimnazija"
+    }
+  ],
+  "apie": {
+    "dirbame": "nuo 2005 metų",
+    "esame": [
+      "pakloję daugiau nei 50 000 m tinklų",
+      "atlikę per 150 statybos objektų",
+      "atestuoti LR aplinkos ministerijoje, atestato Nr. 5441"
+    ],
+    "turime": [
+      {
+        "kodas": "LST EN ISO 9001:2015",
+        "pavadinimas": "Kokybės vadybos sistema"
+      },
+      {
+        "kodas": "LST EN ISO 14001:2015",
+        "pavadinimas": "Aplinkos apsaugos vadybos sistema"
+      },
+      {
+        "kodas": "OHSAS 18001:2007",
+        "pavadinimas": "Darbuotojų saugos ir sveikatos vadybos sistema"
+      }
+    ],
+    "galime": [
+      {
+        "grupe": "Tinklai",
+        "punktai": [
+          "Įrengti lauko ir vidaus vandentiekio, buitinių bei lietaus nuotekų tinklus",
+          "Pakloti vamzdynus nuo šaltinio iki galutinio vartotojo",
+          "Atlikti naujų vamzdynų tiesimą ir senų renovaciją"
+        ]
+      },
+      {
+        "grupe": "Įrenginiai ir gerbūvis",
+        "punktai": [
+          "Sumontuoti siurblines, rezervuarus, valymo įrenginius, naftos bei riebalų gaudykles",
+          "Įrengti infiltracinius laukus, drenažo tinklus",
+          "Atlikti žemės, gerbūvio bei bendrastatybinius darbus, pakloti kelius"
+        ]
+      },
+      {
+        "grupe": "Sudėtingos sąlygos",
+        "punktai": [
+          "Pakloti vamzdynus ypač nepalankiomis sąlygomis (šlapi gruntai, dideli gyliai, ankštos sąlygos, įšalo laužymas)",
+          "Įrengti atramines sienutes iš plieninio špunto",
+          "Įveikti sudėtingas kliūtis (vamzdynų perėjimai per kelius, upes)"
+        ]
+      }
+    ],
+    "laiko_juosta": [
+      {
+        "metai": "2005",
+        "tekstas": "Pirmieji objektai: vandentiekio tinklai Trakuose ir lauko inžineriniai tinklai sandėliui Kirtimų g. 41, Vilniuje.",
+        "projektas": "a52"
+      },
+      {
+        "metai": "2006",
+        "tekstas": "Lietaus nuotekynė D 1000 Konstitucijos pr. 20, Vilniuje.",
+        "projektas": "a48"
+      },
+      {
+        "metai": "2006-2009",
+        "tekstas": "Santariškių g. 45 gyvenamieji namai: 5 800 m lauko tinklų, buitinių nuotekų siurblinė ir privažiavimo kelias.",
+        "projektas": "a46"
+      },
+      {
+        "metai": "2009",
+        "tekstas": "Vilijos g. 2: 4 396 m tinklų, priešgaisriniai rezervuarai, infiltracinė sistema ir 180 m uždaras perėjimas po geležinkeliu.",
+        "projektas": "a38"
+      },
+      {
+        "metai": "2009-2010",
+        "tekstas": "Transeuropinio tinklo jungtis: Vilniaus Vakarinio aplinkelio I etapas.",
+        "projektas": "a34"
+      },
+      {
+        "metai": "2011",
+        "tekstas": "CCGT projektas Lietuvos elektrinėje ir Trakų pusiasalio pilies rekonstrukcija.",
+        "projektas": "a23"
+      },
+      {
+        "metai": "2011-2013",
+        "tekstas": "Kelias E85: Vilniaus pietinio apvažiavimo tiesimas.",
+        "projektas": "a17"
+      },
+      {
+        "metai": "2017",
+        "tekstas": "Kelio E85 Vilnius-Kaunas-Klaipėda rekonstravimas ties Grigiškėmis.",
+        "projektas": "a27"
+      },
+      {
+        "metai": "Šiandien",
+        "tekstas": "Vykdomi vandentiekio, nuotekų ir drenažo objektai Vilniuje ir Vilniaus rajone.",
+        "projektas": null
+      }
+    ],
+    "sertifikatai": [
+      {
+        "failas": "assets/img/agvysta/sertifikatai/atestatas",
+        "pavadinimas": "Kvalifikacijos atestatas Nr. 5441"
+      },
+      {
+        "failas": "assets/img/agvysta/sertifikatai/iso9001",
+        "pavadinimas": "LST EN ISO 9001:2015"
+      },
+      {
+        "failas": "assets/img/agvysta/sertifikatai/iso140001",
+        "pavadinimas": "LST EN ISO 14001:2015"
+      },
+      {
+        "failas": "assets/img/agvysta/sertifikatai/ohsas18001",
+        "pavadinimas": "OHSAS 18001:2007"
+      }
+    ]
+  },
+  "kokybe": {
+    "pavadinimas": "Kokybės, aplinkosaugos ir DSS politika",
+    "ivadas": "Siekdama užtikrinti kokybišką bei tvarkingą statybos darbų vykdymą, reikliai vertindama atliekamų darbų kokybę, jausdama atsakomybę už bendrovės veiklos daromą poveikį supančiai aplinkai, darbuotojų saugai bei sveikatai, UAB „Agvysta“ kelia sau šiuos tikslus:",
+    "tikslai": [
+      "Užtikrinti įmonės finansų tvarumą, darnią plėtrą, nepriekaištingą reputaciją ir lyderystę rinkoje",
+      "Sistemiškai kelti kvalifikaciją ir užtikrinti aukštą atliekamo darbo kokybę",
+      "Tiksliai, sąžiningai ir efektyviai įgyvendinti projekto lauko inžinerinės dalies sprendimus, atitinkant kliento lūkesčius išspręsti sudėtingus klausimus",
+      "Siekti ilgalaikio bendradarbiavimo",
+      "Suteikti galimybę save realizuoti ir tobulėti darnioje, lojalių, vienas kitą gerbiančių profesionalų komandoje, gaunant sąžiningą įvertinimą",
+      "Užtikrinti patrauklią vietą darbui"
+    ],
+    "standartai": "Šie tikslai įgyvendinami vadovaujantis tarptautinių standartų LST EN ISO 9001:2015, LST EN ISO 14001:2015 ir BS OHSAS 18001:2007 reikalavimais.",
+    "kadvs": "KADVS vadybos sistema įpareigoja įmonę būti atsakinga už darbuotojų saugą ir sveikatą, aplinkos apsaugą, kokybę, atitikti augančius darbuotojų saugos ir sveikatos, aplinkos apsaugos ir kokybės poreikius, užtikrinti atitikimą normatyviniams ir teisiniams darbuotojų saugos ir sveikatos, aplinkos apsaugos, kokybės ir įmonės vykdomos veiklos reikalavimams, leidžia valdyti ir gerinti kokybę bei jos veiklos poveikius aplinkai bei darbuotojų saugai ir sveikatai."
+  },
+  "karjera": {
+    "tekstas": "Įmonė UAB „Agvysta“ nuolat plečia savo veiklą inžinerinių tinklų statybos, renovacijos srityse ir į savo kolektyvą kviečia dirbti šios srities profesionalus. Jei esate organizuotas ir kompetentingas specialistas, norite dirbti darnioje komandoje, kviečiame Jus prisijungti prie mūsų kolektyvo.",
+    "cv": "Savo gyvenimo aprašymus (CV) siųskite adresu info@agvysta.lt."
+  },
+  "zmones": [
+    {
+      "pareigos": "Direktorius",
+      "vardas": "Aurelijus Želnys",
+      "tel": "+370 650 33579",
+      "tel_href": "+37065033579",
+      "el": "aurelijus@agvysta.lt",
+      "atestatas": "Atestato Nr. 26335"
+    },
+    {
+      "pareigos": "Statybų vadovas",
+      "vardas": "Aidas Liudvinavičius",
+      "tel": "+370 650 33149",
+      "tel_href": "+37065033149",
+      "el": "agvysta@gmail.com",
+      "atestatas": "Atestatų Nr. 32465, 34731"
+    },
+    {
+      "pareigos": "Vyr. finansininkė",
+      "vardas": "Gitana Klipčienė",
+      "tel": "+370 699 99551",
+      "tel_href": "+37069999551",
+      "el": "gitana@agvysta.lt",
+      "atestatas": null
+    },
+    {
+      "pareigos": "Projektų vadovė",
+      "vardas": "Sonata Chmylkaitė",
+      "tel": null,
+      "tel_href": null,
+      "el": "sonata@agvysta.lt",
+      "atestatas": null
+    }
+  ],
+  "trasos": [
+    {
+      "id": "a46",
+      "pavadinimas": "Gyvenamieji namai su požeminiais parkingais, Santariškių g. 45"
+    },
+    {
+      "id": "a38",
+      "pavadinimas": "Sandėlis Vilijos g. 2"
+    },
+    {
+      "id": "a44",
+      "pavadinimas": "Prekybos ir paslaugų pastatas Priegliaus ir M. Mažvydo g. sankirtoje"
+    },
+    {
+      "id": "a43",
+      "pavadinimas": "Gyvenamųjų namų kvartalas Džiaugsmo g."
+    },
+    {
+      "id": "a47",
+      "pavadinimas": "Daugiabučių kvartalas Pilaitės mikrorajone"
+    },
+    {
+      "id": "a41",
+      "pavadinimas": "Ukmergės g., Laisvės pr. ir Ateities g. sankryža"
+    },
+    {
+      "id": "a45",
+      "pavadinimas": "Logistikos centras Dariaus ir Girėno g. 81, I etapas"
+    },
+    {
+      "id": "a42",
+      "pavadinimas": "Sporto ir sveikatingumo kompleksas Ąžuolyno g. 5"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import pic, video, plural, metrics, gallery_data, cta, arrow %}
+{% block title %}Lauko inžineriniai tinklai, siurblinės, žemės darbai{% endblock %}
+{% block head %}<link rel="preload" as="image" href="assets/video/hero-1600-poster.webp" media="(min-width: 761px)"><link rel="preload" as="image" href="assets/video/hero-720-poster.webp" media="(max-width: 760px)">{% endblock %}
+{% block main %}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">
+    <picture>
+      <source media="(max-width: 760px)" srcset="assets/video/hero-720-poster.webp">
+      <img class="hero__poster" src="assets/video/hero-1600-poster.webp" alt="" width="1600" height="900" fetchpriority="high">
+    </picture>
+    <video class="hero__video" muted loop playsinline preload="none" data-auto data-hero aria-hidden="true">
+      <source data-src="assets/video/hero-720.mp4" media="(max-width: 760px)" type="video/mp4">
+      <source data-src="assets/video/hero-1600.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <h1 class="hero__title" id="hero-title">
+      <span class="ln"><span>Jūsų ateities</span></span>
+      <span class="ln"><span>projektų partneris</span></span>
+    </h1>
+    <p class="hero__lead enter" style="--d:.35s">{{ site.hero_tekstas }}</p>
+    <div class="hero__cta enter" style="--d:.5s">
+      <a class="btn btn--primary" href="kontaktai.html#forma">Pateikti užklausą{{ arrow() }}</a>
+      <a class="btn btn--line" href="projektai.html">Projektai</a>
+    </div>
+  </div>
+  <div class="wrap hero__foot enter" style="--d:.7s">
+    <nav class="hero__svc" aria-label="Paslaugos">
+      {% for p in paslaugos %}
+      <a class="hero__svc-a" href="{{ p.slug }}.html"><span class="hero__svc-nr">{{ p.nr }}</span><span class="hero__svc-name">{{ p.trumpas }}</span></a>
+      {% endfor %}
+    </nav>
+    <button class="vidctl" type="button" data-vidctl aria-label="Sustabdyti foninį vaizdo įrašą" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i></button>
+  </div>
+</section>
+
+<section class="intro" aria-label="Apie įmonę trumpai">
+  <div class="wrap intro__grid">
+    <p class="intro__statement reveal">Įrengiame lauko vandentiekio, buitinių ir lietaus nuotekų tinklus, siurblines bei valymo įrenginius. <span>Nuo privačių projektų iki didelės apimties valstybinių užsakymų.</span></p>
+    <dl class="facts">
+      {% for f in site.faktai %}
+      <div class="fact reveal" style="--i:{{ loop.index0 }}">
+        <dt class="fact__label">{{ f.tekstas }}</dt>
+        <dd class="fact__num"><span{% if not f.nuo %} data-count="{{ f.count }}"{% endif %}>{{ f.skaicius }}</span>{% if f.plius %}<span class="fact__plus">+</span>{% endif %}{% if f.vienetas %}<span class="fact__unit">{{ f.vienetas }}</span>{% endif %}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="svc" aria-labelledby="svc-title">
+  <div class="wrap">
+    <h2 class="h2 svc__title reveal" id="svc-title">Ką darome</h2>
+    <div class="svc__grid">
+      <ol class="svc__list">
+        {% for p in paslaugos %}
+        <li class="svc__item reveal" style="--i:{{ loop.index0 }}">
+          <a class="svc__a" href="{{ p.slug }}.html" data-svc="{{ loop.index0 }}">
+            <span class="svc__nr">{{ p.nr }}</span>
+            <span class="svc__body">
+              <span class="svc__name">{{ p.trumpas }}</span>
+              <span class="svc__desc">{{ p.ivadas }}</span>
+              <span class="svc__meta">{{ plural(p.projektai|length, 'projektas', 'projektai', 'projektų') }} sąraše{% if p.nuotraukos %}, {{ plural(p.nuotraukos|length, 'nuotrauka', 'nuotraukos', 'nuotraukų') }}{% endif %}</span>
+            </span>
+            <i class="ph ph-arrow-up-right svc__arrow" aria-hidden="true"></i>
+          </a>
+          <div class="svc__thumb" aria-hidden="true"><img src="assets/video/{{ p.video }}-poster.webp" alt="" loading="lazy" width="1280" height="720"></div>
+        </li>
+        {% endfor %}
+      </ol>
+      <div class="svc__media" aria-hidden="true">
+        {% for p in paslaugos %}
+        <div class="svc__frame{% if loop.first %} is-on{% endif %}" data-svc-frame="{{ loop.index0 }}">
+          {{ video(p.video) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cond" aria-labelledby="cond-title" data-cond>
+  <div class="wrap cond__grid">
+    <div class="cond__side">
+      <h2 class="cond__title reveal" id="cond-title">Klojame ir ten, kur sąlygos nepalankios</h2>
+      <ul class="cond__list" role="list">
+        {% for c in site.salygos %}
+        <li class="cond__item{% if loop.first %} is-on{% endif %} reveal" style="--i:{{ loop.index0 }}">
+          <button class="cond__btn" type="button" data-cond-i="{{ loop.index0 }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+            <span class="cond__name">{{ c.pavadinimas }}</span>
+            <span class="cond__txt"><span>{{ c.tekstas }}</span></span>
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="cond__media reveal" aria-hidden="true">
+      {% for c in site.salygos %}
+      <div class="cond__frame{% if loop.first %} is-on{% endif %}" data-cond-frame="{{ loop.index0 }}">
+        {% if c.media == 'video' %}{{ video(c.src) }}{% else %}{{ pic(c.src, '', '(max-width: 900px) 92vw, 56vw') }}{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="work" aria-labelledby="work-title">
+  <div class="wrap work__head">
+    <h2 class="h2 reveal" id="work-title">Atrinkti projektai</h2>
+    <div class="work__ctl">
+      <a class="link-arrow" href="projektai.html">Visi {{ pj.vykdomi|length + pj.atlikti|length }} projektai{{ arrow() }}</a>
+      <div class="work__btns">
+        <button class="circ" type="button" data-track-prev aria-label="Ankstesni projektai"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+        <button class="circ" type="button" data-track-next aria-label="Kiti projektai"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="work__track" data-track tabindex="0" aria-label="Atrinktų projektų sąrašas, slinkite horizontaliai">
+    {% for p in featured %}
+    <article class="pcard reveal" style="--i:{{ loop.index0 % 4 }}">
+      <button class="pcard__btn" type="button" data-gallery="{{ gallery_data(p) }}" data-caption="{{ p.trumpas }}, {{ p.laikotarpis }}" aria-label="Peržiūrėti nuotraukas: {{ p.trumpas }} ({{ p.nuotraukos|length }})">
+        <span class="pcard__img"><img src="{{ p.virselis.thumb }}" alt="" loading="lazy" decoding="async" width="800" height="600" draggable="false"></span>
+      </button>
+      <div class="pcard__meta">
+        <p class="pcard__yr">{{ p.laikotarpis }}<span class="pcard__ph"><i class="ph ph-images" aria-hidden="true"></i>{{ p.nuotraukos|length }}</span></p>
+        <h3 class="pcard__title">{{ p.trumpas }}</h3>
+        <p class="pcard__client">{{ p.uzsakovas }}</p>
+        {% if p.darbai %}<p class="pcard__works">{{ p.darbai|join('; ') }}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="wrap"><div class="work__bar" aria-hidden="true"><span data-track-bar></span></div></div>
+</section>
+
+<section class="routes" aria-labelledby="rt-title">
+  <div class="wrap routes__grid">
+    <div class="routes__head">
+      <h2 class="h2 reveal" id="rt-title">Ilgiausios paklotos trasos</h2>
+      <p class="routes__lead reveal">Lauko inžinerinių tinklų ilgis aštuoniuose didžiausiuose objektuose, kuriuose jis nurodytas projektų sąraše.</p>
+      <p class="routes__total reveal"><span class="routes__total-n">{{ trasu.metrai|thousands }}&nbsp;m</span><span>iš viso {{ trasu.projektai }} objektuose su nurodytu ilgiu</span></p>
+    </div>
+    <ol class="routes__list" data-routes>
+      {% for t in trasos %}
+      <li class="route reveal" style="--i:{{ loop.index0 }}; --w:{{ '%.4f' % (t.ilgis / trasu.max) }}">
+        <div class="route__text">
+          <p class="route__name">{{ t.trumpas }}</p>
+          <p class="route__meta">{{ t.laikotarpis }}<span class="dotsep" aria-hidden="true"></span>{{ t.uzsakovas }}</p>
+        </div>
+        <div class="route__bar" aria-hidden="true"><span></span></div>
+        <p class="route__val">{{ t.ilgis|thousands }}&nbsp;m</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="quality" aria-labelledby="q-title">
+  <div class="wrap quality__grid">
+    <div class="quality__text">
+      <h2 class="h2 reveal" id="q-title">Sertifikuota kokybė ir sauga</h2>
+      <p class="quality__lead reveal">Esame atestuoti LR aplinkos ministerijoje (atestato Nr.&nbsp;{{ imone.atestatas }}) ir turime įdiegtas bei sertifikuotas vadybos sistemas.</p>
+      <ul class="std">
+        {% for t in site.apie.turime %}
+        <li class="std__item reveal" style="--i:{{ loop.index0 }}"><span class="std__code">{{ t.kodas }}</span><span class="std__name">{{ t.pavadinimas }}</span></li>
+        {% endfor %}
+      </ul>
+      <a class="link-arrow reveal" href="apie-mus.html#kokybes-politika">Kokybės, aplinkosaugos ir DSS politika{{ arrow() }}</a>
+    </div>
+    <div class="fan reveal" data-fan>
+      {% for c in site.apie.sertifikatai %}
+      {% set wh = img_size(c.failas) %}
+      <button class="fan__doc" type="button" style="--k:{{ loop.index0 }}" data-gallery="{% for x in site.apie.sertifikatai %}{{ x.failas }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-captions="{% for x in site.apie.sertifikatai %}{{ x.pavadinimas }}{% if not loop.last %}|{% endif %}{% endfor %}" aria-label="Peržiūrėti: {{ c.pavadinimas }}">
+        <img src="{{ c.failas }}-800.webp" alt="{{ c.pavadinimas }}" loading="lazy" width="{{ wh[0] }}" height="{{ wh[1] }}">
+        <span class="fan__cap">{{ c.pavadinimas }}</span>
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="clients" aria-labelledby="cl-title">
+  <div class="wrap"><div class="clients__grid">
+    <h2 class="h2 reveal" id="cl-title">Užsakovai, kuriems dirbome</h2>
+    <div>
+      {% set top = pj.uzsakovai|selectattr('projektai', 'gt', 1)|list %}
+      {% set rest = pj.uzsakovai|selectattr('projektai', 'eq', 1)|list %}
+      <ul class="clients__list">
+        {% for c in top %}
+        <li class="clients__item reveal" style="--i:{{ loop.index0 % 4 }}"><span class="clients__n">{{ c.projektai }}</span><span class="clients__name">{{ c.vardas }}</span></li>
+        {% endfor %}
+      </ul>
+      <p class="clients__rest reveal">Taip pat {{ rest|map(attribute='vardas')|join(', ') }}.</p>
+      <p class="clients__note reveal">Skaičius rodo objektų kiekį projektų sąraše ({{ plural(pj.vykdomi|length + pj.atlikti|length, 'objektas', 'objektai', 'objektų') }} nuo {{ imone.nuo }} metų).</p>
+    </div>
+  </div></div>
+</section>
+
+{{ cta() }}
+{% endblock %}

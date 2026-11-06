@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import pic, video %}
+{% block title %}Kontaktai{% endblock %}
+{% block description %}UAB „Agvysta“, Savanorių pr. 187, Vilnius. Tel. +370 5 264 0357, el. paštas info@agvysta.lt.{% endblock %}
+{% block main %}
+
+<section class="phero phero--contact" aria-labelledby="ph-title">
+  <div class="wrap phero__grid">
+    <div class="phero__text">
+      <nav class="crumbs enter" aria-label="Kelias"><a href="index.html">Pradžia</a><span aria-hidden="true">/</span><span>Kontaktai</span></nav>
+      <h1 class="phero__title phero__title--xl enter" id="ph-title" style="--d:.08s">Kontaktai</h1>
+      <div class="qc enter" style="--d:.18s">
+        <a class="qc__big" href="tel:{{ imone.telefonas_href }}">{{ imone.telefonas }}</a>
+        <span class="qc__copy">
+          <a class="qc__big" href="mailto:{{ imone.el_pastas }}">{{ imone.el_pastas }}</a>
+          <button class="copy" type="button" data-copy="{{ imone.el_pastas }}" aria-label="Kopijuoti el. pašto adresą"><i class="ph ph-copy" aria-hidden="true"></i></button>
+        </span>
+        <a class="qc__addr" href="{{ imone.zemelapis }}" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>{{ imone.adresas }}, {{ imone.miestas }}</a>
+      </div>
+    </div>
+    <div class="map enter" style="--d:.2s">
+      <div class="map__ph" aria-hidden="true"><i class="ph ph-map-pin"></i><span>{{ imone.adresas }}<br>{{ imone.miestas }}</span></div>
+      <iframe title="UAB „Agvysta“ biuras žemėlapyje" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox={{ imone.lon - 0.012 }}%2C{{ imone.lat - 0.005 }}%2C{{ imone.lon + 0.012 }}%2C{{ imone.lat + 0.005 }}&amp;layer=mapnik&amp;marker={{ imone.lat }}%2C{{ imone.lon }}"></iframe>
+      <a class="map__link" href="{{ imone.zemelapis }}" target="_blank" rel="noopener">Atidaryti Google Maps<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="req" aria-labelledby="req-title">
+  <div class="wrap"><div class="req__grid">
+    <h2 class="h3 reveal" id="req-title">Rekvizitai</h2>
+    <dl class="req__list">
+      <div class="reveal"><dt>Pavadinimas</dt><dd>{{ imone.pavadinimas }}</dd></div>
+      <div class="reveal" style="--i:1"><dt>Įmonės kodas</dt><dd>{{ imone.kodas }}</dd></div>
+      <div class="reveal" style="--i:2"><dt>PVM mokėtojo kodas</dt><dd>{{ imone.pvm }}</dd></div>
+      <div class="reveal" style="--i:3"><dt>Faksas</dt><dd>{{ imone.faksas }}</dd></div>
+    </dl>
+  </div></div>
+</section>
+
+<section class="team" aria-labelledby="team-title">
+  <div class="wrap">
+    <h2 class="h2 reveal" id="team-title">Darbuotojų kontaktai</h2>
+    <ul class="team__grid">
+      {% for z in site.zmones %}
+      <li class="person reveal" style="--i:{{ loop.index0 }}">
+        <p class="person__role">{{ z.pareigos }}</p>
+        <p class="person__name">{{ z.vardas }}</p>
+        <div class="person__links">
+          {% if z.tel %}<a href="tel:{{ z.tel_href }}"><i class="ph ph-phone" aria-hidden="true"></i>{{ z.tel }}</a>{% endif %}
+          <a href="mailto:{{ z.el }}"><i class="ph ph-envelope-simple" aria-hidden="true"></i>{{ z.el }}</a>
+        </div>
+        {% if z.atestatas %}<p class="person__cert">{{ z.atestatas }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="form-sec" id="forma" aria-labelledby="form-title">
+  <div class="wrap form-sec__grid">
+    <div class="form-sec__text">
+      <h2 class="h2 reveal" id="form-title">Užklausa</h2>
+      <p class="form-sec__lead reveal">Trumpai aprašykite objektą: vietą, darbų pobūdį ir terminus. Susisieksime darbo dieną.</p>
+      <figure class="form-sec__fig reveal">{{ pic('assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Vilija-sklendes', '', '(max-width: 760px) 92vw, 30vw') }}</figure>
+    </div>
+    <form class="form" novalidate data-form>
+      <div class="form__row">
+        <div class="field">
+          <label for="f-name">Vardas, pavardė</label>
+          <input id="f-name" name="vardas" type="text" autocomplete="name" required>
+          <p class="field__err" id="f-name-err">Įrašykite vardą.</p>
+        </div>
+        <div class="field">
+          <label for="f-co">Įmonė <span class="opt">(nebūtina)</span></label>
+          <input id="f-co" name="imone" type="text" autocomplete="organization">
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="f-tel">Telefonas</label>
+          <input id="f-tel" name="telefonas" type="tel" autocomplete="tel" inputmode="tel">
+          <p class="field__help">Telefoną arba el. paštą.</p>
+        </div>
+        <div class="field">
+          <label for="f-mail">El. paštas</label>
+          <input id="f-mail" name="el_pastas" type="email" autocomplete="email">
+          <p class="field__err" id="f-mail-err">Įrašykite telefoną arba teisingą el. pašto adresą.</p>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend>Kokių darbų reikia?</legend>
+        <div class="tags">
+          {% for p in paslaugos %}
+          <label class="tag"><input type="checkbox" name="paslauga" value="{{ p.trumpas }}"><span>{{ p.trumpas }}</span></label>
+          {% endfor %}
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="f-msg">Objektas ir darbai</label>
+        <textarea id="f-msg" name="zinute" rows="5" required></textarea>
+        <p class="field__err" id="f-msg-err">Trumpai aprašykite objektą.</p>
+      </div>
+      <div class="form__foot">
+        <p class="form__note">Pateikdami sutinkate, kad duomenis tvarkytume užklausai atsakyti. <a href="duomenu-apsauga.html">Duomenų apsauga</a></p>
+        <button class="btn btn--primary" type="submit">Siųsti užklausą<i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+      </div>
+      <div class="form__ok" role="status" hidden>
+        <i class="ph ph-check-circle" aria-hidden="true"></i>
+        <div><p class="form__ok-t">Ačiū, užklausa paruošta.</p><p>Tai demonstracinė versija, todėl duomenys niekur neišsiųsti.</p></div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "agvysta", "runtimeExecutable": "python3", "runtimeArgs": ["serve.py", "8140"], "port": 8140 }
+  ]
+}

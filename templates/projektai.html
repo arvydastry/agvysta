@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import pic, video, plural, metrics, gallery_data, cta %}
+{% block title %}Projektai{% endblock %}
+{% block description %}UAB „Agvysta“ vykdomi ir atlikti projektai: lauko inžineriniai tinklai, siurblinės, rezervuarai, gerbūvis ir specialieji darbai Vilniuje ir visoje Lietuvoje.{% endblock %}
+{% block main %}
+{% set total = pj.vykdomi|length + pj.atlikti|length %}
+{% set photos = (pj.vykdomi + pj.atlikti)|selectattr('nuotraukos')|list %}
+
+<section class="phero phero--plain" aria-labelledby="ph-title">
+  <div class="wrap phero__grid phero__grid--wide">
+    <div class="phero__text">
+      <nav class="crumbs enter" aria-label="Kelias"><a href="index.html">Pradžia</a><span aria-hidden="true">/</span><span>Projektai</span></nav>
+      <h1 class="phero__title phero__title--xl enter" id="ph-title" style="--d:.08s">Projektai</h1>
+      <p class="phero__lead enter" style="--d:.18s">Nuo {{ imone.nuo }} metų atlikome per 150 statybos objektų. Čia skelbiami {{ total }}: nuo privačių projektų iki transeuropinio kelio E85 ir Lietuvos elektrinės.</p>
+    </div>
+    <dl class="pstats enter" style="--d:.28s">
+      <div><dt>Vykdomi</dt><dd>{{ pj.vykdomi|length }}</dd></div>
+      <div><dt>Atlikti</dt><dd>{{ pj.atlikti|length }}</dd></div>
+      <div><dt>Užsakovai</dt><dd>{{ pj.uzsakovai|length }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="plist" aria-label="Projektų sąrašas" data-plist>
+  <div class="ptools" data-ptools>
+    <div class="wrap ptools__in">
+      <div class="ptools__row">
+        <div class="seg" role="group" aria-label="Būsena">
+          <button class="seg__b" type="button" data-status="all" aria-pressed="true">Visi<span>{{ total }}</span></button>
+          <button class="seg__b" type="button" data-status="vykdomi" aria-pressed="false">Vykdomi<span>{{ pj.vykdomi|length }}</span></button>
+          <button class="seg__b" type="button" data-status="atlikti" aria-pressed="false">Atlikti<span>{{ pj.atlikti|length }}</span></button>
+        </div>
+        <label class="search">
+          <span class="sr">Paieška pagal objektą, užsakovą ar vietą</span>
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Ieškoti: objektas, užsakovas, gatvė" data-q autocomplete="off">
+        </label>
+      </div>
+      <div class="ptools__row ptools__row--2">
+        <div class="chips" role="group" aria-label="Paslauga">
+          <button class="chip" type="button" data-cat="all" aria-pressed="true">Visos paslaugos</button>
+          {% for k, v in pj.kategorijos.items() %}
+          <button class="chip" type="button" data-cat="{{ k }}" aria-pressed="false">{{ v }}</button>
+          {% endfor %}
+        </div>
+        <label class="switch"><input type="checkbox" data-ph><span class="switch__ui" aria-hidden="true"></span>Su nuotraukomis</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="plist__bar"><p class="plist__count" aria-live="polite" data-count-out>Rodoma {{ total }} iš {{ total }}</p><button class="plist__clear" type="button" data-clear hidden>Išvalyti filtrus</button></div>
+    {% for yr, items in by_year(pj.vykdomi + pj.atlikti) %}
+    <section class="yr" data-yr>
+      <h2 class="yr__label">{{ yr }}</h2>
+      <ul class="yr__list">
+        {% for p in items|sort(attribute='pavadinimas') %}
+        <li class="prow" data-st="{{ p.statusas }}" data-cats="{{ p.kategorijos|join(' ') }}" data-ph="{{ 1 if p.nuotraukos else 0 }}" data-text="{{ (p.pavadinimas ~ ' ' ~ p.uzsakovas ~ ' ' ~ p.darbai|join(' '))|lower }}">
+          <div class="prow__main">
+            <h3 class="prow__title">{{ p.pavadinimas }}</h3>
+            <p class="prow__client">{{ p.uzsakovas }}</p>
+          </div>
+          <div class="prow__info">
+            <p class="prow__period">{% if p.statusas == 'vykdomi' %}<span class="badge">Vykdomas</span>{% endif %}{{ p.laikotarpis }}</p>
+            {% if p.darbai %}<p class="prow__works">{{ p.darbai|join('; ') }}</p>{% endif %}
+            {% if p.ilgiai_m %}<p class="prow__m">{{ metrics(p) }}</p>{% endif %}
+          </div>
+          <div class="prow__ph">
+            {% if p.nuotraukos %}
+            <button class="phbtn" type="button" data-gallery="{{ gallery_data(p) }}" data-caption="{{ p.pavadinimas }}" aria-label="Nuotraukos ({{ p.nuotraukos|length }}): {{ p.pavadinimas }}">
+              <img src="{{ p.nuotraukos[0].thumb }}" alt="" loading="lazy" decoding="async" width="800" height="600">
+              <span class="phbtn__n"><i class="ph ph-images" aria-hidden="true"></i>{{ p.nuotraukos|length }}</span>
+            </button>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+    <div class="empty" data-empty hidden>
+      <p class="empty__t">Pagal pasirinktus filtrus projektų nerasta.</p>
+      <button class="btn btn--ghost" type="button" data-reset>Rodyti visus projektus</button>
+    </div>
+  </div>
+</section>
+
+{{ cta('Ieškote rangovo savo objektui?', 'Papasakokite apie projektą telefonu ar el. paštu. Aptarsime darbų apimtį ir terminus.') }}
+{% endblock %}

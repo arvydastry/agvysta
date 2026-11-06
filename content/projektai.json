@@ -1,0 +1,1518 @@
+{
+ "kategorijos": {
+  "tinklai": "Lauko tinklai",
+  "siurblines": "Siurblinės, rezervuarai",
+  "zemes": "Žemės, gerbūvis",
+  "spec": "Specialieji darbai"
+ },
+ "vykdomi": [
+  {
+   "id": "v02",
+   "pavadinimas": "Drenažo įrengimas objekte, daugiabutis gyvenamasis namas, Aukštaičių g. 10, Vilniuje",
+   "laikotarpis": "nuo 2018 m. birželio mėn.",
+   "metai_nuo": 2018,
+   "metai_iki": 2018,
+   "vykdomas": true,
+   "uzsakovas": "AB „Panevėžio statybos trestas“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "siurblines"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/Aukstaiciu_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/Aukstaiciu_src_1-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "v03",
+   "pavadinimas": "Lauko vandentiekio ir nuotekų šalinimo tinklai Didžiųjų Gulbinų k., Vilniuje",
+   "laikotarpis": "nuo 2018 m. liepos mėn.",
+   "metai_nuo": 2018,
+   "metai_iki": 2018,
+   "vykdomas": true,
+   "uzsakovas": "Privatus užsakovas",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "v04",
+   "pavadinimas": "Lauko vandentiekio tinklų įrengimas objekte, vandentiekis sandėliui su administracinėmis patalpomis, Nesvyžiaus g. 8, Bukiškio km., Vilniaus raj",
+   "laikotarpis": "nuo 2018 m. gegužės mėn.",
+   "metai_nuo": 2018,
+   "metai_iki": 2018,
+   "vykdomas": true,
+   "uzsakovas": "AB „Panevėžio statybos trestas“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "v05",
+   "pavadinimas": "Lauko vandentiekio, lauko buitinių ir lauko lietaus nuotekų tinklų įrengimas Liubčios g. 2, Vilniuje",
+   "laikotarpis": "nuo 2018 m. kovo mėn.",
+   "metai_nuo": 2018,
+   "metai_iki": 2018,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Sintervalas“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "v07",
+   "pavadinimas": "Daugiabutis gyvenamasis namas Salotės k., Vilniuje. Lauko vandentiekio ir nuotekų įrengimas, III etapas",
+   "laikotarpis": "nuo 2017 m. rugpjūčio mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „DTC Internacional“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "v06",
+   "pavadinimas": "Daugiabučiai gyvenamieji namai Padekaniškių vs., Vilniuje. Lauko vandentiekio ir nuotekų įrengimas, III etapas",
+   "laikotarpis": "nuo 2017 m. rugpjūčio mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Omberg“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "v08",
+   "pavadinimas": "Sandėliavimo paskirties pastatų Lauko g. 10 Glitiškių k., Vilniaus raj. rekonstravimo projektas, keičiant paskirtį į gamybos ir pramonės pastatus",
+   "laikotarpis": "nuo 2017 m. gegužės mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Vavista“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "v01",
+   "pavadinimas": "Vandentiekio tinklų rekonstrukcija ir nauja statyba Elbingo g. ir Karaliaučiaus g. Vilniuje",
+   "laikotarpis": "nuo 2017 m. kovo mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Citus construction“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/Automobiliu-stovejimo-aikstele-Verkiu-g-29-Vilniuje_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/Automobiliu-stovejimo-aikstele-Verkiu-g-29-Vilniuje_src_1-800.webp"
+    }
+   ]
+  }
+ ],
+ "atlikti": [
+  {
+   "id": "a01",
+   "pavadinimas": "Lietaus nuotekynė ir vandentiekis Geležinio Vilko g. atkarpos nuo žemės sklypo kad. Nr. 0101/0022:267 iki Ukmergės g. ir Geležinio Vilko/Ukmergės g. sankryžos Vilniuje rekonstravimo projektas",
+   "laikotarpis": "nuo 2018 m. balandžio mėn.",
+   "metai_nuo": 2018,
+   "metai_iki": 2018,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Fegda“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/Daugiabutis-gyvenamasis-namas-Salotes-k-Vilniuje-Lauko-vandentiekio-ir-nuoteku-irengimas-I-II-sklypai_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/Daugiabutis-gyvenamasis-namas-Salotes-k-Vilniuje-Lauko-vandentiekio-ir-nuoteku-irengimas-I-II-sklypai_src_1-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a03",
+   "pavadinimas": "Administracinis pastatas Saltoniškių g. 9B, Vilniuje. Inžinerinių tinklų įrengimas",
+   "laikotarpis": "nuo 2017 m. vasario mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Baltijos gildija“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a53",
+   "pavadinimas": "Daugiabučiai gyv. namai (sekcija 1-3) Rygos g. 46, Vilniuje I-as korpusas",
+   "laikotarpis": "nuo 2017 m. liepos mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Romantalis“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a55",
+   "pavadinimas": "Lauko inžineriniai tinklai Dobkevičiaus g. 10, Vilniuje",
+   "laikotarpis": "nuo 2017 m. sausio mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Conresta“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a54",
+   "pavadinimas": "Pastato-sandėlio rekonstrukcija Plačioji g. 27, S. Trakų km., Trakų raj",
+   "laikotarpis": "nuo 2017 m. balandžio mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Sivysta“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a51",
+   "pavadinimas": "Sporto paskirties pastato priestatas prie „Pramogų arenos“ Ąžuolyno g. 9, Vilnius",
+   "laikotarpis": "nuo 2017 m. liepos mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Sintervalas“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a27",
+   "pavadinimas": "Transeuropinio tinklo kelio E85 (Vilnius-Kaunas-Klaipėda) rekonstravimas. Grigiškių transporto mazgo rekonstrukcija III etapas",
+   "laikotarpis": "nuo 2017 m. balandžio mėn.",
+   "metai_nuo": 2017,
+   "metai_iki": 2017,
+   "vykdomas": true,
+   "uzsakovas": "AB „Panevėžio keliai“",
+   "darbai": [],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a02",
+   "pavadinimas": "Automobilių stovėjimo aikštelės Verkių g. 29, Vilniuje statybos projektas. Lauko inžineriniai tinklai",
+   "laikotarpis": "2015-2016 m.",
+   "metai_nuo": 2015,
+   "metai_iki": 2016,
+   "vykdomas": false,
+   "uzsakovas": "AB „Ogmios centras“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a04",
+   "pavadinimas": "Gamybinio pastato rekonstravimas, pastato-siurblinės griovimas, gamybos ir pramonės, sandėliavimo paskirties pastatas Plačioji g. 27, Senųjų Trakų k., Senųjų Trakų sen., Trakų r. s",
+   "laikotarpis": "2015 m.",
+   "metai_nuo": 2015,
+   "metai_iki": 2015,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Conresta“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "siurblines",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a05",
+   "pavadinimas": "Vandentiekio ir nuotekų tinklų S. B. Jundzilo g., Vilniuje, statybos darbai",
+   "laikotarpis": "2015-2016 m.",
+   "metai_nuo": 2015,
+   "metai_iki": 2016,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Vilbra“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a06",
+   "pavadinimas": "„LTD gamybinio pastato 20P1g rekonstrukcijos darbai“ lauko vandentiekio ir nuotekų tinklų įrengimo darbai, Švitrigailos g. 39a, Vilnius",
+   "laikotarpis": "2015 m.",
+   "metai_nuo": 2015,
+   "metai_iki": 2015,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Geležinkelių projektavimas“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/svitrigailos_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/svitrigailos_src_1-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a11",
+   "pavadinimas": "Daugiabutis gyvenamasis namas Priegliaus g. 5 Vilnius. Lauko inžineriniai tinklai",
+   "laikotarpis": "nuo 2014 m. lapkričio mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „EIKA“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a12",
+   "pavadinimas": "Daugiabučiai gyvenamieji namai (I kvartalas) Bajorų km. Lauko inžineriniai tinklai",
+   "laikotarpis": "nuo 2014 m. spalio mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „EIKA“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a13",
+   "pavadinimas": "Gamybinio pastato sandėlio Žarijų g. 4A Vilniuje lauko vandentiekio, lauko buitinės nuotekynės, lauko lietaus nuotekynės, esamų lauko lietaus nuotekynės tinklų rekonstrukcijos darbai",
+   "laikotarpis": "nuo 2014 m. vasario mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „SIV statyba“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a09",
+   "pavadinimas": "Gamybos ir pramonės pastatai (mechaninio biologinio apdorojimo įrenginiai) Jočionių g. 13, Vilniuje",
+   "laikotarpis": "nuo 2014 m. lapkričio mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Versina“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/Gamybos-ir-pramones-pastatai-mechaninio-biologinio-apdorojimo-irenginiai-Jocioniu-g-13-Vilniuje_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/Gamybos-ir-pramones-pastatai-mechaninio-biologinio-apdorojimo-irenginiai-Jocioniu-g-13-Vilniuje_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/Gamybos-ir-pramones-pastatai-mechaninio-biologinio-apdorojimo-irenginiai-Jocioniu-g-13-Vilniuje_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/Gamybos-ir-pramones-pastatai-mechaninio-biologinio-apdorojimo-irenginiai-Jocioniu-g-13-Vilniuje_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/Gamybos-ir-pramones-pastatai-mechaninio-biologinio-apdorojimo-irenginiai-Jocioniu-g-13-Vilniuje_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/Gamybos-ir-pramones-pastatai-mechaninio-biologinio-apdorojimo-irenginiai-Jocioniu-g-13-Vilniuje_src_2-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a07",
+   "pavadinimas": "Prekybos paskirties pastatas Linkmenų g. 22, Vilnius",
+   "laikotarpis": "nuo 2014 m. birželio mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „BM būstas“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/prekybos-paskirties-pastatas-linkmenu-g-22-vilnius_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/prekybos-paskirties-pastatas-linkmenu-g-22-vilnius_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/prekybos-paskirties-pastatas-linkmenu-g-22-vilnius_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/prekybos-paskirties-pastatas-linkmenu-g-22-vilnius_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/prekybos-paskirties-pastatas-linkmenu-g-22-vilnius_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/prekybos-paskirties-pastatas-linkmenu-g-22-vilnius_src_1-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a08",
+   "pavadinimas": "Vilniaus Šolomo Aleichemo ORT gimnazijos pastato J. I. Kraševskio g. 5, Vilniuje, atnaujinimo ir rekonstravimo darbai",
+   "laikotarpis": "nuo 2014 m. balandžio mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Litcon“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/vilniaus-solomo-aleichemo-ort-gimnazijos-pastato-j-i-krasevskio-g-5-vilniuje-atnaujinimo-ir-rekonstravimo-darbai_src_3-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a10",
+   "pavadinimas": "VšĮ „Fizikos instituto mokslo ir technologijų parko“ Optoelektroninių komponentų tyrimų ir technologijų adaptavimo ir inkubavimo centro statyba ir inžinerinių tinklų ir susisiekimo komunikacijų statyba ir rekonstrukcija",
+   "laikotarpis": "nuo 2014 m. balandžio mėn.",
+   "metai_nuo": 2014,
+   "metai_iki": 2014,
+   "vykdomas": true,
+   "uzsakovas": "UAB „Litcon“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_5.webp",
+     "thumb": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_5-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/vsi-fizikos-instituto-rekonstrukcija_src_2-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a15",
+   "pavadinimas": "Daugiabutis gyvenamasis namas Linksmoji g., Vilniuje",
+   "laikotarpis": "2013 m.",
+   "metai_nuo": 2013,
+   "metai_iki": 2013,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Litcon“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/daugiabutis-gyvenamasis-namas-linksmoji-g-daugiabutis-gyvenamasis-namas-linksmoji-g-vilniuje_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabutis-gyvenamasis-namas-linksmoji-g-daugiabutis-gyvenamasis-namas-linksmoji-g-vilniuje_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/daugiabutis-gyvenamasis-namas-linksmoji-g-daugiabutis-gyvenamasis-namas-linksmoji-g-vilniuje_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabutis-gyvenamasis-namas-linksmoji-g-daugiabutis-gyvenamasis-namas-linksmoji-g-vilniuje_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/daugiabutis-gyvenamasis-namas-linksmoji-g-daugiabutis-gyvenamasis-namas-linksmoji-g-vilniuje_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabutis-gyvenamasis-namas-linksmoji-g-daugiabutis-gyvenamasis-namas-linksmoji-g-vilniuje_src_1-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a14",
+   "pavadinimas": "Gyvenamasis namas su komercinėmis patalpomis Vivulskio g. 41 Vilniuje",
+   "laikotarpis": "2013 m.",
+   "metai_nuo": 2013,
+   "metai_iki": 2013,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Vilbra“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a16",
+   "pavadinimas": "Prekybos paskirties pastatas Bieliūnų ir Ukmergės g. sankirtoje Vilniuje",
+   "laikotarpis": "2013 m.",
+   "metai_nuo": 2013,
+   "metai_iki": 2013,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a22",
+   "pavadinimas": "Administracinis pastatas Verkių g. 25C, Vilniuje",
+   "laikotarpis": "2012 m.",
+   "metai_nuo": 2012,
+   "metai_iki": 2012,
+   "vykdomas": false,
+   "uzsakovas": "AB „Panevėžio statybos trestas“, filialas „Gerbūsta“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a19",
+   "pavadinimas": "Gamybinės paskirties pastatas Vilijos g. 2, Vilniuje",
+   "laikotarpis": "2012 m.",
+   "metai_nuo": 2012,
+   "metai_iki": 2012,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas, priešgaisrinių rezervuarų iškėlimas, lietaus infiltracinės sistemos įrengimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "siurblines"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_6.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_6-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_7.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_7-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_5.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_5-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_8.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_8-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/gamybines-paskirties-pastatas-vilijos-g-2-vilniuje_src_4-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a18",
+   "pavadinimas": "Remonto dirbtuvių su administracinėmis patalpomis Kėdainių raj. sav. Pelėdnagių sen. Saviečių k. statyba",
+   "laikotarpis": "2012 m.",
+   "metai_nuo": 2012,
+   "metai_iki": 2012,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a28",
+   "pavadinimas": "Biotechnologijų mokslinių tyrimų centras, I etapas, Mokslininkų g. 6 Vilnius",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "UAB „SIV statyba“",
+   "darbai": [
+    "Lauko inžineriniai tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a23",
+   "pavadinimas": "CCGT Project in Lithuanian Power Plant",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "Iberdrola",
+   "darbai": [
+    "Lauko inžineriniai tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_5.webp",
+     "thumb": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_5-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/ccgt-project-in-lithuanian-power-plant_src_2-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a21",
+   "pavadinimas": "Daugiabutis gyv. namas (Mėta 1, Mėta 2, Mėta 3, Mėta 4) Santariškių g. 45, Vilniuje",
+   "laikotarpis": "2011-2012 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2012,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Santariškių namai“",
+   "darbai": [
+    "Lauko inžineriniai tinklai, gerbūvio įrengimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/daugiabutis-gyv-namas-meta-1-meta-2-meta-3-meta-4-santariskiu-g-45-vilniuje_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabutis-gyv-namas-meta-1-meta-2-meta-3-meta-4-santariskiu-g-45-vilniuje_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/daugiabutis-gyv-namas-meta-1-meta-2-meta-3-meta-4-santariskiu-g-45-vilniuje_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabutis-gyv-namas-meta-1-meta-2-meta-3-meta-4-santariskiu-g-45-vilniuje_src_4-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a25",
+   "pavadinimas": "Degalinės su operatorine parduotuvė Jakų k., Sendvario sen., Klaipėdos raj",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Neste Lietuva“, UAB „HES-PRO Vilnius“",
+   "darbai": [
+    "Lauko inžineriniai tinklai, gerbūvio įrengimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a20",
+   "pavadinimas": "Gariūnų g. rekonstrukcija, Vilnius",
+   "laikotarpis": "2011-2012 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2012,
+   "vykdomas": false,
+   "uzsakovas": "AB „Panevėžio keliai“",
+   "darbai": [
+    "Lietaus nuotekų tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_9.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_9-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_8.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_8-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_5.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_5-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_6.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_6-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_7.webp",
+     "thumb": "assets/img/agvysta/projektai/gariunu-g-rekonstrukcija-vilnius_src_7-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a26",
+   "pavadinimas": "Prekybos paskirties pastatas (parduotuvė) Saulėtekio al. 43, Vilnius",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Kaminta“",
+   "darbai": [
+    "Lauko inžineriniai tinklai, gerbūvio įrengimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a24",
+   "pavadinimas": "Sandėliavimo pastatas S. Dariaus ir S. Girėno g. 81, Vilnius",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko inžineriniai tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_5.webp",
+     "thumb": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_5-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_6.webp",
+     "thumb": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_6-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/sandeliavimo-pastatas-s-dariaus-ir-s-gireno-g-81-vilnius_src_3-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a29",
+   "pavadinimas": "Trakų pusiasalio pilies rekonstrukcija",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Kaminta“",
+   "darbai": [
+    "Lauko inžineriniai tinklai, gerbūvio atstatymas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a17",
+   "pavadinimas": "Transeuropinio tinklo kelias E85. Vilniaus m. pietinio apvažiavimo tiesimas. Sutartis Nr. 3, Vilnius",
+   "laikotarpis": "2011-2013 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2013,
+   "vykdomas": false,
+   "uzsakovas": "AB „Panevėžio keliai“",
+   "darbai": [
+    "Lauko inžineriniai tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a30",
+   "pavadinimas": "Šv. Mergelės Marijos Ėmimo į dangų pranciškonų (konventualų) bažnyčios Trakų g. 9/1, Vilnius lietaus nuotekų tinklai tarp šulinių Nr.129-ST1",
+   "laikotarpis": "2011 m.",
+   "metai_nuo": 2011,
+   "metai_iki": 2011,
+   "vykdomas": false,
+   "uzsakovas": "Mažesniųjų brolių konventualų (pranciškonų) ordino vienuolynas",
+   "darbai": [
+    "Lauko inžineriniai tinklai, gerbūvio įrengimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a35",
+   "pavadinimas": "Antžeminė automobilių stovėjimo aikštelė V. A. Graičiūno g. 8, Vilniuje",
+   "laikotarpis": "2010 m.",
+   "metai_nuo": 2010,
+   "metai_iki": 2010,
+   "vykdomas": false,
+   "uzsakovas": "UAB „SIV statyba“",
+   "darbai": [
+    "Lietaus nuotekų tinklai, apšvietimo tinklai, gerbūvio darbai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a33",
+   "pavadinimas": "Pastato Gedimino g. 35, Vilniuje rekonstrukcija",
+   "laikotarpis": "2010 m.",
+   "metai_nuo": 2010,
+   "metai_iki": 2010,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lietaus nuotekų tinklų rekonstrukcija"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a32",
+   "pavadinimas": "Prekybos paskirties pastatas; Pilaitės pr. 31, Vilniuje",
+   "laikotarpis": "2010 m.",
+   "metai_nuo": 2010,
+   "metai_iki": 2010,
+   "vykdomas": false,
+   "uzsakovas": "AB „Panevėžio statybos trestas“, filialas „Gerbūsta“",
+   "darbai": [
+    "Lauko vandentiekio ir nuotekų tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a31",
+   "pavadinimas": "Sandėliai ir administracinis korpusas Klonėnų v.s., Jauniūnų sen., Širvintų raj",
+   "laikotarpis": "2010 m.",
+   "metai_nuo": 2010,
+   "metai_iki": 2010,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko inžineriniai tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a36",
+   "pavadinimas": "Gyv. namų kvartalas Miškonių km",
+   "laikotarpis": "2009 m.",
+   "metai_nuo": 2009,
+   "metai_iki": 2009,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Orsta“",
+   "darbai": [
+    "Vandentiekio, buitinių ir lietaus nuotekų lauko ir vidaus tinklų įrengimas. Buitinių nuotekų valymo įrenginių su infiltraciniais laukais sumontavimas. Buitinių nuotekų siurblinės sumontavimas. Priešgaisrinio rezervuaro įrengimas. Gerbūvio įrengimas"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai",
+    "siurblines",
+    "zemes"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a38",
+   "pavadinimas": "Sandėlis Vilijos g. 2, Vilniuje",
+   "laikotarpis": "2009 m.",
+   "metai_nuo": 2009,
+   "metai_iki": 2009,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko vandentiekio, buitinių bei lietaus nuotekų tinklų L=4396 m sumontavimas, priešgaisrinių rezervuarų sumontavimas, lietaus infiltracinės sistemos įrengimas. Uždaro perėjimo po geležinkeliu įrengimas L=180 m"
+   ],
+   "ilgiai_m": [
+    4396,
+    180
+   ],
+   "kategorijos": [
+    "tinklai",
+    "siurblines",
+    "spec"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a40",
+   "pavadinimas": "Sandėlis-logistikos centras Dariaus ir Girėno g. 81, Vilniuje II etapas",
+   "laikotarpis": "2009 m.",
+   "metai_nuo": 2009,
+   "metai_iki": 2009,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lakaja“",
+   "darbai": [
+    "Lauko inžinerinių tinklų įrengimas L=1000 m"
+   ],
+   "ilgiai_m": [
+    1000
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_3-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_6.webp",
+     "thumb": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_6-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_5.webp",
+     "thumb": "assets/img/agvysta/projektai/sandelis-logistikos-centras-dariaus-ir-gireno-g-81-vilniuje-ii-etapas_src_5-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a34",
+   "pavadinimas": "Transeuropinio tinklo jungtis Vilniaus m. Vakarinio aplinkelio I etapas",
+   "laikotarpis": "2009-2010 m.",
+   "metai_nuo": 2009,
+   "metai_iki": 2010,
+   "vykdomas": false,
+   "uzsakovas": "AB „Panevėžio keliai“",
+   "darbai": [
+    "Lauko inžineriniai tinklai"
+   ],
+   "ilgiai_m": [],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_2.webp",
+     "thumb": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_2-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_1.webp",
+     "thumb": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_1-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/transeuropinio-tinklo-jungtis-vilniaus-m-vakarinio-aplinkelio-i-etapas_src_3-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a37",
+   "pavadinimas": "Vandentiekio ir nuotekų tinklų plėtra ir renovacija Trakų m",
+   "laikotarpis": "2009 m.",
+   "metai_nuo": 2009,
+   "metai_iki": 2009,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Lonsta“",
+   "darbai": [
+    "Lauko inžinerinių tinklų L=2000 m sumontavimas"
+   ],
+   "ilgiai_m": [
+    2000
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a42",
+   "pavadinimas": "Daugiafunkcinis sporto, paslaugų ir sveikatingumo kompleksas Ąžuolyno g. 5, Vilniuje",
+   "laikotarpis": "2008 m.",
+   "metai_nuo": 2008,
+   "metai_iki": 2008,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Fegda“",
+   "darbai": [
+    "Lauko inžinerinių tinklų L=2072 m sumontavimas"
+   ],
+   "ilgiai_m": [
+    2072
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a39",
+   "pavadinimas": "Sandėliai ir administracinės patalpos Liepkalnio g. 180, Vilniuje",
+   "laikotarpis": "2008 m.",
+   "metai_nuo": 2008,
+   "metai_iki": 2008,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Fegda“",
+   "darbai": [
+    "Lauko vandentiekio, buitinių bei lietaus nuotekų tinklų L=1951 m sumontavimas, priešgaisrinio vandentiekio sistemos su siurbline įrengimas, lietaus nuotekų valymo įrenginių montavimas"
+   ],
+   "ilgiai_m": [
+    1951
+   ],
+   "kategorijos": [
+    "tinklai",
+    "siurblines"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a44",
+   "pavadinimas": "Prekybos, paslaugų paskirties pastatas Priegliaus ir M. Mažvydo gatvių sankirtoje Vilniuje",
+   "laikotarpis": "2007-2008 m.",
+   "metai_nuo": 2007,
+   "metai_iki": 2008,
+   "vykdomas": false,
+   "uzsakovas": "UAB „EIKA“",
+   "darbai": [
+    "Lauko inžinerinių tinklų įrengimas L=3879 m, priešgaisrinių rezervuarų įrengimas"
+   ],
+   "ilgiai_m": [
+    3879
+   ],
+   "kategorijos": [
+    "tinklai",
+    "siurblines"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a45",
+   "pavadinimas": "Sandėlis-logistikos centras Dariaus ir Girėno g. 81, Vilniuje I etapas",
+   "laikotarpis": "2007 m.",
+   "metai_nuo": 2007,
+   "metai_iki": 2007,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Astana“",
+   "darbai": [
+    "Lauko inžinerinių tinklų įrengimas L=2500 m"
+   ],
+   "ilgiai_m": [
+    2500
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a41",
+   "pavadinimas": "Ukmergės g., Laisvės pr. ir Ateities g. sankryžos rekonstrukcija",
+   "laikotarpis": "2007-2008 m.",
+   "metai_nuo": 2007,
+   "metai_iki": 2008,
+   "vykdomas": false,
+   "uzsakovas": "AB „Panevėžio keliai“",
+   "darbai": [
+    "Lauko inžinerinių tinklų L=3000 m sumontavimas, atraminių sienučių įrengimas, šiluminės trasos kolektoriaus montavimas"
+   ],
+   "ilgiai_m": [
+    3000
+   ],
+   "kategorijos": [
+    "tinklai",
+    "spec"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a46",
+   "pavadinimas": "Daugiabučiai gyv. namai su pož. parkingais Santariškių g. 45, Vilniuje",
+   "laikotarpis": "2006-2009 m.",
+   "metai_nuo": 2006,
+   "metai_iki": 2009,
+   "vykdomas": false,
+   "uzsakovas": "UAB „EIKA“",
+   "darbai": [
+    "Lauko inž. tinklų L=5800 m sumontavimas, buitinių nuotekų siurblinės įrengimas, nuotekų tinklų renovacija. Siurblinės antžeminės dalies pastato bendrastatybiniai darbai, privažiavimo kelio įrengimas"
+   ],
+   "ilgiai_m": [
+    5800
+   ],
+   "kategorijos": [
+    "tinklai",
+    "siurblines",
+    "zemes"
+   ],
+   "nuotraukos": [
+    {
+     "src": "assets/img/agvysta/projektai/daugiabuciai-gyv-namai-su-poz-parkingais-santariskiu-g-45-vilniuje_src_4.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabuciai-gyv-namai-su-poz-parkingais-santariskiu-g-45-vilniuje_src_4-800.webp"
+    },
+    {
+     "src": "assets/img/agvysta/projektai/daugiabuciai-gyv-namai-su-poz-parkingais-santariskiu-g-45-vilniuje_src_3.webp",
+     "thumb": "assets/img/agvysta/projektai/daugiabuciai-gyv-namai-su-poz-parkingais-santariskiu-g-45-vilniuje_src_3-800.webp"
+    }
+   ]
+  },
+  {
+   "id": "a47",
+   "pavadinimas": "Daugiabučių gyv. namų kv. „G 1“, „G 3“, „G 4“, „G 5“ Pilaitės mikr., Vilniuje",
+   "laikotarpis": "2006-2009 m.",
+   "metai_nuo": 2006,
+   "metai_iki": 2009,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Vilmestos projektai“",
+   "darbai": [
+    "Lauko inžinerinių tinklų L=3067 m sumontavimas"
+   ],
+   "ilgiai_m": [
+    3067
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a49",
+   "pavadinimas": "Gulbinų poilsiavietės rekonstrukcija",
+   "laikotarpis": "2006 m.",
+   "metai_nuo": 2006,
+   "metai_iki": 2006,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Hermis Capital“",
+   "darbai": [
+    "Naujų lauko inžinerinių tinklų klojimas, esamų inž.tinklų renovacija L=800 m"
+   ],
+   "ilgiai_m": [
+    800
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a43",
+   "pavadinimas": "Gyv. namų kvartalas Džiaugsmo g., Vilniuje",
+   "laikotarpis": "2006-2008 m.",
+   "metai_nuo": 2006,
+   "metai_iki": 2008,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Constructus“",
+   "darbai": [
+    "Lauko inžinerinių tinklų montavimas L=3800 m"
+   ],
+   "ilgiai_m": [
+    3800
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a48",
+   "pavadinimas": "Lietaus nuotekynė D 1000 Konstitucijos pr. 20, Vilniuje",
+   "laikotarpis": "2006 m.",
+   "metai_nuo": 2006,
+   "metai_iki": 2006,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Ranga IV“",
+   "darbai": [
+    "Lietaus nuotekų trasos D 1000 L=240 m montavimas"
+   ],
+   "ilgiai_m": [
+    240
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a50",
+   "pavadinimas": "UAB „Autoverslas“ sandėlis Kirtimų g. 41, Vilniuje",
+   "laikotarpis": "2005-2006 m.",
+   "metai_nuo": 2005,
+   "metai_iki": 2006,
+   "vykdomas": false,
+   "uzsakovas": "VĮ „Visagino statybininkai“",
+   "darbai": [
+    "Lauko inžineriniai tinklai, vidaus lietaus nuotekynė L=1000 m"
+   ],
+   "ilgiai_m": [
+    1000
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  },
+  {
+   "id": "a52",
+   "pavadinimas": "Vandentiekio tinklai tarp Kęstučio ir Žemaitės g., Trakuose",
+   "laikotarpis": "2005 m.",
+   "metai_nuo": 2005,
+   "metai_iki": 2005,
+   "vykdomas": false,
+   "uzsakovas": "UAB „Trakų vandenys“",
+   "darbai": [
+    "Lauko vandentiekio ir nuotekų tinklai L=500 m"
+   ],
+   "ilgiai_m": [
+    500
+   ],
+   "kategorijos": [
+    "tinklai"
+   ],
+   "nuotraukos": []
+  }
+ ],
+ "uzsakovai": [
+  {
+   "vardas": "UAB „Lakaja“",
+   "projektai": 8
+  },
+  {
+   "vardas": "AB „Panevėžio keliai“",
+   "projektai": 5
+  },
+  {
+   "vardas": "AB „Panevėžio statybos trestas“",
+   "projektai": 4
+  },
+  {
+   "vardas": "UAB „EIKA“",
+   "projektai": 4
+  },
+  {
+   "vardas": "UAB „Fegda“",
+   "projektai": 3
+  },
+  {
+   "vardas": "UAB „Litcon“",
+   "projektai": 3
+  },
+  {
+   "vardas": "UAB „SIV statyba“",
+   "projektai": 3
+  },
+  {
+   "vardas": "UAB „Conresta“",
+   "projektai": 2
+  },
+  {
+   "vardas": "UAB „Kaminta“",
+   "projektai": 2
+  },
+  {
+   "vardas": "UAB „Sintervalas“",
+   "projektai": 2
+  },
+  {
+   "vardas": "UAB „Vilbra“",
+   "projektai": 2
+  },
+  {
+   "vardas": "AB „Ogmios centras“",
+   "projektai": 1
+  },
+  {
+   "vardas": "Iberdrola",
+   "projektai": 1
+  },
+  {
+   "vardas": "Mažesniųjų brolių konventualų (pranciškonų) ordino vienuolynas",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Astana“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „BM būstas“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Baltijos gildija“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Citus construction“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Constructus“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „DTC Internacional“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Geležinkelių projektavimas“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „HES-PRO Vilnius“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Hermis Capital“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Lonsta“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Neste Lietuva“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Omberg“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Orsta“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Ranga IV“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Romantalis“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Santariškių namai“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Sivysta“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Trakų vandenys“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Vavista“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Versina“",
+   "projektai": 1
+  },
+  {
+   "vardas": "UAB „Vilmestos projektai“",
+   "projektai": 1
+  },
+  {
+   "vardas": "VĮ „Visagino statybininkai“",
+   "projektai": 1
+  }
+ ]
+}

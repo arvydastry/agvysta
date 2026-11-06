@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import pic, video, plural, metrics, gallery_data, cta, arrow %}
+{% block title %}{{ s.pavadinimas }}{% endblock %}
+{% block description %}{{ s.ivadas }}{% endblock %}
+{% block main %}
+
+<section class="phero phero--svc" aria-labelledby="ph-title">
+  <div class="wrap phero__grid">
+    <div class="phero__text">
+      <nav class="crumbs enter" aria-label="Kelias"><a href="index.html">Pradžia</a><span aria-hidden="true">/</span><span>Paslaugos</span></nav>
+      <h1 class="phero__title enter" id="ph-title" style="--d:.08s">{{ s.pavadinimas }}</h1>
+      <p class="phero__lead enter" style="--d:.18s">{{ s.ivadas }}</p>
+      <div class="phero__cta enter" style="--d:.28s">
+        <a class="btn btn--primary" href="kontaktai.html#forma">Pateikti užklausą{{ arrow() }}</a>
+        <a class="btn btn--ghost" href="tel:{{ imone.telefonas_href }}"><i class="ph ph-phone" aria-hidden="true"></i>{{ imone.telefonas }}</a>
+      </div>
+      <dl class="proof enter" style="--d:.36s">
+        {% if s.projektai %}<div><dt>Projektų sąraše</dt><dd><a href="#projektai">{{ s.projektai|length }}</a></dd></div>{% endif %}
+        {% if s.nuo_metu %}<div><dt>Pirmasis objektas</dt><dd>{{ s.nuo_metu }}</dd></div>{% endif %}
+        {% if s.nuotraukos %}<div><dt>Nuotraukų iš objektų</dt><dd><a href="#galerija">{{ s.nuotraukos|length }}</a></dd></div>{% endif %}
+      </dl>
+    </div>
+    <div class="phero__media enter" style="--d:.15s">
+      {{ video(s.video, 'phero__video') }}
+    </div>
+  </div>
+</section>
+
+<section class="scope" aria-labelledby="scope-title">
+  <div class="wrap scope__grid">
+    <h2 class="h2 scope__title reveal" id="scope-title">Ką atliekame</h2>
+    <ul class="scope__list{% if s.punktai|length < 5 %} scope__list--short{% endif %}">
+      {% for t in s.punktai %}
+      <li class="scope__item reveal" style="--i:{{ loop.index0 % 4 }}">{{ t }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% if s.nuotraukos %}
+<section class="gal" id="galerija" aria-labelledby="gal-title">
+  <div class="wrap">
+    <div class="gal__head">
+      <h2 class="h2 reveal" id="gal-title">{% if s.galerija %}Nuotraukos iš objektų{% else %}Darbų akimirkos{% endif %}</h2>
+      <p class="gal__n reveal">{{ plural(s.nuotraukos|length, 'nuotrauka', 'nuotraukos', 'nuotraukų') }}</p>
+    </div>
+    {% set all = s.nuotraukos|map('string')|list %}
+    <div class="gal__grid" data-gal>
+      {% for b in s.nuotraukos %}
+      <button class="gal__item reveal{% if loop.index > 12 %} is-more{% endif %}" type="button" style="--i:{{ loop.index0 % 4 }}" data-gallery="{% for x in all %}{{ x }}.webp{% if not loop.last %}|{% endif %}{% endfor %}" data-start="{{ loop.index0 }}" data-caption="{{ s.trumpas }}" aria-label="Didinti nuotrauką {{ loop.index }}">
+        {{ pic(b, '', '(max-width: 760px) 50vw, 25vw') }}
+      </button>
+      {% endfor %}
+    </div>
+    {% if s.nuotraukos|length > 12 %}
+    <button class="btn btn--ghost gal__more" type="button" data-gal-more>Rodyti visas ({{ s.nuotraukos|length }})</button>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if s.projektai %}
+<section class="rel" id="projektai" aria-labelledby="rel-title">
+  <div class="wrap">
+    <div class="rel__head">
+      <h2 class="h2 reveal" id="rel-title">Projektai</h2>
+      <a class="link-arrow reveal" href="projektai.html?k={{ s.kategorija }}">Visi šios srities projektai ({{ s.projektai|length }}){{ arrow() }}</a>
+    </div>
+    <ul class="rel__list">
+      {% for p in s.projektai[:6] %}
+      <li class="rel__item reveal" style="--i:{{ loop.index0 % 3 }}">
+        <p class="rel__yr">{{ p.laikotarpis }}</p>
+        <div class="rel__body">
+          <h3 class="rel__title">{{ p.pavadinimas }}</h3>
+          <p class="rel__client">{{ p.uzsakovas }}{% if p.ilgiai_m %}<span class="dotsep" aria-hidden="true"></span>{{ metrics(p) }}{% endif %}</p>
+        </div>
+        {% if p.nuotraukos %}
+        <button class="rel__ph" type="button" data-gallery="{{ gallery_data(p) }}" data-caption="{{ p.pavadinimas }}" aria-label="Nuotraukos ({{ p.nuotraukos|length }}): {{ p.pavadinimas }}">
+          <img src="{{ p.nuotraukos[0].thumb }}" alt="" loading="lazy" width="800" height="600"><span>{{ p.nuotraukos|length }}</span>
+        </button>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section class="others" aria-labelledby="oth-title">
+  <div class="wrap">
+    <h2 class="h3 reveal" id="oth-title">Kitos paslaugos</h2>
+    <div class="others__grid">
+      {% for o in others %}
+      <a class="other reveal" href="{{ o.slug }}.html" style="--i:{{ loop.index0 }}">
+        <span class="other__img"><img src="assets/video/{{ o.video }}-poster.webp" alt="" loading="lazy" width="1280" height="720"></span>
+        <span class="other__name">{{ o.trumpas }}</span>
+        <i class="ph ph-arrow-up-right other__arrow" aria-hidden="true"></i>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ cta() }}
+{% endblock %}

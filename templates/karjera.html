@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import pic, video, cta %}
+{% block title %}Karjera{% endblock %}
+{% block description %}UAB „Agvysta“ kviečia prisijungti inžinerinių tinklų statybos ir renovacijos profesionalus. CV siųskite adresu info@agvysta.lt.{% endblock %}
+{% block main %}
+
+<section class="phero phero--career" aria-labelledby="ph-title">
+  <div class="wrap phero__grid">
+    <div class="phero__text">
+      <nav class="crumbs enter" aria-label="Kelias"><a href="index.html">Pradžia</a><span aria-hidden="true">/</span><span>Karjera</span></nav>
+      <h1 class="phero__title enter" id="ph-title" style="--d:.08s">Prisijunkite prie mūsų kolektyvo</h1>
+      <p class="phero__lead enter" style="--d:.18s">{{ site.karjera.tekstas }}</p>
+      <div class="phero__cta enter" style="--d:.28s">
+        <a class="btn btn--primary" href="mailto:{{ imone.el_pastas }}?subject=CV">Siųsti CV<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <p class="phero__note">{{ site.karjera.cv }}</p>
+      </div>
+    </div>
+    <div class="phero__media enter" style="--d:.15s">
+      {{ video('ekskavatorius-upe', 'phero__video') }}
+    </div>
+  </div>
+</section>
+
+<section class="values" aria-labelledby="val-title">
+  <div class="wrap values__grid">
+    <h2 class="h2 reveal" id="val-title">Ką žadame komandai</h2>
+    <div class="values__list">
+      {% for i in [4, 1, 5] %}
+      <p class="value reveal" style="--i:{{ loop.index0 }}">{{ site.kokybe.tikslai[i] }}.</p>
+      {% endfor %}
+      <p class="values__src reveal">Iš įmonės <a href="apie-mus.html#kokybes-politika">kokybės, aplinkosaugos ir DSS politikos</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="strip" aria-label="Darbas objektuose">
+  <div class="strip__row">
+    {% for b in ['assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Vakarinis-aplinkelis-Vandentiekis-2-', 'assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--IMG_0172', 'assets/img/agvysta/galerija/siurblines-rezervuarai--Siurblines-montavimas-Santariskese', 'assets/img/agvysta/galerija/lauko-inzineriniu-tinklu-montavimas--Vakarinis-17', 'assets/img/agvysta/galerija/spec-paslaugos--Vakarinis-19'] %}
+    <figure class="strip__fig reveal" style="--i:{{ loop.index0 }}">{{ pic(b, 'Agvystos komanda objekte', '(max-width: 760px) 70vw, 22vw') }}</figure>
+    {% endfor %}
+  </div>
+</section>
+
+{{ cta('Turite klausimų apie darbą?', 'Parašykite arba paskambinkite. Gyvenimo aprašymus (CV) priimame el. paštu ' ~ imone.el_pastas ~ '.', 'Siųsti CV', 'mailto:' ~ imone.el_pastas ~ '?subject=CV') }}
+{% endblock %}
