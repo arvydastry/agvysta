@@ -37,6 +37,20 @@
   </div>
 </section>
 
+<section class="logos" aria-labelledby="logos-title">
+  <div class="wrap logos__row">
+    <h2 class="logos__title" id="logos-title">Tarp mūsų užsakovų</h2>
+    <div class="logos__viewport" data-marquee>
+      <ul class="logos__track">
+        {% for l in logotipai %}<li class="logos__item"><img src="{{ l.failas }}" alt="{{ l.vardas }}" width="{{ l.w }}" height="{{ l.h }}" style="width:{{ l.w }}px;height:{{ l.h }}px" decoding="async"></li>{% endfor %}
+      </ul>
+      <ul class="logos__track" aria-hidden="true">
+        {% for l in logotipai %}<li class="logos__item"><img src="{{ l.failas }}" alt="" width="{{ l.w }}" height="{{ l.h }}" style="width:{{ l.w }}px;height:{{ l.h }}px" decoding="async"></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="intro" aria-label="Apie įmonę trumpai">
   <div class="wrap intro__grid">
     <p class="intro__statement reveal">Įrengiame lauko vandentiekio, buitinių ir lietaus nuotekų tinklus, siurblines bei valymo įrenginius. <span>Nuo privačių projektų iki didelės apimties valstybinių užsakymų.</span></p>

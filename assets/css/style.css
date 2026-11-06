@@ -132,9 +132,31 @@ address { font-style: normal; }
 .hdr__tel { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 500; white-space: nowrap; transition: opacity .2s; }
 .hdr__tel i { font-size: 16px; color: var(--brand); }
 .hdr__tel:hover { opacity: .7; }
-.lang { display: flex; gap: 2px; font-size: 12.5px; font-weight: 500; }
-.lang__a { padding: 6px 5px; opacity: .5; transition: opacity .2s; }
-.lang__a[aria-current], .lang__a:hover { opacity: 1; }
+.lang { display: flex; align-items: center; gap: 2px; }
+.lang__a { display: grid; place-items: center; padding: 6px 4px; opacity: .55; transition: opacity .2s, transform .2s var(--ease); }
+.lang__a img { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; box-shadow: 0 0 0 1px rgba(14,26,34,.12); }
+.lang__a[aria-current] { opacity: 1; }
+.lang__a:hover { opacity: 1; transform: translateY(-1px); }
+.hdr--over:not(.is-solid) .lang__a img { box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+.lang--m { display: flex; flex-wrap: wrap; gap: 8px; }
+.lang--m .lang__a { display: inline-flex; gap: 10px; padding: 8px 14px 8px 10px; border-radius: var(--pill); box-shadow: inset 0 0 0 1px var(--line-2); font-size: 14px; font-weight: 500; color: var(--ink); opacity: 1; }
+.lang--m .lang__a[aria-current] { box-shadow: inset 0 0 0 1px var(--ink); }
+.lang--m .lang__a:not([aria-current]) { color: var(--muted); }
+
+/* ---------- Užsakovų logotipai (vienintelė slenkanti juosta) ---------- */
+.logos { padding: clamp(28px, 3.4vw, 44px) 0; box-shadow: inset 0 -1px 0 var(--line); }
+.logos__row { display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: clamp(20px, 3vw, 48px); }
+.logos__title { font-size: 14px; font-weight: 500; line-height: 1.35; color: var(--muted); }
+.logos__viewport { display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.logos__track { display: flex; flex: none; align-items: center; gap: clamp(40px, 4.4vw, 64px); padding-right: clamp(40px, 4.4vw, 64px); animation: logos-run 55s linear infinite; }
+.logos__viewport:hover .logos__track { animation-play-state: paused; }
+.logos__item { flex: none; display: grid; place-items: center; height: 48px; }
+.logos__item img { max-width: none; filter: brightness(0); opacity: .58; transition: opacity .3s; }
+.logos__item img:hover { opacity: .95; }
+@keyframes logos-run { to { transform: translateX(-100%); } }
+.calm .logos__track { animation: none; }
+.calm .logos__viewport { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: none; mask-image: none; }
+.calm .logos__track[aria-hidden] { display: none; }
 .burger { display: none; width: 44px; height: 44px; position: relative; }
 .burger span { position: absolute; left: 11px; right: 11px; height: 1.5px; background: currentColor; transition: transform .35s var(--ease); }
 .burger span:first-child { top: 18px; }
@@ -653,11 +675,11 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
   .nav__link { padding: 0 9px; font-size: 14.5px; }
   .nav__link::after { left: 9px; right: 9px; }
   .hdr__row { gap: 18px; }
-  .lang { display: none; }
+  .hdr .lang { display: none; }
 }
 @media (max-width: 1024px) {
   .nav, .hdr__cta { display: none; }
-  .lang { display: flex; }
+  .hdr .lang { display: flex; }
   .burger { display: block; }
   .intro__grid, .quality__grid, .policy__grid, .form-sec__grid, .cond__grid, .routes__grid, .clients__grid, .cta__grid { grid-template-columns: 1fr; }
   .intro__grid { gap: 48px; }
@@ -696,9 +718,11 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
 }
 @media (max-width: 760px) {
   :root { --hdr-h: 64px; }
+  .logos__row { grid-template-columns: 1fr; gap: 14px; }
+  .logos__track { animation-duration: 40s; }
   .logo__mark { width: 30px; height: 30px; }
   .logo__word { font-size: 17px; }
-  .lang { display: none; }
+  .hdr .lang { display: none; }
   .hero__inner { padding-bottom: 28px; }
   .hero__title { font-size: clamp(2.5rem, 11.5vw, 3.6rem); }
   .hero__foot { grid-template-columns: 1fr auto; gap: 12px; align-items: start; }

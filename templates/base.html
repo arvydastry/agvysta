@@ -46,9 +46,9 @@
     </nav>
     <div class="hdr__end">
       <div class="lang" role="group" aria-label="Kalba">
-        <a class="lang__a" href="index.html" aria-current="true" lang="lt">LT</a>
-        <button class="lang__a" type="button" data-lang="EN" lang="en">EN</button>
-        <button class="lang__a" type="button" data-lang="RU" lang="ru">RU</button>
+        <a class="lang__a" href="index.html" aria-current="true" lang="lt" title="Lietuvių"><img src="assets/img/flags/lt.svg" alt="Lietuvių" width="20" height="15"></a>
+        <button class="lang__a" type="button" data-lang="EN" lang="en" title="English"><img src="assets/img/flags/gb.svg" alt="English" width="20" height="15"></button>
+        <button class="lang__a" type="button" data-lang="RU" lang="ru" title="Русский"><img src="assets/img/flags/ru.svg" alt="Русский" width="20" height="15"></button>
       </div>
       <a class="hdr__tel" href="tel:{{ imone.telefonas_href }}"><i class="ph ph-phone" aria-hidden="true"></i>{{ imone.telefonas }}</a>
       <a class="btn btn--primary btn--sm hdr__cta" href="kontaktai.html#forma">Pateikti užklausą</a>
@@ -70,6 +70,11 @@
       <li><a href="kontaktai.html">Kontaktai</a></li>
     </ul>
     <a class="btn btn--primary mnav__cta" href="kontaktai.html#forma">Pateikti užklausą</a>
+    <div class="lang lang--m" role="group" aria-label="Kalba">
+      <a class="lang__a" href="index.html" aria-current="true" lang="lt"><img src="assets/img/flags/lt.svg" alt="" width="20" height="15">Lietuvių</a>
+      <button class="lang__a" type="button" data-lang="EN" lang="en"><img src="assets/img/flags/gb.svg" alt="" width="20" height="15">English</button>
+      <button class="lang__a" type="button" data-lang="RU" lang="ru"><img src="assets/img/flags/ru.svg" alt="" width="20" height="15">Русский</button>
+    </div>
     <div class="mnav__foot">
       <a href="tel:{{ imone.telefonas_href }}"><i class="ph ph-phone" aria-hidden="true"></i>{{ imone.telefonas }}</a>
       <a href="mailto:{{ imone.el_pastas }}"><i class="ph ph-envelope-simple" aria-hidden="true"></i>{{ imone.el_pastas }}</a>

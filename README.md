@@ -47,6 +47,11 @@ Demonstracinė **agvysta.lt** svetainės versija. Turinys yra originalus (perkel
 - **Projektai:** filtrai dviem eilutėmis, jungiklis „Su nuotraukomis“, „Išvalyti filtrus“; mobiliajame juosta nelipni, paieška per visą plotį.
 - **Nuotraukų peržiūra:** miniatiūrų juosta.
 
+## v3: užsakovų logotipai ir kalbų vėliavėlės
+
+- Po hero: juosta „Tarp mūsų užsakovų“ su 13 užsakovų logotipų (vienspalviai, lėtai slenka, sustoja užvedus pelę; esant „mažiau judesio“ nustatymui stovi ir slenkama ranka). Šaltiniai: [`docs/logotipai.md`](docs/logotipai.md).
+- Meniu: LT / EN / RU vėliavėlės (tik dizainas, vertimų nėra; paspaudus EN ar RU rodomas pranešimas). Mobiliajame meniu vėliavėlės su kalbų pavadinimais.
+
 ## Puslapiai
 
 Puslapių adresai (slug) **tokie pat kaip senojoje svetainėje** (SEO).

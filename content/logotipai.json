@@ -1,0 +1,80 @@
+[
+ {
+  "failas": "assets/img/klientai/pst.svg",
+  "vardas": "AB „Panevėžio statybos trestas“",
+  "w": 90,
+  "h": 29
+ },
+ {
+  "failas": "assets/img/klientai/paneveziokeliai.png",
+  "vardas": "AB „Panevėžio keliai“",
+  "w": 89,
+  "h": 29
+ },
+ {
+  "failas": "assets/img/klientai/eika.svg",
+  "vardas": "UAB „EIKA“",
+  "w": 136,
+  "h": 20
+ },
+ {
+  "failas": "assets/img/klientai/fegda.png",
+  "vardas": "UAB „Fegda“",
+  "w": 80,
+  "h": 33
+ },
+ {
+  "failas": "assets/img/klientai/kaminta.png",
+  "vardas": "UAB „Kaminta“",
+  "w": 156,
+  "h": 20
+ },
+ {
+  "failas": "assets/img/klientai/sintervalas.png",
+  "vardas": "UAB „Sintervalas“",
+  "w": 93,
+  "h": 28
+ },
+ {
+  "failas": "assets/img/klientai/vilbra.svg",
+  "vardas": "UAB „Vilbra“",
+  "w": 111,
+  "h": 23
+ },
+ {
+  "failas": "assets/img/klientai/iberdrola.svg",
+  "vardas": "Iberdrola",
+  "w": 103,
+  "h": 25
+ },
+ {
+  "failas": "assets/img/klientai/neste.svg",
+  "vardas": "UAB „Neste Lietuva“",
+  "w": 123,
+  "h": 21
+ },
+ {
+  "failas": "assets/img/klientai/ogmios.svg",
+  "vardas": "Ogmios grupė (AB „Ogmios centras“)",
+  "w": 198,
+  "h": 20
+ },
+ {
+  "failas": "assets/img/klientai/citus.svg",
+  "vardas": "UAB „Citus construction“",
+  "w": 75,
+  "h": 35
+ },
+ {
+  "failas": "assets/img/klientai/omberg.png",
+  "vardas": "UAB „Omberg“",
+  "w": 85,
+  "h": 31
+ },
+ {
+  "failas": "assets/img/klientai/versina.png",
+  "vardas": "UAB „Versina“",
+  "w": 124,
+  "h": 21
+ }
+]

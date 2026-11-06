@@ -76,7 +76,7 @@ def main():
     env.filters['thousands'] = lambda n: f'{n:,}'.replace(',', '\u00a0')
 
     pages = {
-        'index.html': ('index.html', dict(page='index', featured=featured, pj=pj, allp=allp, trasos=trasos, trasu=trasu_suvestine)),
+        'index.html': ('index.html', dict(page='index', featured=featured, pj=pj, allp=allp, trasos=trasos, trasu=trasu_suvestine, logotipai=load('logotipai'))),
         'projektai.html': ('projektai.html', dict(page='projektai', pj=pj, by_year=by_year)),
         'apie-mus.html': ('apie-mus.html', dict(page='apie', allp=allp)),
         'karjera.html': ('karjera.html', dict(page='karjera')),
