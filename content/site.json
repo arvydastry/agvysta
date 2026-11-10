@@ -114,7 +114,7 @@
       "slug": "spec-paslaugos-gruntinio-vandens-pazeminimas-atraminiu-sienuciu-irengimas-isalo-lauzymas",
       "nr": "04",
       "pavadinimas": "Specialiosios paslaugos",
-      "trumpas": "Spec. paslaugos",
+      "trumpas": "Specialiosios paslaugos",
       "ivadas": "Gruntinio vandens pažeminimas, atraminės sienutės iš plieninio špunto ir įšalo laužymas objektuose, kur sąlygos sudėtingos.",
       "punktai": [
         "Gruntinio vandens pažeminimas",
@@ -407,25 +407,41 @@
       "src": "assets/img/agvysta/hero/h1",
       "pos": "50% 70%",
       "w": 2400,
-      "h": 1350
+      "h": 1350,
+      "tone": 0.25,
+      "vieta": "Aukštaičių g. 10, Vilnius",
+      "darbai": "Drenažo įrengimas, nuo 2018 m.",
+      "uzsakovas": "AB „Panevėžio statybos trestas“"
     },
     {
       "src": "assets/img/agvysta/hero/h2",
       "pos": "50% 62%",
       "w": 2400,
-      "h": 1596
+      "h": 1596,
+      "tone": 0.65,
+      "vieta": "Linkmenų g. 22, Vilnius",
+      "darbai": "Prekybos paskirties pastatas, nuo 2014 m.",
+      "uzsakovas": "UAB „BM būstas“"
     },
     {
       "src": "assets/img/agvysta/hero/h3",
       "pos": "50% 50%",
       "w": 2400,
-      "h": 1350
+      "h": 1350,
+      "tone": 0.7,
+      "vieta": "Verkių g. 29, Vilnius",
+      "darbai": "Automobilių stovėjimo aikštelė, 2015-2016 m.",
+      "uzsakovas": "AB „Ogmios centras“"
     },
     {
       "src": "assets/img/agvysta/hero/h4",
       "pos": "50% 60%",
       "w": 2400,
-      "h": 1596
+      "h": 1596,
+      "tone": 0.9,
+      "vieta": "Linkmenų g. 22, Vilnius",
+      "darbai": "Lauko tinklų montavimas, nuo 2014 m.",
+      "uzsakovas": "UAB „BM būstas“"
     }
   ]
 }

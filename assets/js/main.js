@@ -29,9 +29,13 @@
   const hdr = $('[data-hdr]');
   const hero = $('.hero');
   if (hdr && hero && 'IntersectionObserver' in window) {
-    /* antraštė tampa vientisa praslinkus ketvirtadalį hero (kol kylantis tekstas dar nepasiekė meniu) */
-    const mark = $('.hero__sentinel', hero) || hero;
-    const io = new IntersectionObserver(([e]) => hdr.classList.toggle('is-solid', !e.isIntersecting && e.boundingClientRect.top < 0), { rootMargin: '-72px 0px 0px 0px' });
+    /* antraštė tampa vientisa, kai žymė (hero ketvirtadalis) pakyla už antraštės apačios.
+       Lyginama su stebėjimo srities viršumi (rootBounds), ne su 0: su rootMargin žymė niekada nepasiekia 0. */
+    const mark = $('.hero__sentinel', hero) || hero, hh = hdr.offsetHeight || 72;
+    const io = new IntersectionObserver(([e]) => {
+      const top = e.rootBounds ? e.rootBounds.top : hh;
+      hdr.classList.toggle('is-solid', !e.isIntersecting && e.boundingClientRect.top < top);
+    }, { rootMargin: '-' + hh + 'px 0px 0px 0px' });
     io.observe(mark);
   } else if (hdr) hdr.classList.add('is-solid');
 
@@ -55,6 +59,7 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Uždaryti meniu' : 'Atidaryti meniu');
     mnav.hidden = !open;
+    $$('main, footer').forEach(el => { el.inert = open; });
     html.classList.toggle('menu-open', open);
   };
   burger && burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
@@ -113,32 +118,89 @@
     vids.forEach(v => { if (d.hidden) v.pause(); else if (v._vis && canPlay(v)) play(v); });
   });
 
-  /* hero: originalių nuotraukų kaita (pauzės mygtukas, WCAG 2.2.2) */
+  /* hero: originalių nuotraukų kaita (pauzės mygtukas, WCAG 2.2.2).
+     Laikmatis yra setTimeout su likusio laiko apskaita; Web Animations API tik piešia aktyvios atkarpos užpildą.
+     Pauzė, hero už ekrano ir paslėptas skirtukas: laikmatis ir užpildas sustoja, .is-held sustabdo priartinimą.
+     Skaidrės 2-4 gauna šaltinius tik įkėlus pirmąją (LCP nekonkuruoja su kitomis nuotraukomis).
+     html.calm: jokio judesio; paleidus rankiniu būdu nuotraukos keičiasi be animacijų. */
   const sw = $('[data-slides]');
   if (sw) {
-    const slides = $$('.hero__slide', sw), ctl = $('[data-slidectl]');
-    let cur = 0, timer = null, paused = calm, inView = true;
-    const go = () => {
-      const prev = slides[cur];
-      cur = (cur + 1) % slides.length;
-      prev.classList.remove('is-on'); prev.classList.add('is-out');
-      slides[cur].classList.remove('is-out'); slides[cur].classList.add('is-on');
-      setTimeout(() => prev.classList.remove('is-out'), 1800);
+    const box = sw.closest('.hero') || sw.parentNode;
+    const slides = $$('.hero__slide', sw), steps = $$('[data-step]', box), caps = $$('.hero__cap', box), ctl = $('[data-slidectl]', box);
+    const DUR = 6500, n = slides.length;
+    let cur = 0, paused = calm, inView = true, tm = null, left = DUR, t0 = 0, fill = null, wait = null;
+    const src = s => {
+      if (s.dataset.srcset) { s.srcset = s.dataset.srcset; s.removeAttribute('data-srcset'); }
+      if (s.dataset.src) { s.src = s.dataset.src; s.removeAttribute('data-src'); }
     };
-    const run = () => {
-      clearInterval(timer); timer = null;
-      if (!paused && inView && !d.hidden && slides.length > 1) timer = setInterval(go, 6500);
+    const rest = () => src(slides[1 % n]);
+    if (slides[0].complete) setTimeout(rest, 200);
+    else { slides[0].addEventListener('load', rest, { once: true }); slides[0].addEventListener('error', rest, { once: true }); }
+    let held = false;
+    const live = () => !paused && !held && inView && !d.hidden && n > 1;
+    const paint = () => {
+      if (fill) { fill.cancel(); fill = null; }
+      const f = !calm && steps[cur] && $('.hero__step-ln > span', steps[cur]);
+      if (f && f.animate) { fill = f.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: DUR, easing: 'linear', fill: 'forwards' }); fill.pause(); }
+    };
+    const halt = () => {
+      if (tm) { clearTimeout(tm); tm = null; left = Math.max(0, left - (performance.now() - t0)); }
+      if (fill) fill.pause();
+    };
+    const tick = () => {
+      box.classList.toggle('is-held', !live());
+      if (!live()) { halt(); return; }
+      if (tm) return;
+      if (fill) { fill.currentTime = DUR - left; fill.play(); }
+      t0 = performance.now();
+      tm = setTimeout(() => { tm = null; show(cur + 1, true); }, left);
+    };
+    const show = (i, auto) => {
+      const next = (i + n) % n, img = slides[next];
+      if (wait) { wait.img.removeEventListener('load', wait.go); wait.img.removeEventListener('error', wait.go); wait = null; }
+      src(img);
+      if (next !== cur && !img.complete) {
+        clearTimeout(tm); tm = null; left = 0;
+        const go = () => { wait = null; if (!auto || live()) show(next, auto); };
+        wait = { img, go };
+        img.addEventListener('load', go, { once: true }); img.addEventListener('error', go, { once: true });
+        return;
+      }
+      clearTimeout(tm); tm = null; left = DUR;
+      if (next !== cur) {
+        const prev = slides[cur];
+        src(slides[next]);
+        box.classList.add('is-cycling');
+        slides.forEach(s => { s.classList.toggle('is-on', s === slides[next]); s.classList.toggle('is-out', s === prev); });
+        clearTimeout(prev._t);
+        prev._t = setTimeout(() => prev.classList.remove('is-out'), 1500);
+        cur = next;
+        src(slides[(cur + 1) % n]);
+      }
+      steps.forEach((b, k) => {
+        b.classList.toggle('is-on', k === cur);
+        b.classList.toggle('is-done', k < cur);
+        if (k === cur) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+      });
+      caps.forEach((c, k) => c.classList.toggle('is-on', k === cur));
+      box.style.setProperty('--tone', slides[cur].dataset.tone || .6);
+      paint(); if (fill && !live()) fill.currentTime = DUR; tick();
     };
     const sync = () => {
-      if (!ctl) return;
-      $('i', ctl).className = 'ph ' + (paused ? 'ph-play' : 'ph-pause');
-      ctl.setAttribute('aria-label', paused ? 'Paleisti nuotraukų kaitą' : 'Sustabdyti nuotraukų kaitą');
-      ctl.setAttribute('aria-pressed', String(paused));
+      if (ctl) {
+        $('i', ctl).className = 'ph ' + (paused ? 'ph-play' : 'ph-pause');
+        ctl.setAttribute('aria-label', paused ? 'Paleisti nuotraukų kaitą' : 'Sustabdyti nuotraukų kaitą');
+      }
+      tick();
     };
-    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; run(); }).observe(sw);
-    d.addEventListener('visibilitychange', run);
-    ctl && ctl.addEventListener('click', () => { paused = !paused; sync(); run(); });
-    sync(); run();
+    const stepsEl = $('.hero__steps', box);
+    stepsEl && stepsEl.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) { held = true; tick(); } });
+    stepsEl && stepsEl.addEventListener('focusout', e => { if (!stepsEl.contains(e.relatedTarget)) { held = false; tick(); } });
+    steps.forEach((b, k) => b.addEventListener('click', () => show(k)));
+    ctl && ctl.addEventListener('click', () => { paused = !paused; sync(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; tick(); }).observe(sw);
+    d.addEventListener('visibilitychange', tick);
+    paint(); sync();
   }
 
   /* paslaugų rodyklė: užvedus keičiasi video */

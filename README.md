@@ -17,7 +17,7 @@ Demonstracinė **agvysta.lt** svetainės versija. Turinys yra originalus (perkel
 |---|---|---|
 | Fonas | balta / pilka, jQuery slankiklis | šviesus vėsus `#F2F3F1`, baltos plokštumos, tamsi poraštė |
 | Akcentas | `#0079BE` | ta pati firminė mėlyna `#0079BE` (vienintelis akcentas), rašalas `#0E1A22` |
-| Šriftai | Open Sans | **Geist** (antraštės ir tekstas) + **Geist Mono** (metai, numeriai, ilgiai), abu su lietuviškais rašmenimis |
+| Šriftai | Open Sans | **Archivo** (kintamas): tekstas 100 %, antraštės 112,5 % pločio (atkartoja platų AGVYSTA logotipą), žodinis ženklas 125 %; lietuviški rašmenys patikrinti (latin-ext) |
 | Hero | 6 nuotraukų slankiklis, vienas šūkis | viso ekrano drono video (smėlis, vandens kanalas, pušynas), šūkis „Jūsų ateities projektų partneris“ išlaikytas, apačioje 4 paslaugų juosta kaip senojoje svetainėje |
 | Logotipas | PNG 243×73 | perpieštas vektoriškai (SVG): žiedas su trimis bangomis + „AGVYSTA“. **Prieš paleidimą reikia originalaus vektorinio logotipo iš kliento.** |
 | Formos | – | medija, kortelės, laukeliai 6 px; mygtukai, filtrai ir žymos pill |
@@ -68,6 +68,15 @@ Visi efektai yra CSS scroll-driven animations (`animation-timeline: view()`): be
 
 - **Hero:** vietoj Pexels video lėta originalių agvysta.lt projektų nuotraukų kaita (4 didelės raiškos nuotraukos: Aukštaičių g. 10, Linkmenų g. 22 ×2, Verkių g. 29), švelnus priartinimas, keičiasi kas 6,5 s, sustoja kai hero nematomas; pauzės mygtukas apačioje dešinėje. Nuotraukos `assets/img/agvysta/hero/h1-h4` (2400 ir 1280 px).
 - **„Užsakovai, kuriems dirbome“:** visų 36 užsakovų sienelė. 16 su logotipais (vienspalviai), kitiems 20 rodomas pavadinimas su teisine forma; kiekvienoje plytelėje objektų skaičius. Logotipų šaltiniai: [`docs/logotipai.md`](docs/logotipai.md).
+
+## v6: naujas hero ir Archivo šriftas
+
+Sprendimas parinktas darbo eiga (workflow): 4 šriftų poros su patikrintu lietuviškų raidžių palaikymu, 3 hero kryptys su prototipais, 3 vertintojai (stilius, AI šabloniškumas, techninė kokybė), tada kritinė peržiūra su 18 patvirtintų ir ištaisytų radinių.
+
+- **Šriftas:** Archivo (Google Fonts, kintamas `wdth 100..125`, `wght 300..800`). Antraštės (`--display`, `--wide: 112.5%`), tekstas 100 %, logotipo žodis 125 % / 800. Atsarginiai šriftai sulyginti metrikomis (mažiau šokinėja kraunantis).
+- **Hero „įrėmintas skydas“:** nuotraukų skydas atitrauktas nuo lango krašto (12 px, telefone 8 px), suapvalintas; dešiniame apatiniame kampe puslapio spalvos išpjova su 4 paslaugomis (lygiuota su 1360 px tinkleliu ir antraštės mygtuku). Istorijų tipo progreso juosta (mygtukai = navigacija), pauzė, po juosta dabartinės nuotraukos objektas (adresas, darbai ir metai, užsakovas). Kiekvienai nuotraukai savas tamsinimo stiprumas (`tone` faile `content/site.json`), kontrastas patikrintas pikseliais visose 4 nuotraukose.
+- **Judesys:** nuotrauka įsislenka „užuolaida“ iš kairės, lėtas priartinimas; slenkant tekstas kyla greičiau, nuotrauka lėčiau, skydas šiek tiek tolsta. Kitos nuotraukos kraunamos tik po pirmosios, po vieną.
+- **Pataisyta peržiūroje:** antraštė dabar tampa vientisa slenkant pele (anksčiau stebėtojas niekada nesuveikdavo), telefone turinys toliau nuo skydo krašto, projektų puslapis telefone nebeplatėja (perjungiklio klaida), meniu atidarius puslapis už jo neaktyvus (`inert`), baltas fokuso žiedas virš nuotraukų, kontrasto ir tipografijos smulkmenos (našlaitės, nedalomi tarpai prie „g.“, „ISO 9001“), „Spec. paslaugos“ pervadinta „Specialiosios paslaugos“.
 
 ## Puslapiai
 

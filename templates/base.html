@@ -11,8 +11,9 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..800&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
 <link rel="stylesheet" href="assets/css/style.css">
 {% block head %}{% endblock %}
 </head>
@@ -32,7 +33,7 @@
               <li><a class="drop__link" href="{{ p.slug }}.html"{% if s is defined and s.slug == p.slug %} aria-current="page"{% endif %}>
                 <span class="drop__img" aria-hidden="true"><img src="assets/video/{{ p.video }}-poster.webp" alt="" loading="lazy" width="1280" height="720"></span>
                 <span class="drop__name">{{ p.trumpas }}</span>
-                <span class="drop__desc">{{ p.ivadas.split('. ')[0] }}.</span>
+                <span class="drop__desc">{{ p.ivadas.split('. ')[0].rstrip('.') }}.</span>
               </a></li>
               {% endfor %}
             </ul>
@@ -139,7 +140,7 @@
 </div>
 <div class="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js" defer fetchpriority="high"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

@@ -1,35 +1,52 @@
 {% extends 'base.html' %}
 {% from '_macros.html' import pic, video, plural, metrics, gallery_data, cta, arrow %}
 {% block title %}Lauko inžineriniai tinklai, siurblinės, žemės darbai{% endblock %}
-{% block head %}{% set h0 = site.hero_skaidres[0].src %}<link rel="preload" as="image" imagesrcset="{{ h0 }}-1280.webp 1280w, {{ h0 }}.webp 2400w" imagesizes="100vw" fetchpriority="high">{% endblock %}
+{% block head %}{% set h0 = site.hero_skaidres[0].src %}<link rel="preload" as="image" imagesrcset="{{ h0 }}-1280.webp 1280w, {{ h0 }}.webp 2400w" imagesizes="(max-width: 900px) and (orientation: portrait) 150vh, (max-width: 900px) calc(100vw - 16px), calc(100vw - 24px)" fetchpriority="high">{% endblock %}
 {% block main %}
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero__media" data-slides aria-hidden="true">
-    {% for h in site.hero_skaidres %}
-    <img class="hero__slide{% if loop.first %} is-on{% endif %}" src="{{ h.src }}-1280.webp" srcset="{{ h.src }}-1280.webp 1280w, {{ h.src }}.webp 2400w" sizes="100vw" width="{{ h.w }}" height="{{ h.h }}" alt="" style="object-position: {{ h.pos }}" decoding="async"{% if loop.first %} fetchpriority="high"{% else %} fetchpriority="low"{% endif %}>
-    {% endfor %}
-  </div>
-  <div class="hero__shade" aria-hidden="true"></div>
+{# Hero: įrėmintas skydas. Kartu pakeiskite index.html bloko head preload: imagesizes turi sutapti su sizes žemiau. #}
+{% set hsizes = '(max-width: 900px) and (orientation: portrait) 150vh, (max-width: 900px) calc(100vw - 16px), calc(100vw - 24px)' %}
+<section class="hero" aria-labelledby="hero-title" style="--tone: {{ site.hero_skaidres[0].tone|default(0.6) }}">
   <span class="hero__sentinel" aria-hidden="true"></span>
-  <div class="wrap hero__inner">
-    <h1 class="hero__title" id="hero-title">
-      <span class="ln"><span>Jūsų ateities</span></span>
-      <span class="ln"><span>projektų partneris</span></span>
-    </h1>
-    <p class="hero__lead enter" style="--d:.35s">{{ site.hero_tekstas }}</p>
-    <div class="hero__cta enter" style="--d:.5s">
-      <a class="btn btn--primary" href="kontaktai.html#forma">Pateikti užklausą{{ arrow() }}</a>
-      <a class="btn btn--line" href="projektai.html">Projektai</a>
+  <div class="hero__frame">
+    <div class="hero__panel" aria-hidden="true">
+      <div class="hero__media" data-slides>
+        {% for h in site.hero_skaidres %}
+        {% set ss = h.src ~ '-1280.webp 1280w, ' ~ h.src ~ '.webp 2400w' %}
+        <img class="hero__slide{% if loop.first %} is-on{% endif %}" {% if loop.first %}src="{{ h.src }}-1280.webp" srcset="{{ ss }}" fetchpriority="high"{% else %}data-src="{{ h.src }}-1280.webp" data-srcset="{{ ss }}" fetchpriority="low"{% endif %} sizes="{{ hsizes }}" width="{{ h.w }}" height="{{ h.h }}" alt="" style="object-position: {{ h.pos }}" data-tone="{{ h.tone|default(0.6) }}" decoding="async">
+        {% endfor %}
+      </div>
+      <div class="hero__shade"></div>
     </div>
-  </div>
-  <div class="wrap hero__foot enter" style="--d:.7s">
+    <div class="hero__in">
+      <h1 class="hero__title" id="hero-title">
+        <span class="ln"><span>Jūsų ateities</span></span>
+        <span class="ln"><span>projektų partneris</span></span>
+      </h1>
+      <p class="hero__lead enter" style="--d:.35s">{{ site.hero_tekstas }}</p>
+      <div class="hero__cta enter" style="--d:.5s">
+        <a class="btn btn--primary" href="kontaktai.html#forma">Pateikti užklausą{{ arrow() }}</a>
+        <a class="hero__more" href="projektai.html">Projektai<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="hero__bar enter" style="--d:.7s">
+        <div class="hero__steps" role="group" aria-label="Objektų nuotraukos">
+          {% for h in site.hero_skaidres %}
+          <button class="hero__step{% if loop.first %} is-on{% endif %}" type="button" data-step{% if loop.first %} aria-current="true"{% endif %}><span class="sr">Nuotrauka {{ loop.index }} iš {{ loop.length }}: {{ h.vieta }}</span><span class="hero__step-ln" aria-hidden="true"><span></span></span></button>
+          {% endfor %}
+        </div>
+        <button class="hero__ctl" type="button" data-slidectl aria-label="Sustabdyti nuotraukų kaitą"><i class="ph ph-pause" aria-hidden="true"></i></button>
+        <div class="hero__caps">
+          {% for h in site.hero_skaidres %}
+          <p class="hero__cap{% if loop.first %} is-on{% endif %}"><span class="hero__cap-a">{{ h.vieta }}</span> <span class="hero__cap-b">{{ h.darbai }}</span> <span class="hero__cap-c">Užsakovas {{ h.uzsakovas }}</span></p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
     <nav class="hero__svc" aria-label="Paslaugos">
       {% for p in paslaugos %}
-      <a class="hero__svc-a" href="{{ p.slug }}.html"><span class="hero__svc-nr">{{ p.nr }}</span><span class="hero__svc-name">{{ p.trumpas }}</span></a>
+      <a class="hero__svc-a" href="{{ p.slug }}.html" style="--i:{{ loop.index0 }}"><span class="hero__svc-nr">{{ p.nr }}</span><span class="hero__svc-name">{{ p.trumpas }}</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
       {% endfor %}
     </nav>
-    <button class="vidctl" type="button" data-slidectl aria-label="Sustabdyti nuotraukų kaitą" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i></button>
   </div>
 </section>
 

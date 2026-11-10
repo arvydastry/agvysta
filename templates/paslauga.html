@@ -8,7 +8,7 @@
   <div class="wrap phero__grid">
     <div class="phero__text">
       <nav class="crumbs enter" aria-label="Kelias"><a href="index.html">Pradžia</a><span aria-hidden="true">/</span><span>Paslaugos</span></nav>
-      <h1 class="phero__title enter" id="ph-title" style="--d:.08s">{{ s.pavadinimas }}</h1>
+      <h1 class="phero__title{% if s.pavadinimas|length > 45 %} phero__title--long{% endif %} enter" id="ph-title" style="--d:.08s">{{ s.pavadinimas }}</h1>
       <p class="phero__lead enter" style="--d:.18s">{{ s.ivadas }}</p>
       <div class="phero__cta enter" style="--d:.28s">
         <a class="btn btn--primary" href="kontaktai.html#forma">Pateikti užklausą{{ arrow() }}</a>

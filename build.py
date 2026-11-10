@@ -32,8 +32,11 @@ def nbsp_fix(html):
     """Trumpi žodeliai ir skaičius + vienetas nelieka eilutės gale."""
     def rep(m):
         t = m.group(0)
-        t = re.sub(r'(?<=\s)(ir|ar|bei|su|be|iš|į|už|po|per|nuo|iki|prie|ant|apie|nr\.|Nr\.|g\.|pr\.|m\.) ', lambda x: x.group(1) + '\u00a0', t)
+        t = re.sub(r'(?<=\s)(ir|ar|bei|su|be|iš|į|už|po|per|nuo|iki|prie|ant|apie|nr\.|Nr\.|m\.) ', lambda x: x.group(1) + '\u00a0', t)
         t = re.sub(r'(\d) (m|mm|km|metų|m\.)(?=[\s,.<)])', '\\1\u00a0\\2', t)
+        t = re.sub(r'(?<=\S) (g\.|pr\.|al\.|k\.|raj\.)(?=[\s,.<)])', '\u00a0\\1', t)
+        t = re.sub(r'\b(g\.|pr\.|al\.) (?=\d)', '\\1\u00a0', t)
+        t = re.sub(r'\b(ISO|OHSAS|EN|LST|BS) (?=[\dA-Z])', '\\1\u00a0', t)
         return t
     parts = re.split(r'(<(?:script|style|textarea)[^>]*>.*?</(?:script|style|textarea)>)', html, flags=re.S)
     return ''.join(p if p.startswith(('<script', '<style', '<textarea')) else re.sub(r'>[^<]+<', rep, p) for p in parts)
