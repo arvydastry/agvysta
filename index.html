@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="preload" as="image" href="assets/video/hero-1600-poster.webp" media="(min-width: 761px)"><link rel="preload" as="image" href="assets/video/hero-720-poster.webp" media="(max-width: 760px)"></head>
+<link rel="preload" as="image" imagesrcset="assets/img/agvysta/hero/h1-1280.webp 1280w, assets/img/agvysta/hero/h1.webp 2400w" imagesizes="100vw" fetchpriority="high"></head>
 <body class="p-index">
 <a class="skip" href="#main">Pereiti prie turinio</a>
 
@@ -105,15 +105,11 @@
 <main id="main">
 
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero__media">
-    <picture>
-      <source media="(max-width: 760px)" srcset="assets/video/hero-720-poster.webp">
-      <img class="hero__poster" src="assets/video/hero-1600-poster.webp" alt="" width="1600" height="900" fetchpriority="high">
-    </picture>
-    <video class="hero__video" muted loop playsinline preload="none" data-auto data-hero aria-hidden="true">
-      <source data-src="assets/video/hero-720.mp4" media="(max-width: 760px)" type="video/mp4">
-      <source data-src="assets/video/hero-1600.mp4" type="video/mp4">
-    </video>
+  <div class="hero__media" data-slides aria-hidden="true">
+    <img class="hero__slide is-on" src="assets/img/agvysta/hero/h1-1280.webp" srcset="assets/img/agvysta/hero/h1-1280.webp 1280w, assets/img/agvysta/hero/h1.webp 2400w" sizes="100vw" width="2400" height="1350" alt="" style="object-position: 50% 70%" decoding="async" fetchpriority="high">
+    <img class="hero__slide" src="assets/img/agvysta/hero/h2-1280.webp" srcset="assets/img/agvysta/hero/h2-1280.webp 1280w, assets/img/agvysta/hero/h2.webp 2400w" sizes="100vw" width="2400" height="1596" alt="" style="object-position: 50% 62%" decoding="async" fetchpriority="low">
+    <img class="hero__slide" src="assets/img/agvysta/hero/h3-1280.webp" srcset="assets/img/agvysta/hero/h3-1280.webp 1280w, assets/img/agvysta/hero/h3.webp 2400w" sizes="100vw" width="2400" height="1350" alt="" style="object-position: 50% 50%" decoding="async" fetchpriority="low">
+    <img class="hero__slide" src="assets/img/agvysta/hero/h4-1280.webp" srcset="assets/img/agvysta/hero/h4-1280.webp 1280w, assets/img/agvysta/hero/h4.webp 2400w" sizes="100vw" width="2400" height="1596" alt="" style="object-position: 50% 60%" decoding="async" fetchpriority="low">
   </div>
   <div class="hero__shade" aria-hidden="true"></div>
   <span class="hero__sentinel" aria-hidden="true"></span>
@@ -135,7 +131,7 @@
       <a class="hero__svc-a" href="zemes-darbai-ir-gerbuvio-darbai-2.html"><span class="hero__svc-nr">03</span><span class="hero__svc-name">Žemės ir gerbūvio darbai</span></a>
       <a class="hero__svc-a" href="spec-paslaugos-gruntinio-vandens-pazeminimas-atraminiu-sienuciu-irengimas-isalo-lauzymas.html"><span class="hero__svc-nr">04</span><span class="hero__svc-name">Spec. paslaugos</span></a>
     </nav>
-    <button class="vidctl" type="button" data-vidctl aria-label="Sustabdyti foninį vaizdo įrašą" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i></button>
+    <button class="vidctl" type="button" data-slidectl aria-label="Sustabdyti nuotraukų kaitą" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i></button>
   </div>
 </section>
 
@@ -144,9 +140,9 @@
     <h2 class="logos__title" id="logos-title">Tarp mūsų užsakovų</h2>
     <div class="logos__viewport" data-marquee>
       <ul class="logos__track">
-<li class="logos__item"><img src="assets/img/klientai/pst.svg" alt="AB „Panevėžio statybos trestas“" width="90" height="29" style="width:90px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/paneveziokeliai.png" alt="AB „Panevėžio keliai“" width="89" height="29" style="width:89px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/eika.svg" alt="UAB „EIKA“" width="136" height="20" style="width:136px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/fegda.png" alt="UAB „Fegda“" width="80" height="33" style="width:80px;height:33px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/kaminta.png" alt="UAB „Kaminta“" width="156" height="20" style="width:156px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/sintervalas.png" alt="UAB „Sintervalas“" width="93" height="28" style="width:93px;height:28px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/vilbra.svg" alt="UAB „Vilbra“" width="111" height="23" style="width:111px;height:23px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/iberdrola.svg" alt="Iberdrola" width="103" height="25" style="width:103px;height:25px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/neste.svg" alt="UAB „Neste Lietuva“" width="123" height="21" style="width:123px;height:21px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/ogmios.svg" alt="Ogmios grupė (AB „Ogmios centras“)" width="198" height="20" style="width:198px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/citus.svg" alt="UAB „Citus construction“" width="75" height="35" style="width:75px;height:35px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/omberg.png" alt="UAB „Omberg“" width="85" height="31" style="width:85px;height:31px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/versina.png" alt="UAB „Versina“" width="124" height="21" style="width:124px;height:21px" decoding="async"></li>      </ul>
+<li class="logos__item"><img src="assets/img/klientai/pst.svg" alt="AB „Panevėžio statybos trestas“" width="90" height="29" style="width:90px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/paneveziokeliai.png" alt="AB „Panevėžio keliai“" width="118" height="39" style="width:118px;height:39px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/eika.svg" alt="UAB „EIKA“" width="136" height="20" style="width:136px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/fegda.png" alt="UAB „Fegda“" width="80" height="33" style="width:80px;height:33px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/kaminta.png" alt="UAB „Kaminta“" width="156" height="20" style="width:156px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/sintervalas.png" alt="UAB „Sintervalas“" width="93" height="28" style="width:93px;height:28px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/vilbra.svg" alt="UAB „Vilbra“" width="111" height="23" style="width:111px;height:23px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/iberdrola.svg" alt="Iberdrola" width="103" height="25" style="width:103px;height:25px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/neste.svg" alt="UAB „Neste Lietuva“" width="123" height="21" style="width:123px;height:21px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/ogmios.svg" alt="Ogmios grupė (AB „Ogmios centras“)" width="198" height="20" style="width:198px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/citus.svg" alt="UAB „Citus construction“" width="75" height="35" style="width:75px;height:35px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/omberg.png" alt="UAB „Omberg“" width="85" height="31" style="width:85px;height:31px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/versina.png" alt="UAB „Versina“" width="124" height="21" style="width:124px;height:21px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/lonsta.png" alt="UAB „Lonsta“" width="102" height="25" style="width:102px;height:25px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/sivysta.png" alt="UAB „Sivysta“" width="88" height="29" style="width:88px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/astana.png" alt="UAB „Astana“" width="92" height="44" style="width:92px;height:44px" decoding="async"></li>      </ul>
       <ul class="logos__track" aria-hidden="true">
-<li class="logos__item"><img src="assets/img/klientai/pst.svg" alt="" width="90" height="29" style="width:90px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/paneveziokeliai.png" alt="" width="89" height="29" style="width:89px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/eika.svg" alt="" width="136" height="20" style="width:136px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/fegda.png" alt="" width="80" height="33" style="width:80px;height:33px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/kaminta.png" alt="" width="156" height="20" style="width:156px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/sintervalas.png" alt="" width="93" height="28" style="width:93px;height:28px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/vilbra.svg" alt="" width="111" height="23" style="width:111px;height:23px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/iberdrola.svg" alt="" width="103" height="25" style="width:103px;height:25px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/neste.svg" alt="" width="123" height="21" style="width:123px;height:21px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/ogmios.svg" alt="" width="198" height="20" style="width:198px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/citus.svg" alt="" width="75" height="35" style="width:75px;height:35px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/omberg.png" alt="" width="85" height="31" style="width:85px;height:31px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/versina.png" alt="" width="124" height="21" style="width:124px;height:21px" decoding="async"></li>      </ul>
+<li class="logos__item"><img src="assets/img/klientai/pst.svg" alt="" width="90" height="29" style="width:90px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/paneveziokeliai.png" alt="" width="118" height="39" style="width:118px;height:39px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/eika.svg" alt="" width="136" height="20" style="width:136px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/fegda.png" alt="" width="80" height="33" style="width:80px;height:33px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/kaminta.png" alt="" width="156" height="20" style="width:156px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/sintervalas.png" alt="" width="93" height="28" style="width:93px;height:28px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/vilbra.svg" alt="" width="111" height="23" style="width:111px;height:23px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/iberdrola.svg" alt="" width="103" height="25" style="width:103px;height:25px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/neste.svg" alt="" width="123" height="21" style="width:123px;height:21px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/ogmios.svg" alt="" width="198" height="20" style="width:198px;height:20px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/citus.svg" alt="" width="75" height="35" style="width:75px;height:35px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/omberg.png" alt="" width="85" height="31" style="width:85px;height:31px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/versina.png" alt="" width="124" height="21" style="width:124px;height:21px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/lonsta.png" alt="" width="102" height="25" style="width:102px;height:25px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/sivysta.png" alt="" width="88" height="29" style="width:88px;height:29px" decoding="async"></li><li class="logos__item"><img src="assets/img/klientai/astana.png" alt="" width="92" height="44" style="width:92px;height:44px" decoding="async"></li>      </ul>
     </div>
   </div>
 </section>
@@ -518,26 +514,158 @@
 </section>
 
 <section class="clients" aria-labelledby="cl-title">
-  <div class="wrap"><div class="clients__grid">
-    <h2 class="h2 reveal" id="cl-title">Užsakovai, kuriems dirbome</h2>
-    <div>
-      <ul class="clients__list">
-        <li class="clients__item reveal" style="--i:0"><span class="clients__n">8</span><span class="clients__name">UAB „Lakaja“</span></li>
-        <li class="clients__item reveal" style="--i:1"><span class="clients__n">5</span><span class="clients__name">AB „Panevėžio keliai“</span></li>
-        <li class="clients__item reveal" style="--i:2"><span class="clients__n">4</span><span class="clients__name">AB „Panevėžio statybos trestas“</span></li>
-        <li class="clients__item reveal" style="--i:3"><span class="clients__n">4</span><span class="clients__name">UAB „EIKA“</span></li>
-        <li class="clients__item reveal" style="--i:0"><span class="clients__n">3</span><span class="clients__name">UAB „Fegda“</span></li>
-        <li class="clients__item reveal" style="--i:1"><span class="clients__n">3</span><span class="clients__name">UAB „Litcon“</span></li>
-        <li class="clients__item reveal" style="--i:2"><span class="clients__n">3</span><span class="clients__name">UAB „SIV statyba“</span></li>
-        <li class="clients__item reveal" style="--i:3"><span class="clients__n">2</span><span class="clients__name">UAB „Conresta“</span></li>
-        <li class="clients__item reveal" style="--i:0"><span class="clients__n">2</span><span class="clients__name">UAB „Kaminta“</span></li>
-        <li class="clients__item reveal" style="--i:1"><span class="clients__n">2</span><span class="clients__name">UAB „Sintervalas“</span></li>
-        <li class="clients__item reveal" style="--i:2"><span class="clients__n">2</span><span class="clients__name">UAB „Vilbra“</span></li>
-      </ul>
-      <p class="clients__rest reveal">Taip pat AB „Ogmios centras“, Iberdrola, Mažesniųjų brolių konventualų (pranciškonų) ordino vienuolynas, UAB „Astana“, UAB „BM būstas“, UAB „Baltijos gildija“, UAB „Citus construction“, UAB „Constructus“, UAB „DTC Internacional“, UAB „Geležinkelių projektavimas“, UAB „HES-PRO Vilnius“, UAB „Hermis Capital“, UAB „Lonsta“, UAB „Neste Lietuva“, UAB „Omberg“, UAB „Orsta“, UAB „Ranga IV“, UAB „Romantalis“, UAB „Santariškių namai“, UAB „Sivysta“, UAB „Trakų vandenys“, UAB „Vavista“, UAB „Versina“, UAB „Vilmestos projektai“, VĮ „Visagino statybininkai“.</p>
-      <p class="clients__note reveal">Skaičius rodo objektų kiekį projektų sąraše (63&nbsp;objektai nuo 2005 metų).</p>
+  <div class="wrap">
+    <div class="clients__head">
+      <h2 class="h2 reveal" id="cl-title">Užsakovai, kuriems dirbome</h2>
+      <p class="clients__note reveal">36 užsakovai projektų sąraše nuo 2005 metų. Skaičius rodo objektų kiekį.</p>
     </div>
-  </div></div>
+    <ul class="wall">
+      <li class="wall__tile reveal wall__tile--name" style="--i:0" title="UAB „Lakaja“">
+        <p class="wall__name"><span>UAB</span>Lakaja</p>
+        <span class="wall__n">8&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:1" title="AB „Panevėžio keliai“">
+        <img class="wall__logo" src="assets/img/klientai/paneveziokeliai.png" alt="AB „Panevėžio keliai“" width="118" height="39" style="width:132px;height:44px" loading="lazy" decoding="async">
+        <span class="wall__n">5&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:2" title="AB „Panevėžio statybos trestas“">
+        <img class="wall__logo" src="assets/img/klientai/pst.svg" alt="AB „Panevėžio statybos trestas“" width="90" height="29" style="width:101px;height:32px" loading="lazy" decoding="async">
+        <span class="wall__n">4&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:3" title="UAB „EIKA“">
+        <img class="wall__logo" src="assets/img/klientai/eika.svg" alt="UAB „EIKA“" width="136" height="20" style="width:152px;height:22px" loading="lazy" decoding="async">
+        <span class="wall__n">4&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:4" title="UAB „Fegda“">
+        <img class="wall__logo" src="assets/img/klientai/fegda.png" alt="UAB „Fegda“" width="80" height="33" style="width:90px;height:37px" loading="lazy" decoding="async">
+        <span class="wall__n">3&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:5" title="UAB „Litcon“">
+        <p class="wall__name"><span>UAB</span>Litcon</p>
+        <span class="wall__n">3&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:0" title="UAB „SIV statyba“">
+        <p class="wall__name"><span>UAB</span>SIV statyba</p>
+        <span class="wall__n">3&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:1" title="UAB „Conresta“">
+        <p class="wall__name"><span>UAB</span>Conresta</p>
+        <span class="wall__n">2&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:2" title="UAB „Kaminta“">
+        <img class="wall__logo" src="assets/img/klientai/kaminta.png" alt="UAB „Kaminta“" width="156" height="20" style="width:175px;height:22px" loading="lazy" decoding="async">
+        <span class="wall__n">2&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:3" title="UAB „Sintervalas“">
+        <img class="wall__logo" src="assets/img/klientai/sintervalas.png" alt="UAB „Sintervalas“" width="93" height="28" style="width:104px;height:31px" loading="lazy" decoding="async">
+        <span class="wall__n">2&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:4" title="UAB „Vilbra“">
+        <img class="wall__logo" src="assets/img/klientai/vilbra.svg" alt="UAB „Vilbra“" width="111" height="23" style="width:124px;height:26px" loading="lazy" decoding="async">
+        <span class="wall__n">2&nbsp;objektai</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:5" title="AB „Ogmios centras“">
+        <img class="wall__logo" src="assets/img/klientai/ogmios.svg" alt="AB „Ogmios centras“" width="198" height="20" style="width:222px;height:22px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:0" title="Iberdrola">
+        <img class="wall__logo" src="assets/img/klientai/iberdrola.svg" alt="Iberdrola" width="103" height="25" style="width:115px;height:28px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:1" title="Mažesniųjų brolių konventualų (pranciškonų) ordino vienuolynas">
+        <p class="wall__name">Mažesniųjų brolių konventualų (pranciškonų) ordino vienuolynas</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:2" title="UAB „Astana“">
+        <img class="wall__logo" src="assets/img/klientai/astana.png" alt="UAB „Astana“" width="92" height="44" style="width:103px;height:49px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:3" title="UAB „BM būstas“">
+        <p class="wall__name"><span>UAB</span>BM būstas</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:4" title="UAB „Baltijos gildija“">
+        <p class="wall__name"><span>UAB</span>Baltijos gildija</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:5" title="UAB „Citus construction“">
+        <img class="wall__logo" src="assets/img/klientai/citus.svg" alt="UAB „Citus construction“" width="75" height="35" style="width:84px;height:39px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:0" title="UAB „Constructus“">
+        <p class="wall__name"><span>UAB</span>Constructus</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:1" title="UAB „DTC Internacional“">
+        <p class="wall__name"><span>UAB</span>DTC Internacional</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:2" title="UAB „Geležinkelių projektavimas“">
+        <p class="wall__name"><span>UAB</span>Geležinkelių projektavimas</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:3" title="UAB „HES-PRO Vilnius“">
+        <p class="wall__name"><span>UAB</span>HES-PRO Vilnius</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:4" title="UAB „Hermis Capital“">
+        <p class="wall__name"><span>UAB</span>Hermis Capital</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:5" title="UAB „Lonsta“">
+        <img class="wall__logo" src="assets/img/klientai/lonsta.png" alt="UAB „Lonsta“" width="102" height="25" style="width:114px;height:28px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:0" title="UAB „Neste Lietuva“">
+        <img class="wall__logo" src="assets/img/klientai/neste.svg" alt="UAB „Neste Lietuva“" width="123" height="21" style="width:138px;height:24px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:1" title="UAB „Omberg“">
+        <img class="wall__logo" src="assets/img/klientai/omberg.png" alt="UAB „Omberg“" width="85" height="31" style="width:95px;height:35px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:2" title="UAB „Orsta“">
+        <p class="wall__name"><span>UAB</span>Orsta</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:3" title="UAB „Ranga IV“">
+        <p class="wall__name"><span>UAB</span>Ranga IV</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:4" title="UAB „Romantalis“">
+        <p class="wall__name"><span>UAB</span>Romantalis</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:5" title="UAB „Santariškių namai“">
+        <p class="wall__name"><span>UAB</span>Santariškių namai</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:0" title="UAB „Sivysta“">
+        <img class="wall__logo" src="assets/img/klientai/sivysta.png" alt="UAB „Sivysta“" width="88" height="29" style="width:99px;height:32px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:1" title="UAB „Trakų vandenys“">
+        <p class="wall__name"><span>UAB</span>Trakų vandenys</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:2" title="UAB „Vavista“">
+        <p class="wall__name"><span>UAB</span>Vavista</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal" style="--i:3" title="UAB „Versina“">
+        <img class="wall__logo" src="assets/img/klientai/versina.png" alt="UAB „Versina“" width="124" height="21" style="width:139px;height:24px" loading="lazy" decoding="async">
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:4" title="UAB „Vilmestos projektai“">
+        <p class="wall__name"><span>UAB</span>Vilmestos projektai</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+      <li class="wall__tile reveal wall__tile--name" style="--i:5" title="VĮ „Visagino statybininkai“">
+        <p class="wall__name"><span>VĮ</span>Visagino statybininkai</p>
+        <span class="wall__n">1&nbsp;objektas</span>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <section class="cta" aria-labelledby="cta-title">

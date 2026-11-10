@@ -113,20 +113,32 @@
     vids.forEach(v => { if (d.hidden) v.pause(); else if (v._vis && canPlay(v)) play(v); });
   });
 
-  /* hero video valdymas (WCAG 2.2.2) */
-  const ctl = $('[data-vidctl]'), hv = $('video[data-hero]');
-  if (ctl && hv) {
-    const icon = $('i', ctl);
-    const sync = paused => {
-      icon.className = 'ph ' + (paused ? 'ph-play' : 'ph-pause');
-      ctl.setAttribute('aria-label', paused ? 'Paleisti foninį vaizdo įrašą' : 'Sustabdyti foninį vaizdo įrašą');
+  /* hero: originalių nuotraukų kaita (pauzės mygtukas, WCAG 2.2.2) */
+  const sw = $('[data-slides]');
+  if (sw) {
+    const slides = $$('.hero__slide', sw), ctl = $('[data-slidectl]');
+    let cur = 0, timer = null, paused = calm, inView = true;
+    const go = () => {
+      const prev = slides[cur];
+      cur = (cur + 1) % slides.length;
+      prev.classList.remove('is-on'); prev.classList.add('is-out');
+      slides[cur].classList.remove('is-out'); slides[cur].classList.add('is-on');
+      setTimeout(() => prev.classList.remove('is-out'), 1800);
+    };
+    const run = () => {
+      clearInterval(timer); timer = null;
+      if (!paused && inView && !d.hidden && slides.length > 1) timer = setInterval(go, 6500);
+    };
+    const sync = () => {
+      if (!ctl) return;
+      $('i', ctl).className = 'ph ' + (paused ? 'ph-play' : 'ph-pause');
+      ctl.setAttribute('aria-label', paused ? 'Paleisti nuotraukų kaitą' : 'Sustabdyti nuotraukų kaitą');
       ctl.setAttribute('aria-pressed', String(paused));
     };
-    if (calm) sync(true);
-    ctl.addEventListener('click', () => {
-      if (hv.paused) { delete hv.dataset.userPaused; play(hv); sync(false); }
-      else { hv.pause(); hv.dataset.userPaused = '1'; sync(true); }
-    });
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; run(); }).observe(sw);
+    d.addEventListener('visibilitychange', run);
+    ctl && ctl.addEventListener('click', () => { paused = !paused; sync(); run(); });
+    sync(); run();
   }
 
   /* paslaugų rodyklė: užvedus keičiasi video */

@@ -1,19 +1,14 @@
 {% extends 'base.html' %}
 {% from '_macros.html' import pic, video, plural, metrics, gallery_data, cta, arrow %}
 {% block title %}Lauko inžineriniai tinklai, siurblinės, žemės darbai{% endblock %}
-{% block head %}<link rel="preload" as="image" href="assets/video/hero-1600-poster.webp" media="(min-width: 761px)"><link rel="preload" as="image" href="assets/video/hero-720-poster.webp" media="(max-width: 760px)">{% endblock %}
+{% block head %}{% set h0 = site.hero_skaidres[0].src %}<link rel="preload" as="image" imagesrcset="{{ h0 }}-1280.webp 1280w, {{ h0 }}.webp 2400w" imagesizes="100vw" fetchpriority="high">{% endblock %}
 {% block main %}
 
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero__media">
-    <picture>
-      <source media="(max-width: 760px)" srcset="assets/video/hero-720-poster.webp">
-      <img class="hero__poster" src="assets/video/hero-1600-poster.webp" alt="" width="1600" height="900" fetchpriority="high">
-    </picture>
-    <video class="hero__video" muted loop playsinline preload="none" data-auto data-hero aria-hidden="true">
-      <source data-src="assets/video/hero-720.mp4" media="(max-width: 760px)" type="video/mp4">
-      <source data-src="assets/video/hero-1600.mp4" type="video/mp4">
-    </video>
+  <div class="hero__media" data-slides aria-hidden="true">
+    {% for h in site.hero_skaidres %}
+    <img class="hero__slide{% if loop.first %} is-on{% endif %}" src="{{ h.src }}-1280.webp" srcset="{{ h.src }}-1280.webp 1280w, {{ h.src }}.webp 2400w" sizes="100vw" width="{{ h.w }}" height="{{ h.h }}" alt="" style="object-position: {{ h.pos }}" decoding="async"{% if loop.first %} fetchpriority="high"{% else %} fetchpriority="low"{% endif %}>
+    {% endfor %}
   </div>
   <div class="hero__shade" aria-hidden="true"></div>
   <span class="hero__sentinel" aria-hidden="true"></span>
@@ -34,7 +29,7 @@
       <a class="hero__svc-a" href="{{ p.slug }}.html"><span class="hero__svc-nr">{{ p.nr }}</span><span class="hero__svc-name">{{ p.trumpas }}</span></a>
       {% endfor %}
     </nav>
-    <button class="vidctl" type="button" data-vidctl aria-label="Sustabdyti foninį vaizdo įrašą" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i></button>
+    <button class="vidctl" type="button" data-slidectl aria-label="Sustabdyti nuotraukų kaitą" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i></button>
   </div>
 </section>
 
@@ -199,20 +194,24 @@
 </section>
 
 <section class="clients" aria-labelledby="cl-title">
-  <div class="wrap"><div class="clients__grid">
-    <h2 class="h2 reveal" id="cl-title">Užsakovai, kuriems dirbome</h2>
-    <div>
-      {% set top = pj.uzsakovai|selectattr('projektai', 'gt', 1)|list %}
-      {% set rest = pj.uzsakovai|selectattr('projektai', 'eq', 1)|list %}
-      <ul class="clients__list">
-        {% for c in top %}
-        <li class="clients__item reveal" style="--i:{{ loop.index0 % 4 }}"><span class="clients__n">{{ c.projektai }}</span><span class="clients__name">{{ c.vardas }}</span></li>
-        {% endfor %}
-      </ul>
-      <p class="clients__rest reveal">Taip pat {{ rest|map(attribute='vardas')|join(', ') }}.</p>
-      <p class="clients__note reveal">Skaičius rodo objektų kiekį projektų sąraše ({{ plural(pj.vykdomi|length + pj.atlikti|length, 'objektas', 'objektai', 'objektų') }} nuo {{ imone.nuo }} metų).</p>
+  <div class="wrap">
+    <div class="clients__head">
+      <h2 class="h2 reveal" id="cl-title">Užsakovai, kuriems dirbome</h2>
+      <p class="clients__note reveal">{{ uzsakovu_sienele|length }} užsakovai projektų sąraše nuo {{ imone.nuo }} metų. Skaičius rodo objektų kiekį.</p>
     </div>
-  </div></div>
+    <ul class="wall">
+      {% for t in uzsakovu_sienele %}
+      <li class="wall__tile reveal{% if not t.logo %} wall__tile--name{% endif %}" style="--i:{{ loop.index0 % 6 }}" title="{{ t.vardas }}">
+        {% if t.logo %}
+        <img class="wall__logo" src="{{ t.logo.failas }}" alt="{{ t.vardas }}" width="{{ t.logo.w }}" height="{{ t.logo.h }}" style="width:{{ (t.logo.w * 1.12)|round|int }}px;height:{{ (t.logo.h * 1.12)|round|int }}px" loading="lazy" decoding="async">
+        {% else %}
+        <p class="wall__name">{% if t.forma %}<span>{{ t.forma }}</span>{% endif %}{{ t.pav }}</p>
+        {% endif %}
+        <span class="wall__n">{{ plural(t.n, 'objektas', 'objektai', 'objektų') }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 {{ cta() }}

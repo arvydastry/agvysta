@@ -64,6 +64,11 @@ Visi efektai yra CSS scroll-driven animations (`animation-timeline: view()`): be
 - **„Ilgiausios paklotos trasos“:** fone didelis kontūrinis „36 005 m“, slenkantis horizontaliai.
 - Telefone parallax amplitudė perpus mažesnė (`--pk: .5`).
 
+## v5: hero iš originalių nuotraukų, užsakovų sienelė
+
+- **Hero:** vietoj Pexels video lėta originalių agvysta.lt projektų nuotraukų kaita (4 didelės raiškos nuotraukos: Aukštaičių g. 10, Linkmenų g. 22 ×2, Verkių g. 29), švelnus priartinimas, keičiasi kas 6,5 s, sustoja kai hero nematomas; pauzės mygtukas apačioje dešinėje. Nuotraukos `assets/img/agvysta/hero/h1-h4` (2400 ir 1280 px).
+- **„Užsakovai, kuriems dirbome“:** visų 36 užsakovų sienelė. 16 su logotipais (vienspalviai), kitiems 20 rodomas pavadinimas su teisine forma; kiekvienoje plytelėje objektų skaičius. Logotipų šaltiniai: [`docs/logotipai.md`](docs/logotipai.md).
+
 ## Puslapiai
 
 Puslapių adresai (slug) **tokie pat kaip senojoje svetainėje** (SEO).

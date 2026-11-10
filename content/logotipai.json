@@ -8,8 +8,8 @@
  {
   "failas": "assets/img/klientai/paneveziokeliai.png",
   "vardas": "AB „Panevėžio keliai“",
-  "w": 89,
-  "h": 29
+  "w": 118,
+  "h": 39
  },
  {
   "failas": "assets/img/klientai/eika.svg",
@@ -76,5 +76,23 @@
   "vardas": "UAB „Versina“",
   "w": 124,
   "h": 21
+ },
+ {
+  "failas": "assets/img/klientai/lonsta.png",
+  "vardas": "UAB „Lonsta“",
+  "w": 102,
+  "h": 25
+ },
+ {
+  "failas": "assets/img/klientai/sivysta.png",
+  "vardas": "UAB „Sivysta“",
+  "w": 88,
+  "h": 29
+ },
+ {
+  "failas": "assets/img/klientai/astana.png",
+  "vardas": "UAB „Astana“",
+  "w": 92,
+  "h": 44
  }
 ]

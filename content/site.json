@@ -401,5 +401,31 @@
       "id": "a42",
       "pavadinimas": "Sporto ir sveikatingumo kompleksas Ąžuolyno g. 5"
     }
+  ],
+  "hero_skaidres": [
+    {
+      "src": "assets/img/agvysta/hero/h1",
+      "pos": "50% 70%",
+      "w": 2400,
+      "h": 1350
+    },
+    {
+      "src": "assets/img/agvysta/hero/h2",
+      "pos": "50% 62%",
+      "w": 2400,
+      "h": 1596
+    },
+    {
+      "src": "assets/img/agvysta/hero/h3",
+      "pos": "50% 50%",
+      "w": 2400,
+      "h": 1350
+    },
+    {
+      "src": "assets/img/agvysta/hero/h4",
+      "pos": "50% 60%",
+      "w": 2400,
+      "h": 1596
+    }
   ]
 }

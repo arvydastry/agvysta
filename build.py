@@ -40,6 +40,25 @@ def nbsp_fix(html):
 
 DASH = re.compile('[\u2013\u2014]')
 
+LEGAL = re.compile(r'^(UAB|AB|VĮ|VšĮ)\s+')
+
+def client_wall(pj, logos):
+    """Užsakovų sienelė: logotipas, jei turime, kitaip pavadinimas (teisinė forma atskirai)."""
+    by_name = {}
+    for l in logos:
+        by_name[l['vardas']] = l
+        by_name[l['vardas'].split(' (')[0]] = l
+    alias = {'UAB „Neste Lietuva“': 'UAB „Neste Lietuva“', 'AB „Ogmios centras“': 'Ogmios grupė (AB „Ogmios centras“)'}
+    tiles = []
+    for c in pj['uzsakovai']:
+        name = c['vardas']
+        logo = by_name.get(name) or by_name.get(alias.get(name, ''))
+        m = LEGAL.match(name)
+        forma = m.group(1) if m else ''
+        pav = LEGAL.sub('', name).replace('„', '').replace('“', '')
+        tiles.append({'vardas': name, 'forma': forma, 'pav': pav, 'n': c['projektai'], 'logo': logo})
+    return tiles
+
 def main():
     site = load('site')
     pj = load('projektai')
@@ -76,7 +95,7 @@ def main():
     env.filters['thousands'] = lambda n: f'{n:,}'.replace(',', '\u00a0')
 
     pages = {
-        'index.html': ('index.html', dict(page='index', featured=featured, pj=pj, allp=allp, trasos=trasos, trasu=trasu_suvestine, logotipai=load('logotipai'))),
+        'index.html': ('index.html', dict(page='index', featured=featured, pj=pj, allp=allp, trasos=trasos, trasu=trasu_suvestine, logotipai=load('logotipai'), uzsakovu_sienele=client_wall(pj, load('logotipai')))),
         'projektai.html': ('projektai.html', dict(page='projektai', pj=pj, by_year=by_year)),
         'apie-mus.html': ('apie-mus.html', dict(page='apie', allp=allp)),
         'karjera.html': ('karjera.html', dict(page='karjera')),

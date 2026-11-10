@@ -1,6 +1,6 @@
 # Užsakovų logotipai
 
-Pradžios puslapio juosta „Tarp mūsų užsakovų“ rodo įmonių, esančių agvysta.lt projektų sąraše, logotipus. Logotipai paimti 2026-11-06 iš viešų šaltinių ir svetainėje rodomi vienspalviai (CSS `filter: brightness(0)`). Prieš paleidžiant verta gauti kliento sutikimą ir originalius vektorinius failus.
+Pradžios puslapio juosta „Tarp mūsų užsakovų“ ir sienelė „Užsakovai, kuriems dirbome“ rodo įmonių, esančių agvysta.lt projektų sąraše, logotipus. Logotipai paimti 2026-11-06 iš viešų šaltinių ir svetainėje rodomi vienspalviai (CSS `filter: brightness(0)`). Prieš paleidžiant verta gauti kliento sutikimą ir originalius vektorinius failus.
 
 | Failas | Įmonė | Šaltinis |
 |---|---|---|
@@ -17,7 +17,10 @@ Pradžios puslapio juosta „Tarp mūsų užsakovų“ rodo įmonių, esančių 
 | `assets/img/klientai/citus.svg` | UAB „Citus construction“ | citus.lt |
 | `assets/img/klientai/omberg.png` | UAB „Omberg“ | omberg.lt |
 | `assets/img/klientai/versina.png` | UAB „Versina“ | versina.lt |
+| `assets/img/klientai/lonsta.png` | UAB „Lonsta“ | lonsta.lt |
+| `assets/img/klientai/sivysta.png` | UAB „Sivysta“ | sivysta.lt |
+| `assets/img/klientai/astana.png` | UAB „Astana“ | astana.lt |
 
-Nerasta / netinka: UAB „Lakaja“ (domene dabar kita veikla), UAB „Litcon“, UAB „SIV statyba“, AB „Panevėžio keliai“ svetainės neveikia; „Conresta“ nukreipia į kitą prekės ženklą.
+Nerasta / netinka (sienelėje rodomas pavadinimas): UAB „Lakaja“ (domene dabar kita veikla), UAB „Litcon“, UAB „SIV statyba“, AB „Panevėžio keliai“ svetainės neveikia; „Conresta“ nukreipia į kitą prekės ženklą.
 
 Kalbų vėliavėlės `assets/img/flags/{lt,gb,ru}.svg` iš [flag-icons](https://github.com/lipis/flag-icons) 7.2.3 (MIT).
