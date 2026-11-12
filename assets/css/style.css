@@ -142,19 +142,16 @@ address { font-style: normal; }
 .lang--m .lang__a[aria-current] { box-shadow: inset 0 0 0 1px var(--ink); }
 .lang--m .lang__a:not([aria-current]) { color: var(--muted); }
 
-/* ---------- Užsakovų logotipai (vienintelė slenkanti juosta) ---------- */
-.logos { padding: clamp(28px, 3.4vw, 44px) 0; box-shadow: inset 0 -1px 0 var(--line); }
-.logos__row { display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: clamp(20px, 3vw, 48px); }
-.logos__title { font-size: 14px; font-weight: 500; line-height: 1.35; color: var(--muted); }
-.logos__viewport { display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.logos__track { display: flex; flex: none; align-items: center; gap: clamp(40px, 4.4vw, 64px); padding-right: clamp(40px, 4.4vw, 64px); animation: logos-run 55s linear infinite; }
+/* ---------- Užsakovų logotipai: spalvoti, per visą plotį (viena juosta į kairę po hero) ---------- */
+.logos { padding: clamp(30px, 3.6vw, 48px) 0; box-shadow: inset 0 -1px 0 var(--line); overflow: hidden; }
+.logos__viewport { display: flex; width: 100%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.logos__track { display: flex; flex: none; align-items: center; gap: clamp(48px, 5vw, 80px); padding-right: clamp(48px, 5vw, 80px); animation: logos-run 70s linear infinite; }
 .logos__viewport:hover .logos__track { animation-play-state: paused; }
-.logos__item { flex: none; display: grid; place-items: center; height: 48px; }
-.logos__item img { max-width: none; filter: brightness(0); opacity: .58; transition: opacity .3s; }
-.logos__item img:hover { opacity: .95; }
+.logos__item { flex: none; display: grid; place-items: center; height: 56px; }
+.logos__item img { max-width: none; }
 @keyframes logos-run { to { transform: translateX(-100%); } }
 .calm .logos__track { animation: none; }
-.calm .logos__viewport { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: none; mask-image: none; }
+.calm .logos__viewport { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: none; mask-image: none; padding-inline: var(--gut); }
 .calm .logos__track[aria-hidden] { display: none; }
 .burger { display: none; width: 44px; height: 44px; position: relative; }
 .burger span { position: absolute; left: 11px; right: 11px; height: 1.5px; background: currentColor; transition: transform .35s var(--ease); }
@@ -186,17 +183,89 @@ html.menu-open .hdr .logo__waves { stroke: var(--brand); }
 main { display: block; }
 body:not(.p-index) main { padding-top: var(--hdr-h); }
 
-/* ---------- Įvadas ir faktai ---------- */
-.intro { padding: var(--sec) 0; }
-.intro__grid { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(40px, 6vw, 112px); align-items: end; }
-.intro__statement { font-size: clamp(1.65rem, 3vw, 2.7rem); line-height: 1.16; letter-spacing: -.03em; color: var(--ink); text-wrap: pretty; }
-.intro__statement span { color: var(--muted); }
-.facts { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(20px, 3vw, 40px); }
-.fact { padding: 20px 0 26px; box-shadow: inset 0 1px 0 var(--line-2); display: flex; flex-direction: column; gap: 10px; }
-.fact__label { order: 1; font-size: 14px; color: var(--muted); line-height: 1.45; max-width: 26ch; }
-.fact__num { order: 0; display: flex; align-items: baseline; font-size: clamp(2.4rem, 3.8vw, 3.5rem); font-weight: 300; line-height: 1; letter-spacing: -.045em; color: var(--ink); white-space: nowrap; }
-.fact__plus { color: var(--brand); font-weight: 300; margin-left: .04em; }
-.fact__unit { font-size: .42em; letter-spacing: 0; margin-left: .3em; color: var(--muted); font-weight: 400; }
+/* ---------- Įvadas ir faktai ----------
+   Ramus redakcinis blokas ant 4 stulpelių tinklelio (tų pačių kaip faktų): kairiame stulpelyje nuoroda „Apie įmonę“,
+   per kitus tris teiginys įprasto pločio Archivo. Faktai po juo, kiekvienas su plona linija viršuje.
+   Su JS (html.js) teiginys „įsigeria“ skaitant: pagrindinis tekstas iš pradžių blyškus (--pre), ant jo uždėta
+   aria-hidden kopija, suskaidyta į raides (data-read="char") arba žodžius (data-read="word"); jos dalys (.u) po vieną
+   ryškėja (opacity), kol teiginys slenka per ekraną (CSS view() laiko juosta; be jos IntersectionObserver ir perėjimai).
+   Pagrindinis <p> lieka vienu tekstu, todėl ekrano skaitytuvas, žymėjimas ir vertimas veikia kaip įprasta.
+   Faktų linijos iš eilės užsipildo mėlyna, skaičius iškyla, kai linija pradeda pildytis.
+   Perėjus bloką, būsena užrakinama (.is-read). html.calm (prefers-reduced-motion, ?static=1): viskas iškart galutinės būsenos. */
+.intro { --cg: clamp(20px, 2.4vw, 40px); --pre: #C9CDCD; padding: var(--sec) 0; }
+/* --pre: dar neperskaityto teiginio spalva (pagrindinis tekstas po kopija) */
+.intro__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--cg); align-items: baseline; }
+.intro__read { grid-column: 2 / -1; grid-row: 1; position: relative; }
+.intro__more { grid-column: 1; grid-row: 1; justify-self: start; white-space: nowrap; }
+.intro__lead { max-width: 23em; font-family: var(--display); font-size: clamp(1.45rem, 2.35vw, 2.45rem); font-weight: 400; line-height: 1.24; letter-spacing: -.022em; color: var(--ink); text-wrap: pretty; }
+.intro__b { color: var(--muted); }
+
+.is-split > .intro__lead, .is-split > .intro__lead .intro__b { color: var(--pre); }
+.is-split > .intro__lead--ink { position: absolute; inset: 0; color: var(--ink); white-space: nowrap; pointer-events: none; -webkit-user-select: none; user-select: none; }
+.is-split > .intro__lead--ink.is-wrap { white-space: normal; }
+.is-split > .intro__lead--ink .intro__b { color: var(--muted); }
+/* žymint tekstą arba išvertus puslapį kopija paslepiama, o pagrindas rodomas galutinėmis spalvomis */
+.is-split.is-sel > .intro__lead, .translated-ltr .is-split > .intro__lead, .translated-rtl .is-split > .intro__lead { color: var(--ink); }
+.is-split.is-sel > .intro__lead .intro__b, .translated-ltr .is-split > .intro__lead .intro__b, .translated-rtl .is-split > .intro__lead .intro__b { color: var(--muted); }
+.is-split.is-sel > .intro__lead--ink, .translated-ltr .is-split > .intro__lead--ink, .translated-rtl .is-split > .intro__lead--ink { opacity: 0; }
+
+.stats { --num: clamp(2.1rem, 3.3vw, 3.1rem); margin-top: clamp(72px, 8vw, 128px); }
+.stats__list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--cg); row-gap: 44px; }
+.stat { --j: var(--i); position: relative; display: flex; flex-direction: column; padding-top: clamp(20px, 2vw, 28px); border-top: 1px solid var(--line-2); }
+/* linija gyvena skaičiaus <dd> viduje (dl leidžia tik dt/dd), bet pozicionuojama pagal .stat */
+.stat__line { position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--brand); transform-origin: 0 50%; }
+.stat__num { order: 0; height: var(--num); overflow: visible clip; font-family: var(--display); font-stretch: var(--wide); font-size: var(--num); font-weight: 300; line-height: 1; letter-spacing: -.035em; color: var(--ink); white-space: nowrap; }
+.stat__v { display: inline-flex; align-items: baseline; }
+.stat__plus { color: var(--brand); margin-left: .04em; }
+.stat__unit { margin-left: .3em; font-family: var(--sans); font-stretch: 100%; font-size: .4em; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+.stat__label { order: 1; margin-top: clamp(14px, 1.3vw, 18px); max-width: 28ch; font-size: 15px; font-weight: 500; line-height: 1.4; color: var(--ink-2); text-wrap: pretty; }
+.stat__detail { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; line-height: 1.45; color: var(--muted); }
+
+/* judesys be slinkimo laiko juostos: IntersectionObserver prideda .in, toliau CSS perėjimai */
+.js .is-split > .intro__lead--ink .u { opacity: 0; transition: opacity .9s linear calc(var(--k) * 2.6s); }
+.js .is-split.in > .intro__lead--ink .u { opacity: 1; }
+.js .stat__line { scale: 0 1; transition: scale .9s cubic-bezier(.45, 0, .2, 1) calc(var(--j) * .3s); }
+.js .stat__v { translate: 0 110%; transition: translate 1s var(--ease) calc(var(--j) * .3s + .1s); }
+.js .stat__label { opacity: 0; translate: 0 -6px; transition: opacity .8s var(--ease) calc(var(--j) * .3s + .25s), translate .8s var(--ease) calc(var(--j) * .3s + .25s); }
+.js .stats.in .stat__line { scale: 1; }
+.js .stats.in .stat__v, .js .stats.in .stat__label { opacity: 1; translate: none; }
+
+/* slinkimo laiko juosta (Chrome, Edge, Safari 26+) */
+@supports (animation-timeline: view()) {
+  /* teiginys ryškėja, kol jo viršus slenka nuo ~88 % iki ~30 % ekrano aukščio (--s ir --e skaičiuojami nuo cover 0,
+     kai viršus ties ekrano apačia). Kiekvienos raidės langas (--w) daug platesnis už žingsnį, todėl ryškėja minkšta banga. */
+  .js .intro__read { --s: 12svh; --e: 70svh; --w: 13svh; view-timeline: --read block; }
+  .js .intro__read[data-read="word"] { --w: 8svh; }
+  .js .is-split > .intro__lead--ink .u { --a: calc(var(--s) + var(--k) * (var(--e) - var(--s) - var(--w))); transition: none; animation: ink-in linear both; animation-timeline: --read; animation-range: cover var(--a) cover calc(var(--a) + var(--w)); }
+  /* faktai: kiekvienas turi savo laiko juostą (telefone antra eilė pradeda, kai pati įslenka); --j: vieta eilėje */
+  .js .stat { --r0: 4%; --st: 5%; --a: calc(var(--r0) + var(--j) * var(--st)); view-timeline: --stat block; }
+  .js .stat__line { transition: none; animation: line-x linear both; animation-timeline: --stat; animation-range: cover var(--a) cover calc(var(--a) + var(--st) * 1.6); }
+  .js .stat__v { transition: none; animation: stat-up linear both; animation-timeline: --stat; animation-range: cover calc(var(--a) + 1%) cover calc(var(--a) + 6%); }
+  .js .stat__label { transition: none; animation: stat-down linear both; animation-timeline: --stat; animation-range: cover calc(var(--a) + 2%) cover calc(var(--a) + 7%); }
+  @keyframes ink-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes line-x { from { scale: 0 1; } to { scale: 1; } }
+  @keyframes stat-up { from { translate: 0 110%; } to { translate: none; } }
+  @keyframes stat-down { from { opacity: 0; translate: 0 -6px; } to { opacity: 1; translate: none; } }
+}
+/* užrakinta po pirmo praėjimo: grįžtant atgal niekas nebejuda */
+.js .stats.is-read .stat__line, .js .stats.is-read .stat__v, .js .stats.is-read .stat__label { animation: none; transition: none; scale: none; translate: none; opacity: 1; }
+
+/* planšetė: faktai 2 × 2 */
+@media (max-width: 900px) {
+  .stats__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(odd) { --j: 0; }
+  .stat:nth-child(even) { --j: 1; }
+}
+/* telefonas: nuoroda po teiginiu */
+@media (max-width: 760px) {
+  .intro__grid { grid-template-columns: minmax(0, 1fr); }
+  .intro__read, .intro__more { grid-column: 1; grid-row: auto; }
+  .intro__more { margin-top: 28px; }
+  .stats { --num: clamp(1.8rem, 7.6vw, 2.3rem); }
+  .stats__list { row-gap: 36px; }
+  .stat__label { font-size: 14px; }
+  .stat__detail { font-size: 13px; }
+}
 
 /* ---------- Paslaugų rodyklė ---------- */
 .svc { padding-bottom: var(--sec); }
@@ -299,19 +368,42 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
 .fan__doc:hover, .fan__doc:focus-visible { transform: rotate(0) translateY(-6%); z-index: 9; }
 .fan__doc:hover .fan__cap, .fan__doc:focus-visible .fan__cap { opacity: 1; }
 
-/* ---------- Užsakovai: logotipų sienelė ---------- */
+/* ---------- Užsakovai: trys priešingomis kryptimis slenkančios eilutės ----------
+   Be rėmelių: vienspalviai logotipai ir pavadinimai (be teisinės formos) laisvai plaukia eilutėmis, kraštai išblunka (mask).
+   Eilutė (.cmarq__row) turi tris vienodus takelius (.cmarq__track) po 12 užsakovų ir slenka per vieno takelio plotį
+   (-100 % / 3), todėl ciklas be siūlės; takelio gale toks pat tarpas (--g) kaip tarp elementų. Lyginė eilutė slenka
+   į kitą pusę (animation-direction: reverse). Juostos aria-hidden: ekrano skaitytuvui skirtas paslėptas sąrašas (.sr).
+   Sustoja užvedus pelę ant eilutės, paspaudus mygtuką (.is-paused) ir kai yra už ekrano ribų (.is-off).
+   Be JS ir html.calm (prefers-reduced-motion, ?static=1): visi užsakovai vienu ramiu, centruotu bloku. */
 .clients { padding: 0 0 var(--sec); }
-.clients__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 48px; flex-wrap: wrap; padding-top: clamp(56px, 6vw, 80px); box-shadow: inset 0 1px 0 var(--line-2); margin-bottom: clamp(28px, 3.6vw, 44px); }
+.clients__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 48px; flex-wrap: wrap; padding-top: clamp(56px, 6vw, 80px); box-shadow: inset 0 1px 0 var(--line-2); margin-bottom: clamp(36px, 4.4vw, 60px); }
+.clients__side { display: flex; align-items: center; gap: 20px; }
 .clients__note { max-width: 40ch; font-size: 14.5px; color: var(--muted); }
-.wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); box-shadow: 0 0 0 1px var(--line); border-radius: var(--r); overflow: hidden; }
-.wall__tile { position: relative; display: grid; place-items: center; min-height: 132px; padding: 22px 18px 34px; background: var(--surface); transition: background-color .3s; }
-.wall__tile:hover { background: var(--white); }
-.wall__logo { max-width: 100%; height: auto; object-fit: contain; filter: brightness(0); opacity: .62; transition: opacity .3s; }
-.wall__tile:hover .wall__logo { opacity: .95; }
-.wall__name { text-align: center; font-size: 15.5px; font-weight: 600; line-height: 1.25; letter-spacing: -.01em; color: rgba(14,26,34,.7); text-wrap: balance; transition: color .3s; }
-.wall__name span { display: block; margin-bottom: 4px; font-size: 11.5px; font-weight: 500; letter-spacing: .06em; color: var(--muted); }
-.wall__tile:hover .wall__name { color: var(--ink); }
-.wall__n { position: absolute; left: 14px; bottom: 10px; font-size: 12px; color: var(--muted); }
+.clients__ctl { flex: none; display: none; place-items: center; width: 40px; height: 40px; border-radius: 50%; font-size: 15px; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line-2); transition: background-color .25s, color .25s, box-shadow .25s; }
+.js .clients__ctl { display: grid; }
+.clients__ctl:hover { background: var(--ink); color: #fff; box-shadow: none; }
+
+.cmarq {
+  --g: clamp(52px, 5vw, 92px); --dur: 72s;
+  display: grid; row-gap: clamp(18px, 2.2vw, 34px); overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 11%, #000 89%, transparent); mask-image: linear-gradient(90deg, transparent, #000 11%, #000 89%, transparent);
+}
+.cmarq__row { display: flex; width: max-content; animation: cm-run var(--dur) linear infinite; }
+.cmarq__row--rev { animation-direction: reverse; }
+.cmarq.is-paused .cmarq__row, .cmarq.is-off .cmarq__row { animation-play-state: paused; }
+@media (hover: hover) { .cmarq__row:hover { animation-play-state: paused; } }
+@keyframes cm-run { to { transform: translateX(calc(-100% / 3)); } }
+.cmarq__track { display: flex; flex: none; align-items: center; gap: var(--g); padding-right: var(--g); }
+.cmarq__item { flex: none; display: grid; place-items: center; height: 52px; }
+.cmarq__logo { max-width: none; filter: brightness(0); opacity: .58; transition: opacity .3s; }
+.cmarq__item:hover .cmarq__logo { opacity: .9; }
+.cmarq__name { display: block; max-width: 19em; text-align: center; font-size: clamp(15px, 1.1vw, 17px); font-weight: 600; line-height: 1.15; letter-spacing: -.012em; color: var(--muted); text-wrap: balance; transition: color .3s; }
+.cmarq__item:hover .cmarq__name { color: var(--ink); }
+/* be JS ir ramiame režime: visi užsakovai vienu centruotu bloku, be dublikatų */
+html:not(.js) .cmarq { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 22px 56px; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gut); -webkit-mask-image: none; mask-image: none; }
+html:not(.js) .cmarq__row, html:not(.js) .cmarq__track:first-child { display: contents; }
+html:not(.js) .cmarq__row { animation: none; }
+html:not(.js) .cmarq__track + .cmarq__track { display: none; }
 
 /* ---------- Kontaktų blokas (CTA) ---------- */
 .cta { padding: 0 0 var(--sec); }
@@ -646,7 +738,7 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
   .hdr__tel { display: none; }
 }
 @media (max-width: 1180px) {
-  .wall { grid-template-columns: repeat(4, 1fr); }
+  .clients__side { width: 100%; justify-content: space-between; }
   .nav__link { padding: 0 9px; font-size: 14.5px; }
   .nav__link::after { left: 9px; right: 9px; }
   .hdr__row { gap: 18px; }
@@ -656,9 +748,7 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
   .nav, .hdr__cta { display: none; }
   .hdr .lang { display: flex; }
   .burger { display: block; }
-  .intro__grid, .quality__grid, .policy__grid, .form-sec__grid, .cond__grid, .routes__grid, .cta__grid { grid-template-columns: 1fr; }
-  .intro__grid { gap: 48px; }
-  .facts { grid-template-columns: repeat(4, 1fr); }
+  .quality__grid, .policy__grid, .form-sec__grid, .cond__grid, .routes__grid, .cta__grid { grid-template-columns: 1fr; }
   .routes__head { position: static; }
   .certs { position: static; grid-template-columns: repeat(4, 1fr); }
   .cert:nth-child(even) { margin-top: 24px; }
@@ -689,16 +779,14 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
   .yr { grid-template-columns: 1fr; gap: 4px; }
   .cgroup { grid-template-columns: 1fr; gap: 14px; }
   .gal__grid { columns: 3; }
-  .facts { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   :root { --hdr-h: 64px; }
-  .logos__row { grid-template-columns: 1fr; gap: 14px; }
-  .logos__track { animation-duration: 40s; }
+  .logos__track { animation-duration: 50s; }
+  .logos__item { height: 48px; }
   .logo__mark { width: 30px; height: 30px; }
   .logo__word { font-size: 17px; }
   .hdr .lang { display: none; }
-  .fact__num { font-size: clamp(2.2rem, 10vw, 2.8rem); }
   .svc__a { grid-template-columns: 36px 1fr 22px; }
   .svc__thumb { margin-left: 36px; }
   .work__head { flex-direction: column; align-items: flex-start; }
@@ -709,8 +797,11 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
   .fan { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .fan__doc, .js .fan.reveal .fan__doc, .js .fan.reveal.in .fan__doc { position: static; width: auto; transform: none; }
   .fan__cap { opacity: 1; }
-  .wall { grid-template-columns: repeat(2, 1fr); }
-  .wall__tile { min-height: 112px; }
+  .cmarq { --g: 40px; --dur: 56s; row-gap: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .cmarq__item { height: 46px; }
+  .cmarq__logo { zoom: .86; }
+  .cmarq__name { font-size: 14.5px; max-width: 15em; }
+  html:not(.js) .cmarq { gap: 16px 36px; }
   .std__item { grid-template-columns: 1fr; gap: 2px; }
   .cta__grid { padding: 28px 20px; gap: 32px; }
   .cta__row { grid-template-columns: 1fr; }
@@ -752,6 +843,8 @@ body:not(.p-index) main { padding-top: var(--hdr-h); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
+  /* nustatymą įjungus jau atvertame puslapyje (html.calm dar nėra) begalinės juostos stovi, o ne trūkčioja .01ms ciklu */
+  .cmarq__row, .logos__track { animation: none !important; }
 }
 @media (prefers-reduced-transparency: reduce) {
   .hdr, .ptools { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }

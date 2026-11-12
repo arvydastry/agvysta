@@ -50,31 +50,35 @@
   </div>
 </section>
 
-<section class="logos" aria-labelledby="logos-title">
-  <div class="wrap logos__row">
-    <h2 class="logos__title" id="logos-title">Tarp mūsų užsakovų</h2>
-    <div class="logos__viewport" data-marquee>
-      <ul class="logos__track">
-        {% for l in logotipai %}<li class="logos__item"><img src="{{ l.failas }}" alt="{{ l.vardas }}" width="{{ l.w }}" height="{{ l.h }}" style="width:{{ l.w }}px;height:{{ l.h }}px" decoding="async"></li>{% endfor %}
-      </ul>
-      <ul class="logos__track" aria-hidden="true">
-        {% for l in logotipai %}<li class="logos__item"><img src="{{ l.failas }}" alt="" width="{{ l.w }}" height="{{ l.h }}" style="width:{{ l.w }}px;height:{{ l.h }}px" decoding="async"></li>{% endfor %}
-      </ul>
-    </div>
+<section class="logos" aria-label="Tarp mūsų užsakovų">
+  <div class="logos__viewport">
+    {% for dup in [False, True] %}
+    <ul class="logos__track"{% if dup %} aria-hidden="true"{% endif %}>
+      {% for l in logotipai %}<li class="logos__item"><img src="{{ l.spalvotas }}" alt="{{ '' if dup else l.vardas }}" width="{{ l.w }}" height="{{ l.h }}" style="width:{{ (l.w * 1.15)|round|int }}px;height:{{ (l.h * 1.15)|round|int }}px" decoding="async"></li>{% endfor %}
+    </ul>
+    {% endfor %}
   </div>
 </section>
 
 <section class="intro" aria-label="Apie įmonę trumpai">
-  <div class="wrap intro__grid">
-    <p class="intro__statement reveal">Įrengiame lauko vandentiekio, buitinių ir lietaus nuotekų tinklus, siurblines bei valymo įrenginius. <span>Nuo privačių projektų iki didelės apimties valstybinių užsakymų.</span></p>
-    <dl class="facts px" style="--par:26">
-      {% for f in site.faktai %}
-      <div class="fact reveal" style="--i:{{ loop.index0 }}">
-        <dt class="fact__label">{{ f.tekstas }}</dt>
-        <dd class="fact__num"><span{% if not f.nuo %} data-count="{{ f.count }}"{% endif %}>{{ f.skaicius }}</span>{% if f.plius %}<span class="fact__plus">+</span>{% endif %}{% if f.vienetas %}<span class="fact__unit">{{ f.vienetas }}</span>{% endif %}</dd>
+  <div class="wrap">
+    <div class="intro__grid">
+      <div class="intro__read" data-read="char">
+        <p class="intro__lead"><span class="intro__a">Įrengiame lauko vandentiekio, buitinių ir lietaus nuotekų tinklus, siurblines bei valymo įrenginius.</span> <span class="intro__b">Nuo&nbsp;privačių projektų iki didelės apimties valstybinių&nbsp;užsakymų.</span></p>
       </div>
-      {% endfor %}
-    </dl>
+      <a class="link-arrow intro__more" href="apie-mus.html">Apie įmonę{{ arrow() }}</a>
+    </div>
+    <div class="stats" data-flow>
+      <dl class="stats__list">
+        {% for f in site.faktai %}
+        {% set t = f.tekstas.split(': ', 1) %}
+        <div class="stat" style="--i:{{ loop.index0 }}">
+          <dt class="stat__label">{{ t[0] }}{% if t|length > 1 %}<span class="sr">: </span><span class="stat__detail">{{ t[1] }}</span>{% endif %}</dt>
+          <dd class="stat__num"><span class="stat__line" aria-hidden="true"></span>{% if f.plius %}<span class="sr">Daugiau nei {{ f.skaicius }}{% if f.vienetas %} {{ f.vienetas }}{% endif %}</span>{% endif %}<span class="stat__v"{% if f.plius %} aria-hidden="true"{% endif %}>{{ f.skaicius }}{% if f.plius %}<span class="stat__plus">+</span>{% endif %}{% if f.vienetas %}<span class="stat__unit">{{ f.vienetas }}</span>{% endif %}</span></dd>
+        </div>
+        {% endfor %}
+      </dl>
+    </div>
   </div>
 </section>
 
@@ -214,20 +218,25 @@
   <div class="wrap">
     <div class="clients__head">
       <h2 class="h2 reveal" id="cl-title">Užsakovai, kuriems dirbome</h2>
-      <p class="clients__note reveal">{{ uzsakovu_sienele|length }} užsakovai projektų sąraše nuo {{ imone.nuo }} metų. Skaičius rodo objektų kiekį.</p>
+      <div class="clients__side reveal">
+        <p class="clients__note">{{ uzsakovu_sienele|length }} užsakovai projektų sąraše nuo {{ imone.nuo }} metų.</p>
+        <button class="clients__ctl" type="button" data-marqctl aria-label="Sustabdyti užsakovų juostas"><i class="ph ph-pause" aria-hidden="true"></i></button>
+      </div>
     </div>
-    <ul class="wall">
-      {% for t in uzsakovu_sienele %}
-      <li class="wall__tile reveal{% if not t.logo %} wall__tile--name{% endif %}" style="--i:{{ loop.index0 % 6 }}" title="{{ t.vardas }}">
-        {% if t.logo %}
-        <img class="wall__logo" src="{{ t.logo.failas }}" alt="{{ t.vardas }}" width="{{ t.logo.w }}" height="{{ t.logo.h }}" style="width:{{ (t.logo.w * 1.12)|round|int }}px;height:{{ (t.logo.h * 1.12)|round|int }}px" loading="lazy" decoding="async">
-        {% else %}
-        <p class="wall__name">{% if t.forma %}<span>{{ t.forma }}</span>{% endif %}{{ t.pav }}</p>
-        {% endif %}
-        <span class="wall__n">{{ plural(t.n, 'objektas', 'objektai', 'objektų') }}</span>
-      </li>
+  </div>
+  <ul class="sr">
+    {% for t in uzsakovu_sienele %}<li>{{ t.vardas }}</li>{% endfor %}
+  </ul>
+  <div class="cmarq reveal" data-marq aria-hidden="true">
+    {% for row in uzsakovu_eilutes %}
+    <div class="cmarq__row{% if loop.index0 is odd %} cmarq__row--rev{% endif %}">
+      {% for dup in range(3) %}
+      <div class="cmarq__track">
+        {% for t in row %}<div class="cmarq__item">{% if t.logo %}<img class="cmarq__logo" src="{{ t.logo.failas }}" alt="" width="{{ t.logo.w }}" height="{{ t.logo.h }}" style="width:{{ (t.logo.w * 1.12)|round|int }}px;height:{{ (t.logo.h * 1.12)|round|int }}px" decoding="async">{% else %}<span class="cmarq__name">{{ t.pav }}</span>{% endif %}</div>{% endfor %}
+      </div>
       {% endfor %}
-    </ul>
+    </div>
+    {% endfor %}
   </div>
 </section>
 

@@ -62,6 +62,23 @@ def client_wall(pj, logos):
         tiles.append({'vardas': name, 'forma': forma, 'pav': pav, 'n': c['projektai'], 'logo': logo})
     return tiles
 
+def client_rows(tiles, n=3):
+    """Užsakovų eilutės juostoms: logotipai ir pavadinimai paskirstomi po lygiai,
+    eilutės viduje logotipai išdėstomi tolygiai tarp pavadinimų (eiliškumas pagal objektų skaičių išlaikomas)."""
+    logos = [t for t in tiles if t['logo']]
+    names = [t for t in tiles if not t['logo']]
+    rl = [[] for _ in range(n)]; rn = [[] for _ in range(n)]
+    for i, t in enumerate(logos): rl[i % n].append(t)
+    for i, t in enumerate(names): rn[(i + len(logos)) % n].append(t)
+    rows = []
+    for L, N in zip(rl, rn):
+        tot = len(L) + len(N); row = []; li = ni = 0
+        for k in range(tot):
+            if L and (k + 1) * len(L) // tot > k * len(L) // tot: row.append(L[li]); li += 1
+            else: row.append(N[ni]); ni += 1
+        rows.append(row)
+    return rows
+
 def main():
     site = load('site')
     pj = load('projektai')
@@ -98,7 +115,7 @@ def main():
     env.filters['thousands'] = lambda n: f'{n:,}'.replace(',', '\u00a0')
 
     pages = {
-        'index.html': ('index.html', dict(page='index', featured=featured, pj=pj, allp=allp, trasos=trasos, trasu=trasu_suvestine, logotipai=load('logotipai'), uzsakovu_sienele=client_wall(pj, load('logotipai')))),
+        'index.html': ('index.html', dict(page='index', featured=featured, pj=pj, allp=allp, trasos=trasos, trasu=trasu_suvestine, logotipai=load('logotipai'), uzsakovu_sienele=client_wall(pj, load('logotipai')), uzsakovu_eilutes=client_rows(client_wall(pj, load('logotipai'))))),
         'projektai.html': ('projektai.html', dict(page='projektai', pj=pj, by_year=by_year)),
         'apie-mus.html': ('apie-mus.html', dict(page='apie', allp=allp)),
         'karjera.html': ('karjera.html', dict(page='karjera')),

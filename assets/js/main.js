@@ -1,5 +1,5 @@
 /* Agvysta demo: elgsena (vanilla JS, be priklausomybių).
-   Meniu, atsiradimai, skaičiai, video tik matomoje srityje, paslaugų rodyklė, projektų karuselė,
+   Meniu, atsiradimai, įvado teiginys ir faktai, užsakovų juostos, video tik matomoje srityje, paslaugų rodyklė, projektų karuselė,
    nuotraukų peržiūra, projektų filtras, demonstracinė forma. Jokių scroll klausytojų: tik IntersectionObserver. */
 (() => {
   'use strict';
@@ -77,21 +77,121 @@
     $$('.reveal').forEach(el => ro.observe(el));
   } else $$('.reveal').forEach(el => el.classList.add('in'));
 
-  /* skaičiai */
-  const fmt = n => Math.round(n).toLocaleString('lt-LT').replace(/\s/g, ' ');
-  if (!calm && 'IntersectionObserver' in window) {
-    const co = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      co.unobserve(e.target);
-      const el = e.target, to = +el.dataset.count, t0 = performance.now(), dur = 1500;
-      const step = now => {
-        const k = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - k, 4);
-        el.textContent = fmt(to * ease);
-        if (k < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }), { threshold: .6 });
-    $$('[data-count]').forEach(el => { el.textContent = '0'; co.observe(el); });
+  /* įvadas: teiginys „įsigeria“ slenkant (po raidę arba po žodį), faktų linijos užsipildo.
+     Pagrindinis <p> lieka vienu tekstu (ekrano skaitytuvui, žymėjimui, vertimui), kol vyksta efektas jis blyškus.
+     Ant jo uždedama aria-hidden kopija, suskaidyta į žodžius tik paprastais tarpais (NBSP, pvz. „Nuo privačių“, lieka žodžio
+     viduje), o data-read="char" atveju dar ir į raides (grafemas). Su animation-timeline: view() eigą valdo CSS;
+     kitur IntersectionObserver prideda .in (CSS perėjimai). Kai paskutinė animacija baigiasi slenkant pirmyn
+     (arba blokas išslenka viršun), būsena užrakinama (.is-read):
+     grįžtant atgal tekstas nebedingsta, skaičiai nebeslenka, kopija pašalinama. html.calm: nieko nedaroma. */
+  const read = $('[data-read]'), flow = $('[data-flow]');
+  if (!calm && (read || flow)) {
+    let ink = null, last = null, ro = null, lines = null;
+    const sel = () => {
+      const s = d.getSelection();
+      read.classList.toggle('is-sel', !!s && !s.isCollapsed && s.containsNode(read, true));
+    };
+    if (read) {
+      ink = $('.intro__lead', read).cloneNode(true);
+      ink.classList.add('intro__lead--ink');
+      ink.setAttribute('aria-hidden', 'true');
+      ink.inert = true; /* kopija nedalyvauja paieškoje (Ctrl+F) ir žymėjime */
+      const byChar = read.dataset.read !== 'word';
+      const seg = byChar && window.Intl && Intl.Segmenter ? new Intl.Segmenter('lt', { granularity: 'grapheme' }) : null;
+      const graphemes = t => seg ? Array.from(seg.segment(t), x => x.segment) : Array.from(t);
+      const units = [];
+      const unit = (cls, t) => { const u = d.createElement('span'); u.className = cls; u.textContent = t; return u; };
+      $$('.intro__a, .intro__b', ink).forEach(part => {
+        const list = part.textContent.trim().split(/[ \t\r\n]+/);
+        part.textContent = '';
+        list.forEach((t, i) => {
+          if (i) part.append(' ');
+          if (byChar) {
+            const w = d.createElement('span');
+            w.className = 'w';
+            graphemes(t).forEach(g => { const c = unit('c u', g); w.append(c); units.push(c); });
+            part.append(w);
+          } else {
+            const w = unit('w u', t);
+            part.append(w);
+            units.push(w);
+          }
+        });
+      });
+      units.forEach((u, i) => u.style.setProperty('--k', (i / Math.max(1, units.length - 1)).toFixed(4)));
+      last = units[units.length - 1] || null;
+      read.append(ink);
+      read.classList.add('is-split');
+      d.addEventListener('selectionchange', sel);
+      /* eilutės kopijoje laužomos ten pat, kur pagrindiniame tekste: raidžių <span> plotis skiriasi dalimis pikselio,
+         todėl kai eilutė telpa vos vos (pvz. padidintas naršyklės šriftas), kopija galėtų perkelti žodį anksčiau.
+         Kopija nowrap, o prieš kiekvieną žodį paslėptas <br>, atidengiamas ten, kur pagrindiniame tekste prasideda nauja eilutė. */
+      const rng = [];
+      const tw = d.createTreeWalker($('.intro__lead', read), NodeFilter.SHOW_TEXT);
+      for (let n; (n = tw.nextNode());) for (const m of n.data.matchAll(/[^ \t\r\n]+/g)) {
+        const r = d.createRange(); r.setStart(n, m.index); r.setEnd(n, m.index + m[0].length); rng.push(r);
+      }
+      const brs = $$('.w', ink).map(w => { const br = d.createElement('br'); br.hidden = true; w.before(br); return br; });
+      if (brs.length === rng.length) {
+        lines = () => {
+          if (!ink) return;
+          let y = 0;
+          rng.forEach((r, i) => { const t = r.getBoundingClientRect().top; if (i) brs[i].hidden = t < y + 2; y = t; });
+        };
+        lines();
+        if (window.ResizeObserver) { ro = new ResizeObserver(lines); ro.observe(read); }
+        if (d.fonts) d.fonts.addEventListener('loadingdone', lines);
+      } else ink.classList.add('is-wrap');
+    }
+    const lock = el => {
+      el.classList.add('in', 'is-read');
+      if (el === read && ink) {
+        d.removeEventListener('selectionchange', sel);
+        if (ro) ro.disconnect();
+        if (lines && d.fonts) d.fonts.removeEventListener('loadingdone', lines);
+        ink.remove();
+        ink = null;
+        read.classList.remove('is-split', 'is-sel');
+      }
+    };
+    const els = [read, flow].filter(Boolean);
+    if ('IntersectionObserver' in window) {
+      /* šaknis pratęsta žemyn: „nebesikerta“ tik išslinkęs viršun (taip pat po šuolio per inkarą ar perkrovus puslapį žemiau) */
+      const done = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) { lock(e.target); done.unobserve(e.target); }
+      }), { rootMargin: '0px 0px 99999px 0px' });
+      els.forEach(el => done.observe(el));
+      const tl = window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()');
+      if (tl) {
+        /* užrakinama vos paskutinė slinkimo animacija pasiekia pabaigą (animationend ateina ir grįžtant, todėl tikrinama eiga) */
+        const onEnd = (el, part) => part && part.addEventListener('animationend', function h(e) {
+          const an = e.target === part && part.getAnimations()[0];
+          if (an && an.effect.getComputedTiming().progress === 1) { part.removeEventListener('animationend', h); lock(el); }
+        });
+        onEnd(read, last);
+        onEnd(flow, flow && $$('.stat__line', flow).pop());
+      } else {
+        /* atsarginis kelias: pradedama, kai bloko viršus pasiekia 90 % (teiginys, nes jis permatomas) / 70 % (faktai)
+           ekrano aukščio arba jau yra aukščiau */
+        const seen = m => new IntersectionObserver((es, o) => es.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); }
+        }), { rootMargin: '99999px 0px ' + m + ' 0px' });
+        if (read) seen('-10%').observe(read);
+        if (flow) seen('-30%').observe(flow);
+      }
+    } else els.forEach(lock);
+  }
+
+  /* užsakovų juostos: sustabdymo mygtukas (WCAG 2.2.2), už ekrano ribų nejuda */
+  const marq = $('[data-marq]');
+  if (marq && !calm) {
+    const ctl = $('[data-marqctl]');
+    ctl && ctl.addEventListener('click', () => {
+      const p = marq.classList.toggle('is-paused');
+      $('i', ctl).className = 'ph ' + (p ? 'ph-play' : 'ph-pause');
+      ctl.setAttribute('aria-label', p ? 'Paleisti užsakovų juostas' : 'Sustabdyti užsakovų juostas');
+    });
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => marq.classList.toggle('is-off', !e.isIntersecting)), { rootMargin: '120px 0px' }).observe(marq);
   }
 
   /* video: įkeliama ir rodoma tik matomoje srityje */
